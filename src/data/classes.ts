@@ -2,7 +2,7 @@ export const classes = [
     {
         id: 1,
         title: "IELTS নিয়মিত ক্লিনিক প্রস্তুতি",
-        image: "/images/class1.webp?height=200&width=300",
+        image: "/images/class2.png?height=200&width=300",
         date: "১৯ জুলাই",
         time: "রাত ৭:০০ - রাত ৮:০০",
         registered: "৩৯৮৫+ রেজিস্টার করেছেন",
