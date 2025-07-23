@@ -5,9 +5,7 @@ export default function PublicLayout() {
     return (
         <>
             <Navbar/>
-            <div className={"my-20"}>
-                <Outlet/>
-            </div>
+            <Outlet/>
         </>
     )
 }

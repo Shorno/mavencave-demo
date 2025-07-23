@@ -14,7 +14,7 @@ export default function HeroSection() {
     ]
 
     return (
-        <div className="bg-gray-50 flex items-center justify-center p-4">
+        <div className="bg-gray-50 min-h-[calc(100dvh-97px)] py-16 md:py-0 flex items-center justify-center p-4">
             <div className="w-full mx-auto text-center">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                     বিদেশে উচ্চশিক্ষার জন্য একমাত্র সহায়কারী।
