@@ -30,7 +30,6 @@ export default function GuidesSection() {
     return (
         <section className="bg-[#4169e1] py-16 px-4">
             <div className="max-w-7xl mx-auto">
-                {/* Header */}
                 <div className="text-center mb-12">
                     <h2 className="text-white text-3xl md:text-4xl font-bold leading-tight max-w-4xl mx-auto">
                         বিদেশে উচ্চশিক্ষার দিকনির্দেশনার জন্য এখুনি ডাউনলোড করে ফেলুন
@@ -41,20 +40,16 @@ export default function GuidesSection() {
                     {guides.map((guide, index) => (
                         <Card key={index} className="bg-white border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
                             <CardContent className="p-8 text-center">
-                                {/* Icon */}
                                 <div
                                     className={`w-16 h-16 ${guide.bgColor} rounded-full flex items-center justify-center mx-auto mb-6`}
                                 >
                                     <guide.icon className={`h-8 w-8 ${guide.iconColor}`} />
                                 </div>
 
-                                {/* Title */}
                                 <h3 className="text-gray-900 text-xl font-bold mb-4">{guide.title}</h3>
 
-                                {/* Description */}
                                 <p className="text-gray-600 text-sm leading-relaxed mb-8">{guide.description}</p>
 
-                                {/* Download Button */}
                                 <Button
                                     variant="outline"
                                     size={"xl"}
