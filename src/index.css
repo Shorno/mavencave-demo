@@ -158,14 +158,12 @@
         button, [role="button"] {
             cursor: pointer;
         }
-
     }
-
     body {
         @apply bg-background text-foreground;
     }
 }
 
 body {
-    font-family: "Noto Sans", sans-serif;
+    font-family: "Baloo Da 2", sans-serif;
 }

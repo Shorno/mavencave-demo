@@ -1,5 +1,6 @@
 import {ChevronLeft, ChevronRight, ArrowRight} from "lucide-react"
 import {Button} from "@/components/ui/button"
+import FourCardGrid from "@/components/four-card-grid.tsx";
 
 const experts = [
     {
@@ -62,32 +63,7 @@ export default function ExpertsSection() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                    {experts.map((expert, index) => (
-                        <div key={index} className="bg-white/10 backdrop-blur-sm border-0 overflow-hidden">
-                            <div className="relative rounded-xl">
-                                <img
-                                    src={expert.image || "/placeholder.svg"}
-                                    alt={expert.name}
-                                    className="w-full h-full rounded-xl object-cover"
-                                />
-
-                                <div
-                                    className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                                    <h3 className="text-white text-xl font-semibold mb-2">{expert.name}</h3>
-
-                                    <div className="flex items-center justify-between text-sm">
-                                        <span className="text-white/90">{expert.experience}</span>
-                                        <div className="flex items-center gap-2">
-                                            <span className="text-2xl">{expert.flag}</span>
-                                            <span className="text-white/90">{expert.country}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                <FourCardGrid items={experts}/>
 
                 <div className="text-center">
                     <Button

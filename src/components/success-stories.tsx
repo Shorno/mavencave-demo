@@ -1,28 +1,28 @@
-"use client"
-
 import { useState } from "react"
 import { ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
+export const stories = [
+    {
+        image: "/images/success1.webp",
+        quote: "মেডেনকোটের থেকে যুক্তরাজ্য উচ্চশিক্ষার জন্য ভিসায় কি কি প্রয়োজন পরিবর্তিত হয়েছে",
+    },
+    {
+        image: "/images/success2.webp",
+        quote: "মেডেনকোট এখানে ৮৫% সফিক ভিসা সফলতা রেট আপনাজ করেছেন",
+    },
+    {
+        image: "/images/success3.webp",
+        quote: "রিলেট অনুযায়ী, বেসিকভাগ শিক্ষার্থী এখানে চিটউটর এর সহায়তায় ব্যান্ড ৭+ স্কোর করেছেন",
+    },
+]
+
+
 export default function SuccessStoriesSection() {
     const [currentSlide, setCurrentSlide] = useState(0)
     const [showMore, setShowMore] = useState(false)
 
-    const stories = [
-        {
-            image: "/images/success1.webp",
-            quote: "মেডেনকোটের থেকে যুক্তরাজ্য উচ্চশিক্ষার জন্য ভিসায় কি কি প্রয়োজন পরিবর্তিত হয়েছে",
-        },
-        {
-            image: "/images/success2.webp",
-            quote: "মেডেনকোট এখানে ৮৫% সফিক ভিসা সফলতা রেট আপনাজ করেছেন",
-        },
-        {
-            image: "/images/success3.webp",
-            quote: "রিলেট অনুযায়ী, বেসিকভাগ শিক্ষার্থী এখানে চিটউটর এর সহায়তায় ব্যান্ড ৭+ স্কোর করেছেন",
-        },
-    ]
 
     const nextSlide = () => {
         setCurrentSlide((prev) => (prev + 1) % stories.length)
