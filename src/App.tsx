@@ -2,6 +2,7 @@ import {Route, Routes} from "react-router";
 import PublicLayout from "@/layout/PublicLayout.tsx";
 import HomePage from "@/pages/HomePage.tsx";
 import AboutPage from "@/pages/About.tsx";
+import BlogPage from "@/pages/Blogs.tsx";
 
 function App() {
     return (
@@ -9,6 +10,7 @@ function App() {
             <Route path={"/"} element={<PublicLayout/>}>
                 <Route index element={<HomePage/>}/>
                 <Route path={"about"} element={<AboutPage/>}/>
+                <Route path={"blog"} element={<BlogPage/>}/>
                 <Route path={"contact"} element={<div>Contact</div>}/>
             </Route>
         </Routes>
