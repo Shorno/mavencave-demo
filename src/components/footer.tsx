@@ -13,7 +13,6 @@ import {
 import { IconBrandTelegram } from "@tabler/icons-react";
 
 const Footer = () => {
-    // Accordion data
     const accordionData = [
         {
             items: [
@@ -211,7 +210,6 @@ const Footer = () => {
                             </div>
                             <Separator className="bg-white/20 my-8 h-px" />
 
-                            Right Section - Four Columns
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 w-full lg:w-full">
                                 {footerColumns.map((column, index) => (
                                     <div key={index}>
