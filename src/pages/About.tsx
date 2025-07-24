@@ -272,11 +272,11 @@ export default function AboutPage() {
             <div className={"max-w-7xl mx-auto px-4 lg:px-6"}>
                 <p className={"text-center text-xl sm:text-3xl lg:text-4xl font-semibold py-8"}>আমাদের পরামর্শদাতা</p>
                 <FourCardGrid items={advisors}/>
-                <div className={"py-8"}>
+                <div className={"py-8 mb-16"}>
                     <p className={"text-center  sm:text-3xl lg:text-4xl font-semibold py-8"}>
                         বিশ্বজুড়ে বিনিয়োগকারীদের বিশ্বাস অর্জন করেছে
                     </p>
-                    <div className={"sm:flex flex flex-col justify-center items-center sm:gap-16"}>
+                    <div className={"sm:flex flex flex-col sm:flex-row justify-center items-center sm:gap-16"}>
                         <img src={"/images/brands/brand3.png"} alt={"brand"} className={"h-14 sm:h-20"}/>
                         <img src={"/images/brands/brand4.png"} alt={"brand"} className={"h-14 sm:h-20"}/>
                         <img src={"/images/brands/brand2.png"} alt={"brand"} className={"h-14 sm:h-20"}/>
