@@ -536,6 +536,6 @@ export const navigationItems: NavigationItem[] = [
     },
 
     { label: "মেভেনকেভ ডাইজেস্ট", href: "/leadership" },
-    { label: "আমাদের AI", href: "/mavencave-ai" },
+    { label: "মেভেনকেভ AI", href: "/mavencave-ai" },
     { label: "আমাদের সম্পর্কে", href: "/about" },
 ];
