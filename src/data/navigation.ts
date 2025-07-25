@@ -2,6 +2,7 @@ export interface NavigationItem {
     label: string;
     href: string;
     hasDropdown?: boolean;
+    isExamSection?: boolean
     dropdownItems?: Array<NavigationItem>;
 }
 
@@ -318,6 +319,7 @@ export const navigationItems: NavigationItem[] = [
     {
         label: "পরীক্ষাসমূহ",
         href: "/exams",
+        isExamSection: true,
         hasDropdown: true,
         dropdownItems: [
             {
@@ -535,7 +537,7 @@ export const navigationItems: NavigationItem[] = [
         ],
     },
 
-    { label: "মেভেনকেভ ডাইজেস্ট", href: "/leadership" },
+    { label: "ডাইজেস্ট", href: "/mavencave-digest" },
     { label: "মেভেনকেভ AI", href: "/mavencave-ai" },
     { label: "আমাদের সম্পর্কে", href: "/about" },
 ];
