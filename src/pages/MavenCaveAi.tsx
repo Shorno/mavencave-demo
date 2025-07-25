@@ -11,8 +11,8 @@ export default function MavenCaveAi() {
     ]);
 
     const options = [
-        {label: 'SOP Generator', path: '/resources/sop'},
-        {label: 'Visa Predictor', path: '/visa-predictor'},
+        {label: 'Visa Predictor', path: '/resources/sop'},
+        {label: 'SOP Generator', path: '/visa-predictor'},
     ];
     const handleSubmit = () => {
         if (input.trim()) {

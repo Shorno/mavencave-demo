@@ -1,5 +1,3 @@
-
-// Using a custom SVG for the circular progress for better control over styling
 const CircularProgressBar = ({percentage}: { percentage: number }) => {
     const radius = 50;
     const circumference = 2 * Math.PI * radius;

@@ -1,6 +1,6 @@
-import SopPart2 from "@/pages/SOP/SopPart2.tsx";
+import SopPart2 from "@/components/sop/SopPart2.tsx";
 import Testimonial from "@/components/sop/Testimonial.tsx";
-import SopPart3 from "@/pages/SOP/SopPart3.tsx";
+import SopPart3 from "@/components/sop/SopPart3.tsx";
 import CTASection from "@/components/cta.tsx";
 import VisaPredictorPart1 from "@/components/visa-predictor/VisaPredictorPart1.tsx";
 

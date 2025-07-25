@@ -24,9 +24,9 @@ const MultiLevelDropdown = ({ items }: { items: NavigationItem[] }) => {
                         </DropdownMenuSub>
                     ) : (
                         <DropdownMenuItem asChild>
-                            <a href={item.href} className="font-medium w-full">
+                            <Link to={item.href} className="font-medium w-full">
                                 {item.label}
-                            </a>
+                            </Link>
                         </DropdownMenuItem>
                     )}
                 </div>
@@ -148,13 +148,13 @@ export default function Navbar() {
             <div className="mx-auto container px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                     <div className="flex items-center">
-                        <a href="/"
+                        <Link to="/"
                            className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors">
                             <DatabaseIcon className="h-8 w-8"/>
                             <span className="text-2xl font-bold tracking-tight">
                                 Maven<span className="font-medium text-gray-600">cave</span>
                             </span>
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="hidden md:block">
