@@ -1,40 +1,40 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, BookOpen, GraduationCap, FileText, CreditCard, User } from "lucide-react"
+import { ArrowRight} from "lucide-react"
 const services = [
     {
         title: "IELTS ক্র্যাক",
-        icon: BookOpen,
+        icon: "/images/icons/ielts.png",
         color: "text-purple-600",
         bgColor: "bg-purple-100",
     },
     {
         title: "শর্টলিস্ট কলেজসমূহ",
-        icon: BookOpen,
+        icon: "/images/icons/books.png",
         color: "text-orange-600",
         bgColor: "bg-orange-100",
     },
     {
         title: "স্কলারশিপ খুঁজুন",
-        icon: GraduationCap,
+        icon: "/images/icons/grad.png",
         color: "text-yellow-600",
         bgColor: "bg-yellow-100",
     },
     {
         title: "SOP রিভিউ",
-        icon: FileText,
+        icon: "/images/icons/sop.png",
         color: "text-blue-600",
         bgColor: "bg-blue-100",
     },
     {
         title: "ভিসা সহায়তা",
-        icon: CreditCard,
+        icon: "/images/icons/visa.png",
         color: "text-green-600",
         bgColor: "bg-green-100",
     },
     {
         title: "কোচ খুঁজুন",
-        icon: User,
+        icon: "/images/icons/coach.png",
         color: "text-blue-600",
         bgColor: "bg-blue-100",
     },
@@ -51,15 +51,16 @@ export default function ServicesSection() {
 
                 <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
                     {services.map((service, index) => {
-                        const IconComponent = service.icon
                         return (
                             <Card key={index} className="bg-gray-50 shadow-xs rounded-lg hover:shadow-sm transition-shadow duration-300">
                                 <CardContent className="sm:p-8 text-center">
                                     <div
-                                        className={`w-16 h-16 mx-auto mb-6 rounded-2xl ${service.bgColor} flex items-center justify-center`}
+                                        className={`w-20 h-20 mx-auto mb-6 rounded-2xl flex items-center justify-center`}
                                     >
-                                        <IconComponent className={`w-8 h-8 ${service.color}`} />
+                                        {/*<IconComponent className={`w-8 h-8 ${service.color}`} />*/}
+                                        <img src={service.icon || ""} alt={"icon"}/>
                                     </div>
+
 
                                     <h3 className="md:text-xl font-semibold text-gray-900 mb-6">{service.title}</h3>
 

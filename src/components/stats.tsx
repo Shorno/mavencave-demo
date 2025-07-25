@@ -3,28 +3,28 @@ import { Card, CardContent } from "@/components/ui/card"
 export default function StatsSection() {
     const stats = [
         {
-            icon: "📱",
+            icon: "/images/google-play.png",
             number: "১০ লক্ষ+",
             description: "ডাউনলোড করেছেন",
             bgColor: "bg-green-100",
             color: "text-green-600",
         },
         {
-            icon: "📺",
+            icon: "/images/icons/yt.png",
             number: "১ লক্ষ+",
             description: "ইউটিউবে সাবস্ক্রাইবার",
             bgColor: "bg-red-100",
             color: "text-red-600",
         },
         {
-            icon: "📘",
+            icon: "/images/icons/fb.png",
             number: "২ লক্ষ+",
             description: "ফেসবুক পরিবার",
             bgColor: "bg-blue-100",
             color: "text-blue-600",
         },
         {
-            icon: "👥",
+            icon: "/images/icons/comm.png",
             number: "১ লক্ষ+",
             description: "কমিউনিটি সদস্য",
             bgColor: "bg-purple-100",
@@ -52,9 +52,11 @@ export default function StatsSection() {
                         >
                             <CardContent className="sm:p-8 text-center">
                                 <div
-                                    className={`w-16 h-16 mx-auto mb-6 rounded-2xl ${stat.bgColor} flex items-center justify-center`}
+                                    className={`w-16 h-16 mx-auto mb-6  flex items-center justify-center`}
                                 >
-                                    <span className={`text-2xl ${stat.color}`}>{stat.icon}</span>
+                                    <span className={`text-2xl ${stat.color}`}>
+                                        <img src={stat.icon} alt={stat.description}/>
+                                    </span>
                                 </div>
 
                                 <div className="text-xl md:text-3xl font-bold text-blue-600 mb-2">

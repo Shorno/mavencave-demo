@@ -99,7 +99,7 @@ export default function MavenCaveAi() {
                 <main className="flex-1 p-8 overflow-y-auto bg-white">
                     <div className="max-w-3xl mx-auto">
                         <h2 className="text-xl font-semibold text-gray-800 mb-6">
-                            {selected} Panel
+                            Ask Maven AI
                         </h2>
 
                         <textarea
