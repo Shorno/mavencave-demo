@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import {Plus, Send, Mic, SendHorizonal} from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
+import {Link} from "react-router";
 
 export default function HeroSection() {
     const sampleQuestions = [
@@ -61,8 +62,10 @@ export default function HeroSection() {
                                     <Mic className="w-6 h-6 text-white" />
                                 </button>
                             </div>
-                            <Button size={"xl"} className="w-full text-base font-medium">
-                                মেভেনকেভ AI
+                            <Button asChild size={"xl"} className="w-full text-base font-medium">
+                                <Link to={"/mavencave-ai"}>
+                                    মেভেনকেভ AI
+                                </Link>
                             </Button>
                         </div>
                     </CardContent>
