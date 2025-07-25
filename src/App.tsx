@@ -3,6 +3,7 @@ import PublicLayout from "@/layout/PublicLayout.tsx";
 import HomePage from "@/pages/HomePage.tsx";
 import AboutPage from "@/pages/About.tsx";
 import BlogPage from "@/pages/Blogs.tsx";
+import StudyAbroad from "@/pages/StudyAbroad.tsx";
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
                 <Route index element={<HomePage/>}/>
                 <Route path={"about"} element={<AboutPage/>}/>
                 <Route path={"blog"} element={<BlogPage/>}/>
+                <Route path={"study-abroad"} element={<StudyAbroad/>}/>
                 <Route path={"contact"} element={<div>Contact</div>}/>
             </Route>
         </Routes>
