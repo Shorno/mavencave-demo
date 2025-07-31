@@ -355,33 +355,45 @@ export const navigationItems: NavigationItem[] = [
             },
 
             {
-                label: "পিটিই",
+                label: "প্রাকটিস মক টেস্ট  ",
                 href: "/exams/pte",
                 hasDropdown: true,
                 dropdownItems: [
+                    // {
+                    //     label: "পরীক্ষার বিবরণ",
+                    //     href: "/exams/pte/overview",
+                    //     hasDropdown: true,
+                    //     dropdownItems: [
+                    //         { label: "পিটিই ওভারভিউ", href: "/exams/pte/overview" },
+                    //         { label: "পিটিই যোগ্যতা", href: "/exams/pte/eligibility" },
+                    //         { label: "পিটিই রেজিস্ট্রেশন", href: "/exams/pte/registration" },
+                    //         { label: "পিটিই ফলাফল", href: "/exams/pte/results" },
+                    //         { label: "পিটিই সিলেবাস", href: "/exams/pte/syllabus" },
+                    //         { label: "পিটিই স্লট বুকিং", href: "/exams/pte/slot-booking" },
+                    //     ],
+                    // },
                     {
                         label: "পরীক্ষার বিবরণ",
                         href: "/exams/pte/overview",
                         hasDropdown: true,
                         dropdownItems: [
-                            { label: "পিটিই ওভারভিউ", href: "/exams/pte/overview" },
-                            { label: "পিটিই যোগ্যতা", href: "/exams/pte/eligibility" },
-                            { label: "পিটিই রেজিস্ট্রেশন", href: "/exams/pte/registration" },
-                            { label: "পিটিই ফলাফল", href: "/exams/pte/results" },
-                            { label: "পিটিই সিলেবাস", href: "/exams/pte/syllabus" },
-                            { label: "পিটিই স্লট বুকিং", href: "/exams/pte/slot-booking" },
+                            { label: "অল ইন ওয়ান ", href: "/exams/ielts/practice/all-in-one" },
+                            { label: "শ্রবণ অংশ", href: "/exams/ielts/practice/listening" },
+                            { label: "পাঠ অংশ", href: "/exams/ielts/practice/reading" },
+                            { label: "লেখার অংশ", href: "/exams/ielts/practice/writing" },
+                            { label: "কথার অংশ", href: "/exams/ielts/practice/speaking" },
                         ],
                     },
-                    {
-                        label: "অনুশীলন",
-                        href: "/exams/pte/practice",
-                        hasDropdown: true,
-                        dropdownItems: [
-                            { label: "স্পিকিং ও রাইটিং", href: "/exams/pte/practice/speaking-writing" },
-                            { label: "রিডিং", href: "/exams/pte/practice/reading" },
-                            { label: "লিসনিং", href: "/exams/pte/practice/listening" },
-                        ],
-                    },
+                    // {
+                    //     label: "অনুশীলন",
+                    //     href: "/exams/pte/practice",
+                    //     hasDropdown: true,
+                    //     dropdownItems: [
+                    //         { label: "স্পিকিং ও রাইটিং", href: "/exams/pte/practice/speaking-writing" },
+                    //         { label: "রিডিং", href: "/exams/pte/practice/reading" },
+                    //         { label: "লিসনিং", href: "/exams/pte/practice/listening" },
+                    //     ],
+                    // },
                 ],
             },
 

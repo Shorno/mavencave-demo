@@ -167,42 +167,6 @@ export default function Navbar() {
                         </Link>
                     </div>
 
-                    {/*<div className="hidden md:block">*/}
-                    {/*    <div className="ml-10 flex items-center space-x-1">*/}
-                    {/*        {navigationItems.map((item) => (*/}
-                    {/*            <div key={item.label}>*/}
-                    {/*                {item.hasDropdown ? (*/}
-                    {/*                    <DropdownMenu>*/}
-                    {/*                        <DropdownMenuTrigger asChild>*/}
-                    {/*                            <Button*/}
-                    {/*                                variant="ghost"*/}
-                    {/*                                className="flex items-center space-x-1 font-medium text-gray-700 hover:text-gray-900"*/}
-                    {/*                            >*/}
-                    {/*                                <span>{item.label}</span>*/}
-                    {/*                                <ChevronDown className="h-4 w-4"/>*/}
-                    {/*                            </Button>*/}
-                    {/*                        </DropdownMenuTrigger>*/}
-                    {/*                        <DropdownMenuContent align="center"*/}
-                    {/*                                             className={item.isExamSection ? "w-auto p-0" : "w-64"}>*/}
-                    {/*                            {item.isExamSection ? (*/}
-                    {/*                                <ExamLayout examData={item.dropdownItems || []}/>*/}
-                    {/*                            ) : (*/}
-                    {/*                                <MultiLevelDropdown items={item.dropdownItems || []}/>*/}
-                    {/*                            )}*/}
-                    {/*                        </DropdownMenuContent>*/}
-                    {/*                    </DropdownMenu>*/}
-                    {/*                ) : (*/}
-                    {/*                    <Link*/}
-                    {/*                        to={item.href}*/}
-                    {/*                        className="rounded-lg font-medium px-4 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-all duration-200"*/}
-                    {/*                    >*/}
-                    {/*                        {item.label}*/}
-                    {/*                    </Link>*/}
-                    {/*                )}*/}
-                    {/*            </div>*/}
-                    {/*        ))}*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-center space-x-1">
                             {navigationItems.map((item) => (

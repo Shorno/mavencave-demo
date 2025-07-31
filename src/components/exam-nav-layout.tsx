@@ -1,5 +1,5 @@
 import {useState} from "react"
-import {ChevronRight, Bot} from "lucide-react"
+import {Bot, ChevronRight} from "lucide-react"
 import {Button} from "@/components/ui/button"
 import type {NavigationItem} from "@/data/navigation.ts";
 import {Link} from "react-router";
@@ -19,7 +19,7 @@ export function ExamLayout({examData, onLinkClick}: ExamLayoutProps) {
         currentExam?.dropdownItems?.find((item) => item.label.includes("পরীক্ষার বিবরণ") || item.label.includes("বিবরণ"))
             ?.dropdownItems || []
 
-    const practiceItems = currentExam?.dropdownItems?.find((item) => item.label.includes("অনুশীলন"))?.dropdownItems || []
+    // const practiceItems = currentExam?.dropdownItems?.find((item) => item.label.includes("অনুশীলন"))?.dropdownItems || []
 
     const handleLinkClick = () => {
         if (onLinkClick) {
@@ -29,7 +29,7 @@ export function ExamLayout({examData, onLinkClick}: ExamLayoutProps) {
 
 
     return (
-        <div className="w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className="w-2xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="flex h-[500px]">
                 {/* Sidebar */}
                 <div className="w-48 bg-gray-50 border-r border-gray-200">
@@ -50,6 +50,19 @@ export function ExamLayout({examData, onLinkClick}: ExamLayoutProps) {
                                     {selectedExam === exam.label && <ChevronRight className="h-4 w-4 text-blue-600"/>}
                                 </button>
                             ))}
+                            <div className="mt-8 pt-6 border-t border-gray-200">
+                                <Button size="xl"
+                                        className="w-full text-white text-xs"
+                                        onClick={handleLinkClick}
+                                >
+                                    <Link to={"/mavencave-ai"}>
+                                        <div className="flex items-center justify-center space-x-2 text-lg ">
+                                            <Bot className="h-4 w-4 mb-1"/>
+                                            <span>মেভেনকেভ AI</span>
+                                        </div>
+                                    </Link>
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -70,7 +83,7 @@ export function ExamLayout({examData, onLinkClick}: ExamLayoutProps) {
                         {/* Exam Details Section */}
                         <div className="flex-1 p-6 border-r border-gray-200">
                             <h3 className="text-lg font-semibold text-gray-900 mb-4">পরীক্ষার বিবরণ</h3>
-                            <div className="grid grid-cols-2 gap-3">
+                            <div className="grid  gap-3">
                                 {examDetails.map((item) => (
                                     <Link
                                         key={item.label}
@@ -86,36 +99,36 @@ export function ExamLayout({examData, onLinkClick}: ExamLayoutProps) {
                         </div>
 
                         {/* Practice Section */}
-                        <div className="w-64 p-6">
-                            <h3 className="text-lg font-semibold text-gray-900 mb-4">অনুশীলন</h3>
-                            <div className="space-y-2">
-                                {practiceItems.map((item) => (
-                                    <Link
-                                        key={item.label}
-                                        to={item.href}
-                                        onClick={handleLinkClick}
-                                        className="flex items-center p-3 rounded-lg hover:bg-blue-50 transition-colors duration-200 group"
-                                    >
-                                        <span
-                                            className="text-sm font-medium text-gray-700 group-hover:text-gray-900">{item.label}</span>
-                                    </Link>
-                                ))}
-                            </div>
+                        {/*<div className="w-64 p-6">*/}
+                        {/*    <h3 className="text-lg font-semibold text-gray-900 mb-4">অনুশীলন</h3>*/}
+                        {/*    <div className="space-y-2">*/}
+                        {/*        {practiceItems.map((item) => (*/}
+                        {/*            <Link*/}
+                        {/*                key={item.label}*/}
+                        {/*                to={item.href}*/}
+                        {/*                onClick={handleLinkClick}*/}
+                        {/*                className="flex items-center p-3 rounded-lg hover:bg-blue-50 transition-colors duration-200 group"*/}
+                        {/*            >*/}
+                        {/*                <span*/}
+                        {/*                    className="text-sm font-medium text-gray-700 group-hover:text-gray-900">{item.label}</span>*/}
+                        {/*            </Link>*/}
+                        {/*        ))}*/}
+                        {/*    </div>*/}
 
-                            <div className="mt-8 pt-6 border-t border-gray-200">
-                                <Button size="xl"
-                                        className="w-full text-white text-xs"
-                                        onClick={handleLinkClick}
-                                >
-                                    <Link to={"/mavencave-ai"}>
-                                        <div className="flex items-center justify-center space-x-2 text-lg ">
-                                            <Bot className="h-4 w-4 mb-1"/>
-                                            <span>মেভেনকেভ AI</span>
-                                        </div>
-                                    </Link>
-                                </Button>
-                            </div>
-                        </div>
+                        {/*    <div className="mt-8 pt-6 border-t border-gray-200">*/}
+                        {/*        <Button size="xl"*/}
+                        {/*                className="w-full text-white text-xs"*/}
+                        {/*                onClick={handleLinkClick}*/}
+                        {/*        >*/}
+                        {/*            <Link to={"/mavencave-ai"}>*/}
+                        {/*                <div className="flex items-center justify-center space-x-2 text-lg ">*/}
+                        {/*                    <Bot className="h-4 w-4 mb-1"/>*/}
+                        {/*                    <span>মেভেনকেভ AI</span>*/}
+                        {/*                </div>*/}
+                        {/*            </Link>*/}
+                        {/*        </Button>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
                     </div>
                 </div>
             </div>
