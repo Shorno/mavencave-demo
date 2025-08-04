@@ -25,7 +25,7 @@ export default function CTASection() {
     ]
 
     return (
-        <section className="bg-gray-50 py-8 md:py-16 px-4">
+        <section className="bg-gray-50 py-8 md:py-16 px-4 w-full">
             <div className="max-w-6xl mx-auto">
                 <div className="relative bg-[#4169e1] rounded-2xl py-12 md:py-16 px-6 md:px-8 overflow-hidden">
 
