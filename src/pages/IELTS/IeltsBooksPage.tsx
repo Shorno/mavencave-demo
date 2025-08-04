@@ -9,21 +9,21 @@ import FAQAccordion, {type FAQItem} from "@/components/study-abroad/FAQAccordion
 
 const articles = [
     {
-        image: "/src/assets/images/blog/blog1.jpg",
+        image: "/images/blog/blog1.jpg",
         title: "বিশ্বের শীর্ষ ১০ বিশ্ববিদ্যালয়: কোথায় পড়বেন আপনি?",
         date: "১২ জুলাই, ২০২৫",
         readTime: "৫ মিনিট",
         href: "/articles/top-10-universities"
     },
     {
-        image: "/src/assets/images/blog/blog2.jpg",
+        image: "/images/blog/blog2.jpg",
         title: "যুক্তরাষ্ট্রের শীর্ষ বিশ্ববিদ্যালয়সমূহ ও তাদের বিশেষত্ব",
         date: "১২ জুলাই, ২০২৫",
         readTime: "৫ মিনিট",
         href: "/articles/best-us-universities"
     },
     {
-        image: "/src/assets/images/blog/blog3.jpg",
+        image: "/images/blog/blog3.jpg",
         title: "প্রযুক্তি শিক্ষার জন্য সেরা বিশ্ববিদ্যালয়গুলো",
         date: "১২ জুলাই, ২০২৫",
         readTime: "৫ মিনিট",
@@ -33,19 +33,19 @@ const articles = [
 
 const ieltsCarouselData = [
     {
-        image: "/src/assets/images/blog/blog4.webp",
+        image: "/images/blog/blog4.webp",
         title: "১. IELTS প্রস্তুতির বই ২০২৪-২০২৫",
         description: "IELTS পরীক্ষায় ভালো স্কোর করতে হলে, ইংরেজি ভাষায় ভালো দখল থাকা অত্যন্ত গুরুত্বপূর্ণ।",
         index: "১/৩",
     },
     {
-        image: "/src/assets/images/blog/blog4.webp",
+        image: "/images/blog/blog4.webp",
         title: "২. IELTS প্রস্তুতির টিপস",
         description: "IELTS পরীক্ষার জন্য প্রস্তুতি নিতে আপনাকে সাহায্য করার জন্য এখানে কিছু দারুন টিপস দেয়া হলো।",
         index: "২/৩",
     },
     {
-        image: "/src/assets/images/blog/blog4.webp",
+        image: "/images/blog/blog4.webp",
         title: "২. IELTS প্রস্তুতির টিপস",
         description: "IELTS পরীক্ষার জন্য প্রস্তুতি নিতে আপনাকে সাহায্য করার জন্য এখানে কিছু দারুন টিপস দেয়া হলো।",
         index: "২/৩",
