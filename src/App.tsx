@@ -11,6 +11,7 @@ import IeltsListening from "@/pages/IeltsListening.tsx";
 import ReadingTestStyled from "@/pages/IeltsReading.tsx";
 import IeltsWriting from "@/pages/IeltsWriting.tsx";
 import IeltsSpeaking from "@/pages/IeltsSpeaking.tsx";
+import ExamsPage from "@/pages/Exams.tsx";
 
 function App() {
     return (
@@ -27,6 +28,7 @@ function App() {
                 <Route path={"/exams/ielts/practice/writing"} element={<IeltsWriting/>}/>
                 <Route path={"/exams/ielts/practice/speaking"} element={<IeltsSpeaking/>}/>
                 <Route path={"/visa-predictor"} element={<VisaPredictor/>}/>
+                <Route path={"/exams"} element={<ExamsPage/>}/>
                 <Route path={"contact"} element={<div>Contact</div>}/>
             </Route>
         </Routes>
