@@ -1,17 +1,16 @@
 import {Route, Routes} from "react-router";
-import PublicLayout from "@/layout/PublicLayout.tsx";
-import HomePage from "@/pages/HomePage.tsx";
-import AboutPage from "@/pages/About.tsx";
-import BlogPage from "@/pages/Blogs.tsx";
-import StudyAbroad from "@/pages/StudyAbroad.tsx";
-import MavenCaveAi from "@/pages/MavenCaveAi.tsx";
-import SOP from "@/pages/SOP.tsx";
-import VisaPredictor from "@/pages/VisaPredictor.tsx";
-import IeltsListening from "@/pages/IeltsListening.tsx";
-import ReadingTestStyled from "@/pages/IeltsReading.tsx";
-import IeltsWriting from "@/pages/IeltsWriting.tsx";
-import IeltsSpeaking from "@/pages/IeltsSpeaking.tsx";
-import ExamsPage from "@/pages/Exams.tsx";
+import PublicLayout from "./layout/PublicLayout";
+import {
+    AboutPage,
+    BlogPage,
+    HomePage,
+    IeltsBooksPage,
+    ExamsPage,
+    IeltsWriting,
+    IeltsListening,
+    StudyAbroad, MavenCaveAi, SOP, ReadingTestStyled, IeltsSpeaking, VisaPredictor
+} from "@/pages";
+
 
 function App() {
     return (
@@ -27,6 +26,7 @@ function App() {
                 <Route path={"/exams/ielts/practice/reading"} element={<ReadingTestStyled/>}/>
                 <Route path={"/exams/ielts/practice/writing"} element={<IeltsWriting/>}/>
                 <Route path={"/exams/ielts/practice/speaking"} element={<IeltsSpeaking/>}/>
+                <Route path={"/exams/ielts/books"} element={<IeltsBooksPage/>}/>
                 <Route path={"/visa-predictor"} element={<VisaPredictor/>}/>
                 <Route path={"/exams"} element={<ExamsPage/>}/>
                 <Route path={"contact"} element={<div>Contact</div>}/>

@@ -144,7 +144,7 @@ export default function ExamsPage() {
                 heading={"বিদেশে উচ্চ শিক্ষার জন্য শীর্ষ পরীক্ষাগুলো অন্বেষণ করুন"}
                 description={"IELTS, GRE, GMAT, SAT এবং আরও অনেক কিছুর সম্পর্কে আপনার জানার প্রয়োজনীয় সব কিছু এখানে রয়েছে।"}
                 image={{
-                    src: "/images/exams/hero.png",
+                    src: "/images/exams/hero.webp",
                     alt: "Exams Hero Image"
                 }}
                 countryOptions={countryOptions}
