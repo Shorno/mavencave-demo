@@ -1,10 +1,11 @@
-import {type ReactNode } from "react";
+import {type ReactNode} from "react";
 import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
+import {cn} from "@/lib/utils.ts";
 
 export interface FAQItem {
     id: string;
@@ -15,10 +16,12 @@ export interface FAQItem {
 interface FAQAccordionProps {
     title: string;
     data: FAQItem[];
+    className?: string;
 }
-export default function FAQAccordion({ title, data }: FAQAccordionProps) {
+
+export default function FAQAccordion({title, data, className}: FAQAccordionProps) {
     return (
-        <div className="w-full max-w-4xl mx-auto">
+        <div className={cn("w-full max-w-4xl mx-auto", className)}>
             <h2 className="text-3xl font-semibold mb-8 text-center">{title}</h2>
 
             <Accordion type="single" collapsible className="w-full space-y-4">
