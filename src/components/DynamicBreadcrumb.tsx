@@ -1,11 +1,8 @@
 import {BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { useLocation, Link } from "react-router";
 import React from "react";
+import type {BreadcrumbSegment} from "@/components/ielts/book-hero.tsx";
 
-type BreadcrumbSegment = {
-    label: string;
-    path: string;
-};
 
 const getPathSegments = (pathname: string): BreadcrumbSegment[] => {
     const segments = pathname.split("/").filter(Boolean);
