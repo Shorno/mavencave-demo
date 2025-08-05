@@ -11,6 +11,7 @@ import IeltsWriting from "@/pages/IELTS/IeltsWriting.tsx";
 import IeltsSpeaking from "@/pages/IELTS/IeltsSpeaking.tsx";
 import ExamsPage from "@/pages/Exams.tsx";
 import IeltsBooksPage from "@/pages/IELTS/IeltsBooksPage.tsx";
+import IeltsOverviewPage from "@/pages/IELTS/OverviewPage.tsx";
 
 
 export {
@@ -26,5 +27,6 @@ export {
     IeltsWriting,
     IeltsSpeaking,
     ExamsPage,
-    IeltsBooksPage
+    IeltsBooksPage,
+    IeltsOverviewPage
 }

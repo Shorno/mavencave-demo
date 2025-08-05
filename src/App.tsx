@@ -8,7 +8,7 @@ import {
     ExamsPage,
     IeltsWriting,
     IeltsListening,
-    StudyAbroad, MavenCaveAi, SOP, ReadingTestStyled, IeltsSpeaking, VisaPredictor
+    StudyAbroad, MavenCaveAi, SOP, ReadingTestStyled, IeltsSpeaking, VisaPredictor, IeltsOverviewPage
 } from "@/pages";
 
 
@@ -26,6 +26,7 @@ function App() {
                 <Route path={"/exams/ielts/practice/reading"} element={<ReadingTestStyled/>}/>
                 <Route path={"/exams/ielts/practice/writing"} element={<IeltsWriting/>}/>
                 <Route path={"/exams/ielts/practice/speaking"} element={<IeltsSpeaking/>}/>
+                <Route path={"/exams/ielts/overview"} element={<IeltsOverviewPage/>}/>
                 <Route path={"/exams/ielts/books"} element={<IeltsBooksPage/>}/>
                 <Route path={"/visa-predictor"} element={<VisaPredictor/>}/>
                 <Route path={"/exams"} element={<ExamsPage/>}/>

@@ -1,4 +1,4 @@
-import BookHeroSection from "@/components/ielts/book-hero.tsx";
+import BlogHeaderSection from "@/components/ielts/book-hero.tsx";
 import RelatedArticlesSection from "@/components/ielts/related-articles.tsx";
 import IeltsCarouselSection from "@/components/ielts/Ielts-carousel-section.tsx";
 import IeltsBooksListSection from "@/components/ielts/books-list.tsx";
@@ -52,6 +52,12 @@ const ieltsCarouselData = [
     },
 ];
 
+const customSegments = [
+    {label: "বিদেশে উচ্চশিক্ষা", path: "/study-abroad"},
+    {label: "পরীক্ষাসমূহ", path: "/study-abroad/exams"},
+    {label: "IELTS", path: "/study-abroad/exams/ielts"},
+    {label: "বইসমূহ", path: "/study-abroad/exams/ielts/booklist"},
+];
 
 const faqs: FAQItem[] = [
     {
@@ -107,7 +113,21 @@ export default function IeltsBooksPage() {
             <div className="container mx-auto px-2">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <div className="lg:col-span-2">
-                        <BookHeroSection/>
+                        <BlogHeaderSection
+                            title="IELTS বই ২০২৪-২০২৫"
+                            updatedDate="২২ নভেম্বর, ২০২৪, ৫:৪৩"
+                            customSegments={customSegments}
+                        >
+                            <p>
+                                IELTS পরীক্ষার জন্য কার্যকরভাবে প্রস্তুতি নিতে সঠিক বই নির্বাচন করা অত্যন্ত গুরুত্বপূর্ণ, কারণ এটি ভালো স্কোর পাওয়ার চাবিকাঠি।
+                            </p>
+                            <p>
+                                সবচেয়ে ভালো IELTS বই নির্ধারণ করা কঠিন হতে পারে, কারণ যে বই একজন শিক্ষার্থীর জন্য কার্যকর, তা আরেকজনের জন্য ততটা সহায়ক নাও হতে পারে। প্রত্যেকের শেখার ধরন আলাদা।
+                            </p>
+                            <p>
+                                তবে চিন্তার কিছু নেই—আমরা কিছু নির্ভরযোগ্য ও সুপারিশকৃত প্রস্তুতির বইয়ের তালিকা তৈরি করেছি, যেগুলো আপনার IELTS যাত্রাকে সহজ করে তুলবে এবং উচ্চ স্কোর পেতে সহায়ক হবে।
+                            </p>
+                        </BlogHeaderSection>
                         <IeltsCarouselSection data={ieltsCarouselData}/>
                         <IeltsBooksListSection/>
                         <IeltsTipsSection/>
@@ -115,7 +135,7 @@ export default function IeltsBooksPage() {
                         <AllInfoTables/>
                         <FAQAccordion title={"বেশি জিজ্ঞাসিত প্রশ্ন"} data={faqs} className={"bg-white w-full max-w-7xl p-4 rounded-xl"}/>
                     </div>
-                    <aside className={"sticky top-8 self-start"}>
+                    <aside className={"sticky top-4 self-start"}>
                         <RelatedArticlesSection articles={articles}/>
                     </aside>
                 </div>

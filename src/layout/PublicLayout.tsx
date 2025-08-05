@@ -4,10 +4,12 @@ import Footer from "@/components/footer.tsx";
 
 export default function PublicLayout() {
     return (
-        <>
+        <div className={"min-h-screen flex flex-col"}>
             <Navbar/>
-            <Outlet/>
+            <div className={"grow"}>
+                <Outlet/>
+            </div>
             <Footer/>
-        </>
+        </div>
     )
 }
