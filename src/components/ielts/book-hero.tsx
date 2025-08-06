@@ -21,7 +21,7 @@ export default function HeroSection({
                                         children,
                                     }: HeroSectionProps) {
     return (
-        <section className="px-4 pb-10 bg-white p-4 rounded-xl">
+        <section className="px-4 pb-10 bg-white p-4 md:p-8 rounded-xl">
             <DynamicBreadcrumb customSegments={customSegments} />
 
             <h1 className="font-heading font-bold text-3xl md:text-4xl mt-2 mb-3 tracking-tight text-gray-900">

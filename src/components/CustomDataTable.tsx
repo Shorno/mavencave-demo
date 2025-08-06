@@ -8,7 +8,7 @@ interface Column {
 
 interface CustomDataTableProps {
     columns: Column[]
-    data: Record<string, string>[]
+    data: Record<string, string>[] | Record<string, React.ReactNode>[]
     className?: string
 }
 

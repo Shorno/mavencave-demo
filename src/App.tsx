@@ -8,8 +8,9 @@ import {
     ExamsPage,
     IeltsWriting,
     IeltsListening,
-    StudyAbroad, MavenCaveAi, SOP, ReadingTestStyled, IeltsSpeaking, VisaPredictor, IeltsOverviewPage
+    StudyAbroad, MavenCaveAi, SOP, ReadingTestStyled, IeltsSpeaking, VisaPredictor, IeltsOverviewPage, IeltsTypesPage
 } from "@/pages";
+import IeltsBlogLayout from "@/layout/IeltsBlogLayout.tsx";
 
 
 function App() {
@@ -26,8 +27,11 @@ function App() {
                 <Route path={"/exams/ielts/practice/reading"} element={<ReadingTestStyled/>}/>
                 <Route path={"/exams/ielts/practice/writing"} element={<IeltsWriting/>}/>
                 <Route path={"/exams/ielts/practice/speaking"} element={<IeltsSpeaking/>}/>
-                <Route path={"/exams/ielts/overview"} element={<IeltsOverviewPage/>}/>
-                <Route path={"/exams/ielts/books"} element={<IeltsBooksPage/>}/>
+                <Route element={<IeltsBlogLayout/>}>
+                    <Route path={"/exams/ielts/overview"} element={<IeltsOverviewPage/>}/>
+                    <Route path={"/exams/ielts/types"} element={<IeltsTypesPage/>}/>
+                    <Route path={"/exams/ielts/books"} element={<IeltsBooksPage/>}/>
+                </Route>
                 <Route path={"/visa-predictor"} element={<VisaPredictor/>}/>
                 <Route path={"/exams"} element={<ExamsPage/>}/>
                 <Route path={"contact"} element={<div>Contact</div>}/>
