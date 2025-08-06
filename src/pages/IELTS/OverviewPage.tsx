@@ -1,4 +1,4 @@
-import BlogHeaderSection from "@/components/ielts/book-hero.tsx";
+import BlogHeaderSection from "@/components/ielts/blog-header.tsx";
 import IeltsCarouselSection from "@/components/ielts/Ielts-carousel-section.tsx";
 import NextStepsSection from "@/components/ielts/next-steps.tsx";
 import AllInfoTables from "@/components/ielts/all-info-table.tsx";

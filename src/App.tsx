@@ -11,6 +11,7 @@ import {
     StudyAbroad, MavenCaveAi, SOP, ReadingTestStyled, IeltsSpeaking, VisaPredictor, IeltsOverviewPage, IeltsTypesPage
 } from "@/pages";
 import IeltsBlogLayout from "@/layout/IeltsBlogLayout.tsx";
+import IeltsEligibilityPage from "@/pages/IELTS/IeltsEligibilityPage.tsx";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
                     <Route path={"/exams/ielts/overview"} element={<IeltsOverviewPage/>}/>
                     <Route path={"/exams/ielts/types"} element={<IeltsTypesPage/>}/>
                     <Route path={"/exams/ielts/books"} element={<IeltsBooksPage/>}/>
+                    <Route path={"/exams/ielts/eligibility"} element={<IeltsEligibilityPage/>}/>
                 </Route>
                 <Route path={"/visa-predictor"} element={<VisaPredictor/>}/>
                 <Route path={"/exams"} element={<ExamsPage/>}/>

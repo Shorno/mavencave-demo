@@ -1,4 +1,4 @@
-import BlogHeaderSection from "@/components/ielts/book-hero.tsx";
+import BlogHeaderSection from "@/components/ielts/blog-header.tsx";
 import IeltsAcademicTypeSection from "@/components/ielts/types/IeltsAcademicTypeSection.tsx";
 import IeltsGeneralTrainingTypeSection from "@/components/ielts/types/IeltsGeneralTrainingTypeSection.tsx";
 import IeltsLifeSkillsUkviTypeSection from "@/components/ielts/types/IeltsLifeSkillsUkviTypeSection.tsx";
