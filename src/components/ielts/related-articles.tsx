@@ -14,7 +14,7 @@ type RelatedArticlesSectionProps = {
 }
 
 const RelatedArticlesSection= ({ articles, onSeeAll } : RelatedArticlesSectionProps) => (
-    <section>
+    <section className={"max-w-sm mx-auto"}>
         <div className="flex items-center justify-between px-1 mb-3">
             <h2 className="font-bold text-2xl text-gray-900">আরও পড়ুন</h2>
             <button
