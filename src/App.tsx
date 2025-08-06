@@ -12,6 +12,7 @@ import {
 } from "@/pages";
 import IeltsBlogLayout from "@/layout/IeltsBlogLayout.tsx";
 import IeltsEligibilityPage from "@/pages/IELTS/IeltsEligibilityPage.tsx";
+import IeltsRegistrationPage from "@/pages/IELTS/IeltsRegistrationPage.tsx";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
                     <Route path={"/exams/ielts/types"} element={<IeltsTypesPage/>}/>
                     <Route path={"/exams/ielts/books"} element={<IeltsBooksPage/>}/>
                     <Route path={"/exams/ielts/eligibility"} element={<IeltsEligibilityPage/>}/>
+                    <Route path={"/exams/ielts/registration"} element={<IeltsRegistrationPage/>}/>
                 </Route>
                 <Route path={"/visa-predictor"} element={<VisaPredictor/>}/>
                 <Route path={"/exams"} element={<ExamsPage/>}/>
