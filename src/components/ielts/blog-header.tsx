@@ -7,19 +7,19 @@ export type BreadcrumbSegment = {
     path: string;
 };
 
-type HeroSectionProps = {
+type BlogHeaderSectionProps = {
     title: string;
     updatedDate?: string;
     customSegments: BreadcrumbSegment[];
     children?: React.ReactNode;
 };
 
-export default function HeroSection({
+export default function BlogHeaderSection({
                                         title,
                                         updatedDate,
                                         customSegments,
                                         children,
-                                    }: HeroSectionProps) {
+                                    }: BlogHeaderSectionProps) {
     return (
         <section className="px-4 pb-10 bg-white p-4 md:p-8 rounded-xl">
             <DynamicBreadcrumb customSegments={customSegments} />
