@@ -19,6 +19,7 @@ import {
     IeltsBlogLayout, IeltsEligibilityPage, IeltsResultsPage, IeltsRegistrationPage, IeltsSyllabus, SlotBookingPage
 } from "@/pages";
 import useScrollToTop from "@/hooks/useScrollToTop.tsx";
+import SOPPhD from "@/pages/SOPPhD.tsx";
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
                 </Route>
                 <Route path={"/visa-predictor"} element={<VisaPredictor/>}/>
                 <Route path={"/exams"} element={<ExamsPage/>}/>
+                <Route path={"/sop-phd"} element={<SOPPhD/>}/>
                 <Route path={"contact"} element={<div>Contact</div>}/>
             </Route>
         </Routes>
