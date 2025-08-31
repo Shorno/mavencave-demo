@@ -25,7 +25,7 @@ export default function CTASection() {
     ]
 
     return (
-        <section className="bg-gray-50 py-8 md:py-16 px-4">
+        <section className="bg-gray-50 py-8 md:py-16 px-4 w-full">
             <div className="max-w-6xl mx-auto">
                 <div className="relative bg-[#4169e1] rounded-2xl py-12 md:py-16 px-6 md:px-8 overflow-hidden">
 
@@ -76,6 +76,7 @@ export default function CTASection() {
                         </p>
 
                         <Button
+                            size={"xl"}
                             className="bg-white text-blue-700 hover:bg-gray-100 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                         >
                             কাউন্সেলর এর সাথে কথা বলুন
