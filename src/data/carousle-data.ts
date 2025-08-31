@@ -15,6 +15,6 @@ export const ieltsCarouselData = [
         image: "/images/blog/blog4.webp",
         title: "২. IELTS প্রস্তুতির টিপস",
         description: "IELTS পরীক্ষার জন্য প্রস্তুতি নিতে আপনাকে সাহায্য করার জন্য এখানে কিছু দারুন টিপস দেয়া হলো।",
-        index: "২/৩",
+        index: "৩/৩",
     },
 ];

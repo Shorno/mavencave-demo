@@ -3,6 +3,8 @@ import IeltsCarouselSection from "@/components/ielts/Ielts-carousel-section.tsx"
 import {ieltsCarouselData} from "@/data/carousle-data.ts";
 import IeltsEligibilitySection from "@/components/ielts/eligibility/IeltsEligibilitySection.tsx";
 import IeltsQualificationScoreSection from "@/components/ielts/eligibility/IeltsQualificationScoreSection.tsx";
+import AllInfoTables from "@/components/ielts/all-info-table.tsx";
+import NextStepsSection from "@/components/ielts/next-steps.tsx";
 
 const customSegments = [
     { label: "বিদেশে উচ্চশিক্ষা", path: "/study-abroad" },
@@ -34,6 +36,8 @@ export default function IeltsEligibilityPage() {
             <IeltsCarouselSection data={ieltsCarouselData}/>
             <IeltsEligibilitySection/>
             <IeltsQualificationScoreSection/>
+            <NextStepsSection/>
+            <AllInfoTables/>
         </>
     )
 }

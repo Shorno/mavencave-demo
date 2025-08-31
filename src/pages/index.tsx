@@ -13,7 +13,12 @@ import ExamsPage from "@/pages/Exams.tsx";
 import IeltsBooksPage from "@/pages/IELTS/IeltsBooksPage.tsx";
 import IeltsOverviewPage from "@/pages/IELTS/OverviewPage.tsx";
 import IeltsTypesPage from "@/pages/IELTS/IeltsTypesPage.tsx";
-
+import IeltsBlogLayout from "@/layout/IeltsBlogLayout.tsx";
+import IeltsEligibilityPage from "@/pages/IELTS/IeltsEligibilityPage.tsx";
+import IeltsRegistrationPage from "@/pages/IELTS/IeltsRegistrationPage.tsx";
+import IeltsResultsPage from "@/pages/IELTS/IeltsResultsPage.tsx";
+import IeltsSyllabus from "@/pages/IELTS/IeltsSyllabus.tsx";
+import SlotBookingPage from "@/pages/IELTS/SlotBookingPage.tsx";
 
 export {
     HomePage,
@@ -30,5 +35,12 @@ export {
     ExamsPage,
     IeltsBooksPage,
     IeltsOverviewPage,
-    IeltsTypesPage
+    IeltsTypesPage,
+    IeltsBlogLayout,
+    IeltsEligibilityPage,
+    IeltsRegistrationPage,
+    IeltsResultsPage,
+    IeltsSyllabus,
+    SlotBookingPage,
+
 }

@@ -8,13 +8,21 @@ import {
     ExamsPage,
     IeltsWriting,
     IeltsListening,
-    StudyAbroad, MavenCaveAi, SOP, ReadingTestStyled, IeltsSpeaking, VisaPredictor, IeltsOverviewPage, IeltsTypesPage
+    StudyAbroad,
+    MavenCaveAi,
+    SOP,
+    ReadingTestStyled,
+    IeltsSpeaking,
+    VisaPredictor,
+    IeltsOverviewPage,
+    IeltsTypesPage,
+    IeltsBlogLayout, IeltsEligibilityPage, IeltsResultsPage, IeltsRegistrationPage, IeltsSyllabus, SlotBookingPage
 } from "@/pages";
-import IeltsBlogLayout from "@/layout/IeltsBlogLayout.tsx";
-import IeltsEligibilityPage from "@/pages/IELTS/IeltsEligibilityPage.tsx";
+import useScrollToTop from "@/hooks/useScrollToTop.tsx";
 
 
 function App() {
+    useScrollToTop()
     return (
         <Routes>
             <Route path={"/"} element={<PublicLayout/>}>
@@ -33,6 +41,11 @@ function App() {
                     <Route path={"/exams/ielts/types"} element={<IeltsTypesPage/>}/>
                     <Route path={"/exams/ielts/books"} element={<IeltsBooksPage/>}/>
                     <Route path={"/exams/ielts/eligibility"} element={<IeltsEligibilityPage/>}/>
+                    <Route path={"/exams/ielts/registration"} element={<IeltsRegistrationPage/>}/>
+                    <Route path={"/exams/ielts/results"} element={<IeltsResultsPage/>}/>
+                    <Route path={"/exams/ielts/syllabus"} element={<IeltsSyllabus/>}/>
+                    <Route path={"/exams/ielts/slot-booking"} element={<SlotBookingPage/>}/>
+                    {/*these */}
                 </Route>
                 <Route path={"/visa-predictor"} element={<VisaPredictor/>}/>
                 <Route path={"/exams"} element={<ExamsPage/>}/>

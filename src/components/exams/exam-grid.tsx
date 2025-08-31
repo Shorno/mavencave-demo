@@ -14,7 +14,7 @@ const exams = [
         title: "IELTS",
         description: "ইংরেজি ভাষার দক্ষতা পরিমাপের জন্য বিশ্বব্যাপী গ্রহণযোগ্য একটি পরীক্ষা, বিশেষ করে যুক্তরাজ্য, কানাডা, অস্ট্রেলিয়া ও নিউজিল্যান্ডে উচ্চশিক্ষার জন্য প্রয়োজন হয়।",
         linkLabel: "শুরু করুন",
-        href: "/exams/ielts/practice/listening",
+        href: "/exams/ielts/overview",
     },
     {
         flag: germanyFlag,
