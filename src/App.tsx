@@ -45,6 +45,7 @@ function App() {
                     <Route path={"/exams/ielts/results"} element={<IeltsResultsPage/>}/>
                     <Route path={"/exams/ielts/syllabus"} element={<IeltsSyllabus/>}/>
                     <Route path={"/exams/ielts/slot-booking"} element={<SlotBookingPage/>}/>
+                    {/*these */}
                 </Route>
                 <Route path={"/visa-predictor"} element={<VisaPredictor/>}/>
                 <Route path={"/exams"} element={<ExamsPage/>}/>
