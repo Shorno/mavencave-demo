@@ -24,6 +24,7 @@ import LorMasters from "@/pages/LorMasters.tsx";
 import SignUpPage from "@/pages/SignUpPage.tsx";
 import AuthLayout from "@/layout/AuthLayout.tsx";
 import LoginPage from "@/pages/LoginPage.tsx";
+import CueCardPage from "@/pages/IELTS/CueCardPage.tsx";
 
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
                     <Route path={"/login"} element={<LoginPage/>}/>
                 </Route>
                 <Route path={"/visa-predictor"} element={<VisaPredictor/>}/>
+                <Route path={"/cue-card"} element={<CueCardPage/>}/>
                 <Route path={"/exams"} element={<ExamsPage/>}/>
                 <Route path={"/sop-phd"} element={<SOPPhD/>}/>
                 <Route path={"contact"} element={<div>Contact</div>}/>
