@@ -21,6 +21,9 @@ import {
 import useScrollToTop from "@/hooks/useScrollToTop.tsx";
 import SOPPhD from "@/pages/SOPPhD.tsx";
 import LorMasters from "@/pages/LorMasters.tsx";
+import SignUpPage from "@/pages/SignUpPage.tsx";
+import AuthLayout from "@/layout/AuthLayout.tsx";
+import LoginPage from "@/pages/LoginPage.tsx";
 
 
 function App() {
@@ -48,7 +51,10 @@ function App() {
                     <Route path={"/exams/ielts/syllabus"} element={<IeltsSyllabus/>}/>
                     <Route path={"/exams/ielts/slot-booking"} element={<SlotBookingPage/>}/>
                     <Route path={"/lor-masters"} element={<LorMasters/>}/>
-
+                </Route>
+                <Route element={<AuthLayout/>}>
+                    <Route path={"/signup"} element={<SignUpPage/>}/>
+                    <Route path={"/login"} element={<LoginPage/>}/>
                 </Route>
                 <Route path={"/visa-predictor"} element={<VisaPredictor/>}/>
                 <Route path={"/exams"} element={<ExamsPage/>}/>
