@@ -20,6 +20,7 @@ import {
 } from "@/pages";
 import useScrollToTop from "@/hooks/useScrollToTop.tsx";
 import SOPPhD from "@/pages/SOPPhD.tsx";
+import LorMasters from "@/pages/LorMasters.tsx";
 
 
 function App() {
@@ -46,7 +47,8 @@ function App() {
                     <Route path={"/exams/ielts/results"} element={<IeltsResultsPage/>}/>
                     <Route path={"/exams/ielts/syllabus"} element={<IeltsSyllabus/>}/>
                     <Route path={"/exams/ielts/slot-booking"} element={<SlotBookingPage/>}/>
-                    {/*these */}
+                    <Route path={"/lor-masters"} element={<LorMasters/>}/>
+
                 </Route>
                 <Route path={"/visa-predictor"} element={<VisaPredictor/>}/>
                 <Route path={"/exams"} element={<ExamsPage/>}/>

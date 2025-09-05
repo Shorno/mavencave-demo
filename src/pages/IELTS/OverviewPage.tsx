@@ -75,7 +75,7 @@ const customSegments = [
 ];
 
 
-export default function IeltsOverviewPage() {
+export default function  IeltsOverviewPage() {
     return (
         <>
             <BlogHeaderSection
