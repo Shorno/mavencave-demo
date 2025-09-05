@@ -36,6 +36,8 @@ const faqItems: FAQItem[] = [
 ]
 
 export default function CueCardPage() {
+
+
     return (
         <div className="max-w-4xl mx-auto px-4 py-8 space-y-12">
             <section className="space-y-6">
@@ -107,6 +109,7 @@ export default function CueCardPage() {
                 <h2 className="text-xl md:text-2xl font-bold text-purple-600 text-balance">
                     শিক্ষার্থীদের করা সবথেকে বেশি প্রশ্ন সমূহ-
                 </h2>
+                {/*for deployment*/}
 
                 <Accordion type="single" collapsible className="space-y-2">
                     {faqItems.map((faq) => (
