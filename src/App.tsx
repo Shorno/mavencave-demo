@@ -16,7 +16,10 @@ import {
     VisaPredictor,
     IeltsOverviewPage,
     IeltsTypesPage,
-    IeltsBlogLayout, IeltsEligibilityPage, IeltsResultsPage, IeltsRegistrationPage, IeltsSyllabus, SlotBookingPage
+    IeltsBlogLayout, IeltsEligibilityPage, IeltsResultsPage, IeltsRegistrationPage, IeltsSyllabus, SlotBookingPage,
+    HarvardReact,
+
+
 } from "@/pages";
 import useScrollToTop from "@/hooks/useScrollToTop.tsx";
 import SOPPhD from "@/pages/SOPPhD.tsx";
@@ -61,6 +64,7 @@ function App() {
                 <Route path={"/cue-card"} element={<CueCardPage/>}/>
                 <Route path={"/exams"} element={<ExamsPage/>}/>
                 <Route path={"/sop-phd"} element={<SOPPhD/>}/>
+                <Route path={"/harvard_react"} element={<HarvardReact/>}/>
                 <Route path={"contact"} element={<div>Contact</div>}/>
             </Route>
         </Routes>
