@@ -19,7 +19,7 @@ import IeltsRegistrationPage from "@/pages/IELTS/IeltsRegistrationPage.tsx";
 import IeltsResultsPage from "@/pages/IELTS/IeltsResultsPage.tsx";
 import IeltsSyllabus from "@/pages/IELTS/IeltsSyllabus.tsx";
 import SlotBookingPage from "@/pages/IELTS/SlotBookingPage.tsx";
-import HarvardReact from "@/pages/harvard_react.tsx";
+import HarvardReact from "@/pages/HarvardReact.tsx";
 
 export {
     HomePage,

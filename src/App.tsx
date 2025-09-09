@@ -30,6 +30,7 @@ import LoginPage from "@/pages/LoginPage.tsx";
 import CueCardPage from "@/pages/IELTS/CueCardPage.tsx";
 
 
+
 function App() {
     useScrollToTop()
     return (
@@ -64,7 +65,7 @@ function App() {
                 <Route path={"/cue-card"} element={<CueCardPage/>}/>
                 <Route path={"/exams"} element={<ExamsPage/>}/>
                 <Route path={"/sop-phd"} element={<SOPPhD/>}/>
-                <Route path={"/harvard_react"} element={<HarvardReact/>}/>
+                <Route path={"/harvard-react"} element={<HarvardReact/>}/>
                 <Route path={"contact"} element={<div>Contact</div>}/>
             </Route>
         </Routes>
