@@ -17,18 +17,9 @@ import {
     IeltsOverviewPage,
     IeltsTypesPage,
     IeltsBlogLayout, IeltsEligibilityPage, IeltsResultsPage, IeltsRegistrationPage, IeltsSyllabus, SlotBookingPage,
-    HarvardReact,
-
-
+    HarvardReact, LorMasters, AuthLayout, SignUpPage, LoginPage, CueCardPage, SOPPhD,
 } from "@/pages";
 import useScrollToTop from "@/hooks/useScrollToTop.tsx";
-import SOPPhD from "@/pages/SOPPhD.tsx";
-import LorMasters from "@/pages/LorMasters.tsx";
-import SignUpPage from "@/pages/SignUpPage.tsx";
-import AuthLayout from "@/layout/AuthLayout.tsx";
-import LoginPage from "@/pages/LoginPage.tsx";
-import CueCardPage from "@/pages/IELTS/CueCardPage.tsx";
-
 
 
 function App() {

@@ -20,6 +20,12 @@ import IeltsResultsPage from "@/pages/IELTS/IeltsResultsPage.tsx";
 import IeltsSyllabus from "@/pages/IELTS/IeltsSyllabus.tsx";
 import SlotBookingPage from "@/pages/IELTS/SlotBookingPage.tsx";
 import HarvardReact from "@/pages/HarvardReact.tsx";
+import SOPPhD from "@/pages/SOPPhD.tsx";
+import LorMasters from "@/pages/LorMasters.tsx";
+import SignUpPage from "@/pages/SignUpPage.tsx";
+import AuthLayout from "@/layout/AuthLayout.tsx";
+import LoginPage from "@/pages/LoginPage.tsx";
+import CueCardPage from "@/pages/IELTS/CueCardPage.tsx";
 
 export {
     HomePage,
@@ -44,5 +50,12 @@ export {
     IeltsSyllabus,
     SlotBookingPage,
     HarvardReact,
+    SOPPhD,
+    LorMasters,
+    SignUpPage,
+    AuthLayout,
+    LoginPage,
+    CueCardPage
+
 
 }
