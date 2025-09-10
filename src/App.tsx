@@ -16,14 +16,14 @@ import {
     VisaPredictor,
     IeltsOverviewPage,
     IeltsTypesPage,
-    IeltsBlogLayout, IeltsEligibilityPage, IeltsResultsPage, IeltsRegistrationPage, IeltsSyllabus, SlotBookingPage
+    IeltsBlogLayout, IeltsEligibilityPage, IeltsResultsPage, IeltsRegistrationPage, IeltsSyllabus, SlotBookingPage,
+    HarvardReact, LorMasters, AuthLayout, SignUpPage, LoginPage, CueCardPage, SOPPhD,
 } from "@/pages";
 import useScrollToTop from "@/hooks/useScrollToTop.tsx";
-import SOPPhD from "@/pages/SOPPhD.tsx";
-import LorMasters from "@/pages/LorMasters.tsx";
-import SignUpPage from "@/pages/SignUpPage.tsx";
-import AuthLayout from "@/layout/AuthLayout.tsx";
-import LoginPage from "@/pages/LoginPage.tsx";
+import Careers from "./pages/Careers";
+import KnowledgeCenter from "./components/KnoledgeCenter/KnowledgeCenter.tsx";
+import MavencaveAdvantage from "./components/MavencaveAdvantage/MavencaveAdvantage";
+import MavencaveFreeClass from "./components/MavencaveFreeClass/MavencaveFreeClass";
 
 
 function App() {
@@ -57,9 +57,16 @@ function App() {
                     <Route path={"/login"} element={<LoginPage/>}/>
                 </Route>
                 <Route path={"/visa-predictor"} element={<VisaPredictor/>}/>
+                <Route path={"/cue-card"} element={<CueCardPage/>}/>
                 <Route path={"/exams"} element={<ExamsPage/>}/>
                 <Route path={"/sop-phd"} element={<SOPPhD/>}/>
-                <Route path={"contact"} element={<div>Contact</div>}/>
+                <Route path={"/harvard-react"} element={<HarvardReact/>}/>
+
+                {/*bristy*/}
+                <Route path={"/careers"} element={<Careers/>}/>
+                <Route path={"/knowledge-center"} element={<KnowledgeCenter/>}/>
+                <Route path={"/mavencave-advantage"} element={<MavencaveAdvantage/>}/>
+                <Route path={"/mavencave-freeClass"} element={<MavencaveFreeClass/>}/>
             </Route>
         </Routes>
     )
