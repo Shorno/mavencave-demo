@@ -1,8 +1,8 @@
 import React from 'react';
-import image from '../../public/images/Bristy/vitaly-gariev-6UEyCVPkjys-unsplash.jpg';
-import image1 from '../../public/images/Bristy/vitaly-gariev-92gc5wLdtnY-unsplash.jpg';
-import image2 from '../../public/images/Bristy/mapbox-zU6tCBzO0Ig-unsplash.jpg';
-import image3 from '../../public/images/Bristy/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg';
+import image from '/images/Bristy/vitaly-gariev-6UEyCVPkjys-unsplash.jpg';
+import image1 from '/images/Bristy/vitaly-gariev-92gc5wLdtnY-unsplash.jpg';
+import image2 from '/images/Bristy/mapbox-zU6tCBzO0Ig-unsplash.jpg';
+import image3 from '/images/Bristy/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg';
 
 interface Position {
   title: string;

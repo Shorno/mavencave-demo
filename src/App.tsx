@@ -21,8 +21,7 @@ import {
 } from "@/pages";
 import useScrollToTop from "@/hooks/useScrollToTop.tsx";
 import Careers from "./pages/Careers";
-import Examss from "./pages/Examss";
-import KnoledgeCenter from "./components/KnoledgeCenter/KnoledgeCenter";
+import KnowledgeCenter from "./components/KnoledgeCenter/KnowledgeCenter.tsx";
 import MavencaveAdvantage from "./components/MavencaveAdvantage/MavencaveAdvantage";
 import MavencaveFreeClass from "./components/MavencaveFreeClass/MavencaveFreeClass";
 
@@ -62,13 +61,12 @@ function App() {
                 <Route path={"/exams"} element={<ExamsPage/>}/>
                 <Route path={"/sop-phd"} element={<SOPPhD/>}/>
                 <Route path={"/harvard-react"} element={<HarvardReact/>}/>
-                {/* bristy */}
+
+                {/*bristy*/}
                 <Route path={"/careers"} element={<Careers/>}/>
-                <Route path={"/exams"} element={<Examss/>}/>
-                <Route path={"/knowledge-center"} element={<KnoledgeCenter/>}/>
+                <Route path={"/knowledge-center"} element={<KnowledgeCenter/>}/>
                 <Route path={"/mavencave-advantage"} element={<MavencaveAdvantage/>}/>
                 <Route path={"/mavencave-freeClass"} element={<MavencaveFreeClass/>}/>
-                <Route path={"contact"} element={<div>Contact</div>}/>
             </Route>
         </Routes>
     )

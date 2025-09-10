@@ -2,7 +2,7 @@ import CategoryList from "./CategoryList";
 import KnowledgeCenterList from "./KnowledgeCenterList";
 
 
-const KnoledgeCenter = () => {
+const KnowledgeCenter = () => {
     return (
         <div>
             <CategoryList></CategoryList>
@@ -11,4 +11,4 @@ const KnoledgeCenter = () => {
     );
 };
 
-export default KnoledgeCenter;
+export default KnowledgeCenter;
