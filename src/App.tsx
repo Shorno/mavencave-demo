@@ -61,6 +61,8 @@ function App() {
                 <Route path={"/exams"} element={<ExamsPage/>}/>
                 <Route path={"/sop-phd"} element={<SOPPhD/>}/>
                 <Route path={"/harvard-react"} element={<HarvardReact/>}/>
+
+                {/*bristy*/}
                 <Route path={"/careers"} element={<Careers/>}/>
                 <Route path={"/knowledge-center"} element={<KnowledgeCenter/>}/>
                 <Route path={"/mavencave-advantage"} element={<MavencaveAdvantage/>}/>
