@@ -20,6 +20,9 @@ import {
     HarvardReact, LorMasters, AuthLayout, SignUpPage, LoginPage, CueCardPage, SOPPhD,
 } from "@/pages";
 import useScrollToTop from "@/hooks/useScrollToTop.tsx";
+import Careers from "./pages/Careers";
+import Examss from "./pages/Examss";
+import KnoledgeCenter from "./components/KnoledgeCenter/KnoledgeCenter";
 
 
 function App() {
@@ -57,6 +60,10 @@ function App() {
                 <Route path={"/exams"} element={<ExamsPage/>}/>
                 <Route path={"/sop-phd"} element={<SOPPhD/>}/>
                 <Route path={"/harvard-react"} element={<HarvardReact/>}/>
+                {/* bristy */}
+                <Route path={"/careers"} element={<Careers/>}/>
+                <Route path={"/exams"} element={<Examss/>}/>
+                <Route path={"/knowledge-center"} element={<KnoledgeCenter/>}/>
                 <Route path={"contact"} element={<div>Contact</div>}/>
             </Route>
         </Routes>
