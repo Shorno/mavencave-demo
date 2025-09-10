@@ -23,6 +23,8 @@ import useScrollToTop from "@/hooks/useScrollToTop.tsx";
 import Careers from "./pages/Careers";
 import Examss from "./pages/Examss";
 import KnoledgeCenter from "./components/KnoledgeCenter/KnoledgeCenter";
+import MavencaveAdvantage from "./components/MavencaveAdvantage/MavencaveAdvantage";
+import MavencaveFreeClass from "./components/MavencaveFreeClass/MavencaveFreeClass";
 
 
 function App() {
@@ -64,6 +66,8 @@ function App() {
                 <Route path={"/careers"} element={<Careers/>}/>
                 <Route path={"/exams"} element={<Examss/>}/>
                 <Route path={"/knowledge-center"} element={<KnoledgeCenter/>}/>
+                <Route path={"/mavencave-advantage"} element={<MavencaveAdvantage/>}/>
+                <Route path={"/mavencave-freeClass"} element={<MavencaveFreeClass/>}/>
                 <Route path={"contact"} element={<div>Contact</div>}/>
             </Route>
         </Routes>
