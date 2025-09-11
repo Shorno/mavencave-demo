@@ -16,16 +16,26 @@ import {
     VisaPredictor,
     IeltsOverviewPage,
     IeltsTypesPage,
-    IeltsBlogLayout, IeltsEligibilityPage, IeltsResultsPage, IeltsRegistrationPage, IeltsSyllabus, SlotBookingPage,
-    HarvardReact, LorMasters, AuthLayout, SignUpPage, LoginPage, CueCardPage, SOPPhD,
+    IeltsBlogLayout,
+    IeltsEligibilityPage,
+    IeltsResultsPage,
+    IeltsRegistrationPage,
+    IeltsSyllabus,
+    SlotBookingPage,
+    HarvardReact,
+    LorMasters,
+    AuthLayout,
+    SignUpPage,
+    LoginPage,
+    CueCardPage,
+    SOPPhD,
+    Listening,
+    Reading,
+    Careers,
+    KnowledgeCenter, MavencaveAdvantage, MavencaveFreeClass,
 } from "@/pages";
 import useScrollToTop from "@/hooks/useScrollToTop.tsx";
-import Careers from "./pages/Careers";
-import KnowledgeCenter from "./components/KnoledgeCenter/KnowledgeCenter.tsx";
-import MavencaveAdvantage from "./components/MavencaveAdvantage/MavencaveAdvantage";
-import MavencaveFreeClass from "./components/MavencaveFreeClass/MavencaveFreeClass";
-import Listening from "./components/ielts/Listening/Listening.tsx";
-import Reading from "./components/ielts/Reading/Reading.tsx";
+
 
 
 function App() {
