@@ -7,6 +7,8 @@ import FeatureFour from "./FeatureFour";
 import FeatureThree from "./FeatureThree";
 import FeatureTwo from "./FeatureTwo";
 import Intro from "./Intro";
+import IeltsCarouselSection from "@/components/ielts/Ielts-carousel-section.tsx";
+import {ieltsCarouselData} from "@/data/carousle-data.ts";
 
 
 
@@ -14,8 +16,8 @@ const Listening = () => {
     return (
         <div>
            <Intro></Intro>
-           
-           <FeatureTwo></FeatureTwo>
+            <IeltsCarouselSection data={ieltsCarouselData}/>
+            <FeatureTwo></FeatureTwo>
            <FeatureThree></FeatureThree>
            <FeatureFour></FeatureFour>
            <FeatureFive></FeatureFive>

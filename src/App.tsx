@@ -53,6 +53,8 @@ function App() {
                     <Route path={"/exams/ielts/syllabus"} element={<IeltsSyllabus/>}/>
                     <Route path={"/exams/ielts/slot-booking"} element={<SlotBookingPage/>}/>
                     <Route path={"/lor-masters"} element={<LorMasters/>}/>
+                    <Route path={"/listening-practice"} element={<Listening/>}/>
+                    <Route path={"/reading-practice"} element={<Reading/>}/>
                 </Route>
                 <Route element={<AuthLayout/>}>
                     <Route path={"/signup"} element={<SignUpPage/>}/>
@@ -69,8 +71,6 @@ function App() {
                 <Route path={"/knowledge-center"} element={<KnowledgeCenter/>}/>
                 <Route path={"/mavencave-advantage"} element={<MavencaveAdvantage/>}/>
                 <Route path={"/mavencave-freeClass"} element={<MavencaveFreeClass/>}/>
-                <Route path={"/listening-practice"} element={<Listening/>}/>
-                <Route path={"/reading-practice"} element={<Reading/>}/>
             </Route>
         </Routes>
     )
