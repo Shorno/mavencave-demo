@@ -129,7 +129,7 @@ const FeatureFour: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [currentTime, setCurrentTime] = useState<number>(0);
   const [duration, setDuration] = useState<number>(0);
-  const [currentFeature, setCurrentFeature] = useState<number>(0);
+  const [currentFeature] = useState<number>(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const feature = features[currentFeature];
