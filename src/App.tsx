@@ -24,6 +24,8 @@ import Careers from "./pages/Careers";
 import KnowledgeCenter from "./components/KnoledgeCenter/KnowledgeCenter.tsx";
 import MavencaveAdvantage from "./components/MavencaveAdvantage/MavencaveAdvantage";
 import MavencaveFreeClass from "./components/MavencaveFreeClass/MavencaveFreeClass";
+import Listening from "./components/ielts/Listening/Listening.tsx";
+import Reading from "./components/ielts/Reading/Reading.tsx";
 
 
 function App() {
@@ -67,6 +69,8 @@ function App() {
                 <Route path={"/knowledge-center"} element={<KnowledgeCenter/>}/>
                 <Route path={"/mavencave-advantage"} element={<MavencaveAdvantage/>}/>
                 <Route path={"/mavencave-freeClass"} element={<MavencaveFreeClass/>}/>
+                <Route path={"/listening-practice"} element={<Listening/>}/>
+                <Route path={"/reading-practice"} element={<Reading/>}/>
             </Route>
         </Routes>
     )
