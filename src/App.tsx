@@ -38,6 +38,9 @@ import useScrollToTop from "@/hooks/useScrollToTop.tsx";
 import IeltsExamDate from "./components/ielts/IeltsExamDate/IeltsExamDate";
 import IeltsPractice from "./components/ielts/IeltsPractice/IeltsPractice";
 import IeltsFees from "./components/ielts/IeltsFees/IeltsFees";
+import IeltsTestCenters from "./components/ielts/IeltsTestCenters/IeltsTestCenters";
+import Speaking from "./components/ielts/Speaking/Speaking";
+import IeltsTypes from "./components/ielts/IeltsTypes/IeltsTypes";
 
 
 
@@ -87,6 +90,9 @@ function App() {
                 <Route path={"/ielts-date"} element={<IeltsExamDate/>}/>
                 <Route path={"/ielts-practice"} element={<IeltsPractice/>}/>
                 <Route path={"/ielts-fees"} element={<IeltsFees/>}/>
+                <Route path={"/ielts-centers"} element={<IeltsTestCenters/>}/>
+                <Route path={"/ielts-speaking"} element={<Speaking/>}/>
+                <Route path={"/ielts-types"} element={<IeltsTypes/>}/>
             </Route>
         </Routes>
     )
