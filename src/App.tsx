@@ -35,6 +35,9 @@ import {
     KnowledgeCenter, MavencaveAdvantage, MavencaveFreeClass,
 } from "@/pages";
 import useScrollToTop from "@/hooks/useScrollToTop.tsx";
+import IeltsExamDate from "./components/ielts/IeltsExamDate/IeltsExamDate";
+import IeltsPractice from "./components/ielts/IeltsPractice/IeltsPractice";
+import IeltsFees from "./components/ielts/IeltsFees/IeltsFees";
 
 
 
@@ -81,6 +84,9 @@ function App() {
                 <Route path={"/knowledge-center"} element={<KnowledgeCenter/>}/>
                 <Route path={"/mavencave-advantage"} element={<MavencaveAdvantage/>}/>
                 <Route path={"/mavencave-freeClass"} element={<MavencaveFreeClass/>}/>
+                <Route path={"/ielts-date"} element={<IeltsExamDate/>}/>
+                <Route path={"/ielts-practice"} element={<IeltsPractice/>}/>
+                <Route path={"/ielts-fees"} element={<IeltsFees/>}/>
             </Route>
         </Routes>
     )
