@@ -29,7 +29,7 @@ const Intro: React.FC = () => {
   );
 
   return (
-    <div className="bg-gray-50 min-h-screen py-8 px-4 sm:px-6 lg:px-8 font-sans">
+    <div className="min-h-screen py-8 px-4 sm:px-6 font-sans">
       {/* Breadcrumb & Intro */}
       <div className="bg-white p-6 rounded-lg shadow-md max-w-4xl mx-auto mb-8">
         <div className="text-sm text-gray-500 mb-2">
