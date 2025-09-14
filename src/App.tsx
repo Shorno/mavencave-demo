@@ -40,7 +40,6 @@ import IeltsPractice from "./components/ielts/IeltsPractice/IeltsPractice";
 import IeltsFees from "./components/ielts/IeltsFees/IeltsFees";
 import IeltsTestCenters from "./components/ielts/IeltsTestCenters/IeltsTestCenters";
 import Speaking from "./components/ielts/Speaking/Speaking";
-import IeltsTypes from "./components/ielts/IeltsTypes/IeltsTypes";
 import PracticeResources from "./components/ielts/PracticeResources/PracticeResources";
 import Writing from "./components/ielts/Writing/Writing";
 
@@ -73,6 +72,12 @@ function App() {
                     <Route path={"/lor-masters"} element={<LorMasters/>}/>
                     <Route path={"/listening-practice"} element={<Listening/>}/>
                     <Route path={"/reading-practice"} element={<Reading/>}/>
+                    <Route path={"/ielts-date"} element={<IeltsExamDate/>}/>
+                    <Route path={"/ielts-fees"} element={<IeltsFees/>}/>
+                    <Route path={"/ielts-centers"} element={<IeltsTestCenters/>}/>
+                    <Route path={"/ielts-speaking"} element={<Speaking/>}/>
+                    <Route path={"/ielts-writing"} element={<Writing/>}/>
+                    <Route path={"/ielts-practice"} element={<IeltsPractice/>}/>
                 </Route>
                 <Route element={<AuthLayout/>}>
                     <Route path={"/signup"} element={<SignUpPage/>}/>
@@ -83,21 +88,12 @@ function App() {
                 <Route path={"/exams"} element={<ExamsPage/>}/>
                 <Route path={"/sop-phd"} element={<SOPPhD/>}/>
                 <Route path={"/harvard-react"} element={<HarvardReact/>}/>
-
                 {/*bristy*/}
                 <Route path={"/careers"} element={<Careers/>}/>
-                <Route path={"/knowledge-center"} element={<KnowledgeCenter/>}/>
+                <Route path={"/knowle dge-center"} element={<KnowledgeCenter/>}/>
                 <Route path={"/mavencave-advantage"} element={<MavencaveAdvantage/>}/>
                 <Route path={"/mavencave-freeClass"} element={<MavencaveFreeClass/>}/>
-                <Route path={"/ielts-date"} element={<IeltsExamDate/>}/>
-                <Route path={"/ielts-practice"} element={<IeltsPractice/>}/>
-                <Route path={"/ielts-fees"} element={<IeltsFees/>}/>
-                <Route path={"/ielts-centers"} element={<IeltsTestCenters/>}/>
-                <Route path={"/ielts-speaking"} element={<Speaking/>}/>
-             
-                <Route path={"/ielts-types"} element={<IeltsTypes/>}/>
                 <Route path={"/ielts-resources"} element={<PracticeResources/>}/>
-                <Route path={"/ielts-writing"} element={<Writing/>}/>
             </Route>
         </Routes>
     )

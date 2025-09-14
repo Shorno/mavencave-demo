@@ -1,4 +1,5 @@
-// ---------- FAQCard Component ----------
+import {useState} from "react";
+
 interface FAQCardProps {
   question: string;
   children: React.ReactNode;
@@ -7,7 +8,7 @@ interface FAQCardProps {
 const FAQCard: React.FC<FAQCardProps> = ({ question, children }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 mb-4 overflow-hidden">
+    <div className=" rounded-lg shadow-sm border  mb-4 overflow-hidden">
       <div
         className="p-4 flex justify-between items-center cursor-pointer hover:bg-gray-50 transition-colors"
         onClick={() => setIsExpanded(!isExpanded)}
@@ -31,7 +32,7 @@ const FAQCard: React.FC<FAQCardProps> = ({ question, children }) => {
 // ---------- FAQ Section ----------
 const FAQ = () => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
+    <div className="max-w-5xl mx-auto p-6 rounded-lg shadow-md">
       <h2 className="text-xl font-bold text-gray-800 mb-4">বেশি জিজ্ঞাসিত প্রশ্ন</h2>
 
       <FAQCard question="IELTS স্পিকিং টেস্টটি নোট করতে থাকে?">
