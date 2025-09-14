@@ -41,6 +41,8 @@ import IeltsFees from "./components/ielts/IeltsFees/IeltsFees";
 import IeltsTestCenters from "./components/ielts/IeltsTestCenters/IeltsTestCenters";
 import Speaking from "./components/ielts/Speaking/Speaking";
 import IeltsTypes from "./components/ielts/IeltsTypes/IeltsTypes";
+import PracticeResources from "./components/ielts/PracticeResources/PracticeResources";
+import Writing from "./components/ielts/Writing/Writing";
 
 
 
@@ -92,7 +94,10 @@ function App() {
                 <Route path={"/ielts-fees"} element={<IeltsFees/>}/>
                 <Route path={"/ielts-centers"} element={<IeltsTestCenters/>}/>
                 <Route path={"/ielts-speaking"} element={<Speaking/>}/>
+             
                 <Route path={"/ielts-types"} element={<IeltsTypes/>}/>
+                <Route path={"/ielts-resources"} element={<PracticeResources/>}/>
+                <Route path={"/ielts-writing"} element={<Writing/>}/>
             </Route>
         </Routes>
     )
