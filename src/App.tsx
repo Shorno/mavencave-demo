@@ -42,7 +42,8 @@ import IeltsTestCenters from "./components/ielts/IeltsTestCenters/IeltsTestCente
 import Speaking from "./components/ielts/Speaking/Speaking";
 import PracticeResources from "./components/ielts/PracticeResources/PracticeResources";
 import Writing from "./components/ielts/Writing/Writing";
-
+import StanfordUniversity from "@/pages/Universities/StanfordUniversity.tsx";
+import YaleUniversity from "@/pages/YaleUniversity.tsx";
 
 
 function App() {
@@ -79,6 +80,8 @@ function App() {
                     <Route path={"/ielts-writing"} element={<Writing/>}/>
                     <Route path={"/ielts-practice"} element={<IeltsPractice/>}/>
                 </Route>
+                <Route path={"/university/stanford"} element={<StanfordUniversity/>}/>
+                <Route path={"/university/yale"} element={<YaleUniversity/>}/>
                 <Route element={<AuthLayout/>}>
                     <Route path={"/signup"} element={<SignUpPage/>}/>
                     <Route path={"/login"} element={<LoginPage/>}/>
