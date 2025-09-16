@@ -26,6 +26,12 @@ import SignUpPage from "@/pages/SignUpPage.tsx";
 import AuthLayout from "@/layout/AuthLayout.tsx";
 import LoginPage from "@/pages/LoginPage.tsx";
 import CueCardPage from "@/pages/IELTS/CueCardPage.tsx";
+import Careers from "@/pages/Careers";
+import KnowledgeCenter from "@/components/KnoledgeCenter/KnowledgeCenter.tsx";
+import MavencaveAdvantage from "@/components/MavencaveAdvantage/MavencaveAdvantage";
+import MavencaveFreeClass from "@/components/MavencaveFreeClass/MavencaveFreeClass";
+import Listening from "@/components/ielts/Listening/Listening.tsx";
+import Reading from "@/components/ielts/Reading/Reading.tsx";
 
 export {
     HomePage,
@@ -55,7 +61,11 @@ export {
     SignUpPage,
     AuthLayout,
     LoginPage,
-    CueCardPage
-
-
+    CueCardPage,
+    Careers,
+    KnowledgeCenter,
+    MavencaveAdvantage,
+    MavencaveFreeClass,
+    Listening,
+    Reading
 }

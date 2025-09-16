@@ -16,14 +16,34 @@ import {
     VisaPredictor,
     IeltsOverviewPage,
     IeltsTypesPage,
-    IeltsBlogLayout, IeltsEligibilityPage, IeltsResultsPage, IeltsRegistrationPage, IeltsSyllabus, SlotBookingPage,
-    HarvardReact, LorMasters, AuthLayout, SignUpPage, LoginPage, CueCardPage, SOPPhD,
+    IeltsBlogLayout,
+    IeltsEligibilityPage,
+    IeltsResultsPage,
+    IeltsRegistrationPage,
+    IeltsSyllabus,
+    SlotBookingPage,
+    HarvardReact,
+    LorMasters,
+    AuthLayout,
+    SignUpPage,
+    LoginPage,
+    CueCardPage,
+    SOPPhD,
+    Listening,
+    Reading,
+    Careers,
+    KnowledgeCenter, MavencaveAdvantage, MavencaveFreeClass,
 } from "@/pages";
 import useScrollToTop from "@/hooks/useScrollToTop.tsx";
-import Careers from "./pages/Careers";
-import KnowledgeCenter from "./components/KnoledgeCenter/KnowledgeCenter.tsx";
-import MavencaveAdvantage from "./components/MavencaveAdvantage/MavencaveAdvantage";
-import MavencaveFreeClass from "./components/MavencaveFreeClass/MavencaveFreeClass";
+import IeltsExamDate from "./components/ielts/IeltsExamDate/IeltsExamDate";
+import IeltsPractice from "./components/ielts/IeltsPractice/IeltsPractice";
+import IeltsFees from "./components/ielts/IeltsFees/IeltsFees";
+import IeltsTestCenters from "./components/ielts/IeltsTestCenters/IeltsTestCenters";
+import Speaking from "./components/ielts/Speaking/Speaking";
+import PracticeResources from "./components/ielts/PracticeResources/PracticeResources";
+import Writing from "./components/ielts/Writing/Writing";
+import StanfordUniversity from "@/pages/Universities/StanfordUniversity.tsx";
+import YaleUniversity from "@/pages/YaleUniversity.tsx";
 
 
 function App() {
@@ -51,7 +71,17 @@ function App() {
                     <Route path={"/exams/ielts/syllabus"} element={<IeltsSyllabus/>}/>
                     <Route path={"/exams/ielts/slot-booking"} element={<SlotBookingPage/>}/>
                     <Route path={"/lor-masters"} element={<LorMasters/>}/>
+                    <Route path={"/listening-practice"} element={<Listening/>}/>
+                    <Route path={"/reading-practice"} element={<Reading/>}/>
+                    <Route path={"/ielts-date"} element={<IeltsExamDate/>}/>
+                    <Route path={"/ielts-fees"} element={<IeltsFees/>}/>
+                    <Route path={"/ielts-centers"} element={<IeltsTestCenters/>}/>
+                    <Route path={"/ielts-speaking"} element={<Speaking/>}/>
+                    <Route path={"/ielts-writing"} element={<Writing/>}/>
+                    <Route path={"/ielts-practice"} element={<IeltsPractice/>}/>
                 </Route>
+                <Route path={"/university/stanford"} element={<StanfordUniversity/>}/>
+                <Route path={"/university/yale"} element={<YaleUniversity/>}/>
                 <Route element={<AuthLayout/>}>
                     <Route path={"/signup"} element={<SignUpPage/>}/>
                     <Route path={"/login"} element={<LoginPage/>}/>
@@ -61,12 +91,12 @@ function App() {
                 <Route path={"/exams"} element={<ExamsPage/>}/>
                 <Route path={"/sop-phd"} element={<SOPPhD/>}/>
                 <Route path={"/harvard-react"} element={<HarvardReact/>}/>
-
                 {/*bristy*/}
                 <Route path={"/careers"} element={<Careers/>}/>
-                <Route path={"/knowledge-center"} element={<KnowledgeCenter/>}/>
+                <Route path={"/knowle dge-center"} element={<KnowledgeCenter/>}/>
                 <Route path={"/mavencave-advantage"} element={<MavencaveAdvantage/>}/>
                 <Route path={"/mavencave-freeClass"} element={<MavencaveFreeClass/>}/>
+                <Route path={"/ielts-resources"} element={<PracticeResources/>}/>
             </Route>
         </Routes>
     )
