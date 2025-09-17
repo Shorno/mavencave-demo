@@ -71,7 +71,7 @@ const CommonPart: React.FC = () => {
 
       {/* IELTS Accepting Universities */}
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 sm:p-8">
-        <h2 className="text-xl md:text-2xl font-bold text-[#4446a8] text-center mb-6">
+        <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-6">
           IELTS গ্রহণকারী বিশ্ববিদ্যালয়সমূহ
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
@@ -91,7 +91,7 @@ const CommonPart: React.FC = () => {
 
       {/* IELTS Exercise */}
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 sm:p-8">
-        <h2 className="text-xl md:text-2xl font-bold text-[#4446a8] text-center mb-6">
+        <h2 className="text-xl md:text-2xl font-bold text-gray-800  mb-6">
           IELTS অনুশীলন পরীক্ষার সম্পর্কে আরও পড়ুন
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
@@ -111,7 +111,7 @@ const CommonPart: React.FC = () => {
 
       {/* Bangladesh Centers */}
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 sm:p-8">
-        <h2 className="text-xl md:text-2xl font-bold text-[#4446a8] text-center mb-6">
+        <h2 className="text-xl md:text-2xl font-bold text-gray-800  mb-6">
           বাংলাদেশে IELTS পরীক্ষার কেন্দ্র ও তারিখ
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3">
@@ -128,7 +128,7 @@ const CommonPart: React.FC = () => {
 
       {/* Cue Cards */}
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6">
-        <h2 className="text-xl sm:text-2xl font-semibold text-purple-700 mb-6">
+        <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-6">
           সেরা কিউ কার্ডগুলো উত্তরসহ
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ">

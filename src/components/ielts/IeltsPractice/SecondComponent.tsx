@@ -41,6 +41,61 @@ export const SecondComponent = () => {
   );
 };
 
+
+const IELTSPractice = () => {
+  return (
+    <div className="container  max-w-4xl p-4 md:p-8 font-sans  text-gray-800">
+      {/* Listening Section */}
+      <div className="mb-10 p-6 md:p-10 bg-white rounded-lg shadow-md">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800">IELTS প্র্যাকটিস টেস্ট: লিসেনিং</h2>
+        <p className="mb-4 leading-relaxed">IELTS Listening টেস্ট ৩০ মিনিটের হয়, যা Academic এবং General Training উভয় মডিউলের জন্য একই। এই টেস্টে আপনাকে চারটি রেকর্ডিং শুনতে হয়, যেখানে নেটিভ ইংলিশ স্পিকাররা কথা বলেন, এবং মোট ৪০টি প্রশ্নের উত্তর দিতে হয়, প্রতি রেকর্ডিংয়ে ১০টি করে প্রশ্ন থাকে।</p>
+        
+        <p className="mb-2 leading-relaxed">প্রতি রেকর্ডিংয়ে আপনি শুধু একবারই শুনতে পারেন, যা আপনার মনোযোগ পরীক্ষা করে:</p>
+        <ul className="list-disc list-inside mb-4 ml-4 leading-relaxed">
+          <li>মূল ধারণা এবং গুরুত্বপূর্ণ তথ্য শোনা।</li>
+          <li>মনোভাব, মনোযোগ এবং বক্তার উদ্দেশ্য বোঝা।</li>
+          <li>ধারাবাহিকতা এবং ধারণাগুলো অনুসরণ করা।</li>
+        </ul>
+        
+        <p className="mb-2 leading-relaxed">আপনি বিভিন্ন ধরণের রেকর্ডিং শুনতে পারেন:</p>
+        <ul className="list-disc list-inside mb-6 ml-4 leading-relaxed">
+          <li><strong className="font-semibold">রেকর্ডিং ১:</strong> সামাজিক প্রেক্ষাপটে দুইজন মানুষের মধ্যে কথোপকথন।</li>
+          <li><strong className="font-semibold">রেকর্ডিং ২:</strong> সামাজিক পরিবেশে একটি মনোলগ (যেমন, স্থানীয় ঘটনার উপর বক্তৃতা)।</li>
+          <li><strong className="font-semibold">রেকর্ডিং ৩:</strong> একাডেমিক বিষয়ে একটি মনোলগ (যেমন, বিশ্ববিদ্যালয়ের লেকচার)।</li>
+          <li><strong className="font-semibold">রেকর্ডিং ৪:</strong> শিক্ষামূলক পরিবেশে সরবোচ্চ চারজনের মধ্যে কথোপকথন।</li>
+        </ul>
+        <a href="#" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+          IELTS Listening প্র্যাকটিস টেস্টের জন্য এখানে ক্লিক করুন। <span className="ml-2 font-bold">➔</span>
+        </a>
+      </div>
+
+      <hr className="my-10 border-gray-300" />
+
+      {/* Speaking Section */}
+      <div className="p-6 md:p-10 bg-white rounded-lg shadow-md">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800">IELTS প্র্যাকটিস টেস্ট: স্পিকিং</h2>
+        <p className="mb-4 leading-relaxed">IELTS স্পিকিং টেস্টটি সাধারণ কথোপকথনমূলক হয়, যা Academic এবং General Training উভয় মডিউলের জন্য ১১ থেকে ১৪ মিনিট দীর্ঘ হয় এবং এটি ৩টি ভাগে বিভক্ত।</p>
+        
+        <ul className="list-disc list-inside mb-4 ml-4 leading-relaxed">
+          <li><strong className="font-semibold">পার্ট ১ (৪-৫ মিনিট):</strong> টেস্ট শুরু হয় পরিচিত বিষয় দিয়ে এবং দৈনন্দিন জীবন যেমন আপনার পরিবার, পড়াশোনা, কাজ এবং ব্যক্তিগত আগ্রহ সম্পর্কে কিছু প্রশ্ন দিয়ে।</li>
+          <li><strong className="font-semibold">পার্ট ২ (৩-৪ মিনিট):</strong> আপনাকে একটি টাস্ক কার্ড দেওয়া হবে। একটি নির্দিষ্ট বিষয় নিয়ে ১ মিনিট প্রস্তুতি নেওয়ার সময় পাবেন, তারপর সেই বিষয় নিয়ে ১-২ মিনিট কথা বলতে হবে। পরীক্ষক অতিরিক্ত কিছু প্রশ্নও করতে পারেন।</li>
+          <li><strong className="font-semibold">পার্ট ৩ (৪-৫ মিনিট):</strong> এটি হলো দুই-পার্শ্বের আলোচনার মতো। এখানে পরীক্ষক পার্ট ২-এর বিষয়ের সঙ্গে সম্পর্কিত আরও প্রশ্ন করবেন, যা আপনাকে গভীর চিন্তা প্রকাশ এবং আপনার মতামত জানানোর সুযোগ দেবে।</li>
+        </ul>
+        
+        <p className="mb-4 leading-relaxed">নমুনা প্রশ্ন ছাড়াও বইয়ের সাহায্যে অনুশীলন করাও গুরুত্বপূর্ণ কারণ এগুলো কাঠামোবদ্ধ অনুশীলন দেয় এবং আপনার কাঙ্ক্ষিত IELTS স্কোর অর্জনে সহায়ক পরিষ্কারভাবে আলোচনা করা এবং গুরুত্বপূর্ণ কারণগুলো তুলে ধরা অত্যন্ত গুরুত্বপূর্ণ অনুশীলন এবং আপনার কাঙ্ক্ষিত IELTS স্কোর পাওয়ার সহায়ক।</p>
+        
+        <p className="mb-6 leading-relaxed">IELTS বইগুলো গুরুত্বপূর্ণ কারণ এগুলো হলো আসল IELTS পরীক্ষার ফরম্যাটের অনুরূপ উপকরণ সরবরাহ করে, যা পরীক্ষার দিন কী আশা করতে হবে তা বুঝতে সাহায্য করে।</p>
+        
+        <a href="#" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+          IELTS স্পিকিং প্র্যাকটিস টেস্টের জন্য এখানে ক্লিক করুন। <span className="ml-2 font-bold">➔</span>
+        </a>
+      </div>
+    </div>
+  );
+};
+
+export default IELTSPractice;
+
 // FAQ Component
 export const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -73,8 +128,8 @@ export const FAQ = () => {
   ];
 
   return (
-    <div className="bg-white p-4">
-      <div className="bg-white p-6 rounded-lg shadow-md max-w-4xl mx-auto my-8">
+    <div className="bg-white p-4 ">
+      <div className="bg-white max-w-4xl p-6 rounded-lg shadow-md  mx-auto my-8">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">সাধারণ প্রশ্নাবলী (FAQ)</h2>
         {faqs.map((item, index) => (
           <div key={index} className="mb-4 border-b pb-2">

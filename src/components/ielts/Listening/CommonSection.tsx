@@ -51,7 +51,7 @@ const CommonSection: React.FC = () => {
 
       {/* Next Step Section */}
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 sm:p-8">
-        <h2 className="text-xl md:text-2xl font-bold text-[#4446a8] mb-6">পরবর্তী ধাপ</h2>
+        <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-6">পরবর্তী ধাপ</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {stepsData.map((step, index) => (
             <div key={index} className="bg-[#f0f3f6] p-6 rounded-lg shadow-sm border border-gray-200 flex flex-col items-center text-center">
@@ -71,7 +71,7 @@ const CommonSection: React.FC = () => {
 
       {/* IELTS Info Section */}
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 sm:p-8">
-        <h2 className="text-xl md:text-2xl font-bold text-[#4446a8] text-center mb-6">IELTS সংক্রান্ত গুরুত্বপূর্ণ তথ্য</h2>
+        <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-6">IELTS সংক্রান্ত গুরুত্বপূর্ণ তথ্য</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {infoData.map((item, index) => (
             <div 
@@ -89,7 +89,7 @@ const CommonSection: React.FC = () => {
 
       {/* IELTS Accepting Countries Section */}
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 sm:p-8">
-        <h2 className="text-xl md:text-2xl font-bold text-[#4446a8] text-center mb-6">IELTS গ্রহণকারী দেশসমূহ</h2>
+        <h2 className="text-xl md:text-2xl font-bold text-gray-800  mb-6">IELTS গ্রহণকারী দেশসমূহ</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {countryData.map((item, index) => (
             <div 
