@@ -1,7 +1,7 @@
 import CommonPart from "../Listening/CommonPart";
 import CommonSection from "../Listening/CommonSection";
 import Intro, { IeltsReading, IeltsSummary } from "./Intro";
-import { FAQ, SecondComponent } from "./SecondComponent";
+import IELTSPractice, { FAQ, SecondComponent } from "./SecondComponent";
 
 
 const IeltsPractice = () => {
@@ -11,6 +11,7 @@ const IeltsPractice = () => {
             <IeltsReading></IeltsReading>
             <IeltsSummary></IeltsSummary>
             <SecondComponent></SecondComponent>
+            <IELTSPractice></IELTSPractice>
             <CommonSection></CommonSection>
             <CommonPart></CommonPart>
             <FAQ></FAQ>

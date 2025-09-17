@@ -4,7 +4,7 @@ export const Intro = () => {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md max-w-4xl mx-auto my-8">
       <div className="text-sm text-gray-500 mb-2">
-        <span className="font-bold">সফলতা টুটোরিয়াল</span> / পরীক্ষা-সমূহ / IELTS / প্র্যাকটিস টেস্ট
+        <span className="font-bold">সফলতা টিউটোরিয়াল</span> / পরীক্ষা-সমূহ / IELTS / প্র্যাকটিস টেস্ট
       </div>
       <h1 className="text-3xl font-bold text-gray-800 mb-4">IELTS প্র্যাকটিস টেস্ট</h1>
       <div className="flex items-center text-gray-500 text-sm mb-6">
@@ -70,7 +70,7 @@ export const IeltsSummary = () => {
 
       {/* Writing Section */}
       <div className="w-full p-6 bg-gray-50 rounded-lg">
-        <h2 className="text-2xl font-bold mb-4 text-center text-blue-800">২. IELTS প্র্যাকটিস টেস্ট: রাইটিং</h2>
+        <h2 className="text-2xl font-bold mb-4 text-center text-gray-800">২. IELTS প্র্যাকটিস টেস্ট: রাইটিং</h2>
         <div className="text-lg text-gray-700 space-y-4">
           <p>
             IELTS Writing সেকশন সম্পন্ন করার জন্য আপনার কাছে ৬০ মিনিট সময় রয়েছে, যা Academic এবং General Training দুই মডিউলের জন্যই প্রযোজ্য।
