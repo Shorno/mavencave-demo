@@ -85,6 +85,7 @@ function App() {
                 </Route>
                 <Route path={"/university/stanford"} element={<StanfordUniversity/>}/>
                 <Route path={"/university/yale"} element={<YaleUniversity/>}/>
+                <Route path={"/university/columbia"} element={<YaleUniversity/>}/>
                 <Route path={"/university/oxford"} element={<OxfordUniversity/>}/>
                 <Route path={"/university/cambridge"} element={<CambridgeUniversity/>}/>
                 <Route path={"/university/mit"} element={<MIT/>}/>
