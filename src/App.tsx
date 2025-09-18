@@ -44,6 +44,9 @@ import PracticeResources from "./components/ielts/PracticeResources/PracticeReso
 import Writing from "./components/ielts/Writing/Writing";
 import StanfordUniversity from "@/pages/Universities/StanfordUniversity.tsx";
 import YaleUniversity from "@/pages/YaleUniversity.tsx";
+import OxfordUniversity from "./pages/Universities/OxfordUniversity";
+import CambridgeUniversity from "./pages/Universities/CambridgeUnversity";
+import MIT from "./pages/Universities/MIT";
 
 
 function App() {
@@ -82,6 +85,10 @@ function App() {
                 </Route>
                 <Route path={"/university/stanford"} element={<StanfordUniversity/>}/>
                 <Route path={"/university/yale"} element={<YaleUniversity/>}/>
+                <Route path={"/university/columbia"} element={<YaleUniversity/>}/>
+                <Route path={"/university/oxford"} element={<OxfordUniversity/>}/>
+                <Route path={"/university/cambridge"} element={<CambridgeUniversity/>}/>
+                <Route path={"/university/mit"} element={<MIT/>}/>
                 <Route element={<AuthLayout/>}>
                     <Route path={"/signup"} element={<SignUpPage/>}/>
                     <Route path={"/login"} element={<LoginPage/>}/>

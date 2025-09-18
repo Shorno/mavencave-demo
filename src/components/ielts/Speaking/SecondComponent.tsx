@@ -181,18 +181,19 @@ const SecondComponent: React.FC = () => {
 
       {/* Feature Four */}
       <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-        <h2 className="text-xl font-bold text-gray-800 mb-4">৪. IELTS কথাসম্পাদন ফি ২০২৩</h2>
+        <h2 className="text-xl font-bold text-gray-800 mb-4">৪. IELTS ক্যানসেলেশন ফি ২০২৫</h2>
         <p className="text-gray-700 mb-4">
-          IELTS পরীক্ষার প্রস্তুতি নেওয়ার সময়, আপনি অনুশীলন পরীক্ষাগুলো করতে পারেন এবং আপনার দুর্বলতাগুলো চিহ্নিত করতে পারেন।
+         যেকোনো অবস্থায় IELTS পরীক্ষার নিবন্ধন (Academic বা General Training, যেটাই হোক) বাতিল করলে, নিবন্ধন ফিয়ের একটি নির্দিষ্ট অংশ কেটে রাখা হবে। আপনি যদি কোনো কারণে নিবন্ধন বাতিল করতে চান, তাহলে অনলাইন বা আইডিপি-তে গিয়ে একটি ফর্ম পূরণ করে বাতিল করতে পারেন। 
         </p>
         <p className="text-gray-700 mb-6">
-          IELTS পরীক্ষা যে কোনো ধরনের হোক, আপনাকে অবশ্যই একজন ভালো ইংরেজী ভাষাভাষীর মতো কথা বলা, বোঝা, এবং বাক্য গঠনে দক্ষ হতে হবে। IELTS স্পিকিং পরীক্ষায় আপনি কত নম্বর পাবেন, তা আপনার দক্ষতা এবং উচ্চারণের উপর নির্ভরশীল।
+        পরীক্ষার পাঁচ সপ্তাহের বেশি সময় থাকলে কিছু টাকা ফেরত পাওয়া যাবে, অন্যথায় পুরো টাকা কেটে নেওয়া হবে।
+
+এই ফিটি IDP IELTS পরীক্ষার প্রতিষ্ঠান থেকে নির্ধারিত হয়। পরীক্ষা বাতিল করার কারণ এবং কখন আপনি পরীক্ষা বাতিল করছেন, তার উপর ফি নির্ভর করবে।
         </p>
-        <div className="bg-blue-50 p-4 rounded-lg mb-6">
+        {/* <div className="bg-blue-50 p-4 rounded-lg mb-6">
           <p className="font-semibold text-gray-800">বি.দ্র.:</p>
           <p className="text-sm text-gray-700">IELTS স্পিকিং পরীক্ষার প্রধান প্রধান ধাপগুলো হলো: ইন্ট্রোডাকশন, কিউ কার্ড এবং ডিসকাশন।</p>
-        </div>
-
+        </div> */}
         <h2 className="text-xl font-bold text-gray-800 mb-4">ফলো-আপ প্রশ্ন ১</h2>
         <QACard
           question="In this part, we'll discuss more abstract and complex issues related to the topic. So, let's continue talking about education. What events usually become memorable in our life?"
