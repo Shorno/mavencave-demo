@@ -1,7 +1,7 @@
 import BlogHeaderSection from "@/components/ielts/blog-header.tsx";
-import IeltsCarouselSection from "@/components/ielts/Ielts-carousel-section.tsx";
+import CustomCarouselSection from "@/components/ielts/CustomCarouselSection.tsx";
 import NextStepsSection from "@/components/ielts/next-steps.tsx";
-import AllInfoTables from "@/components/ielts/all-info-table.tsx";
+import IeltsAllInfoTables from "@/components/ielts/all-info-table.tsx";
 import FAQAccordion, {type FAQItem} from "@/components/study-abroad/FAQAccordion.tsx";
 import WhatIsIeltsSection from "@/components/ielts/overview/why-ielts.tsx";
 import IeltsScoreSection from "@/components/ielts/overview/IeltsScoreSection.tsx";
@@ -75,32 +75,32 @@ const customSegments = [
 ];
 
 
+
 export default function  IeltsOverviewPage() {
     return (
         <>
+
             <BlogHeaderSection
-                title="বিদেশে উচ্চশিক্ষার জন্য আইইএলটিএস পরীক্ষা: ২০২৫ সালে সফলতার চূড়ান্ত গাইড"
-                updatedDate="২৮ এপ্রিল, ২০২৫, ০৫:৫৭"
+                title="TOEFL পরীক্ষা ২০২৫: তারিখ, ফি, ফলাফল, সিলেবাস ও প্যাটার্ন"
+                updatedDate="২৮ এপ্রিল, ২০২৫, ০৫:৫৬"
                 customSegments={customSegments}
             >
                 <p>
-                    আপনি কি কখনো ভেবেছেন কীভাবে আপনার বিদেশে উচ্চশিক্ষার যাত্রা শুরু করবেন? সাধারণত এটি শুরু হয় একটি
-                    ইংরেজি দক্ষতা পরীক্ষার মাধ্যমে, যা যুক্তরাজ্য, যুক্তরাষ্ট্র, অস্ট্রেলিয়া, নিউজিল্যান্ড এবং
-                    আয়ারল্যান্ডের মতো জনপ্রিয় গন্তব্যগুলোর জন্য প্রয়োজনীয়। সব পরীক্ষার মধ্যে IELTS সবচেয়ে জনপ্রিয়
-                    এবং বিশ্ববিদ্যালয় ও নিয়োগকারীদের মধ্যে সবচেয়ে বেশি গ্রহণযোগ্য। নিচের আর্টিকেলে IELTS সম্পর্কে
-                    বিস্তারিত আলোচনা করা হয়েছে—যা আপনার বিদেশে পড়াশোনার স্বপ্নকে বাস্তবে রূপ দিতে সহায়তা করবে!
+                    আপনি কি আমেরিকা, কানাডা, অস্ট্রেলিয়া বা যুক্তরাজ্যে উচ্চশিক্ষার স্বপ্ন দেখেন? তাহলে TOEFL (Test of English as a Foreign Language) আপনার জন্য একটি গুরুত্বপূর্ণ ধাপ। এই পরীক্ষাটি বিশ্বের ১২.৫ হাজারেরও বেশি শিক্ষা প্রতিষ্ঠানে স্বীকৃত এবং আন্তর্জাতিক শিক্ষার্থীদের ইংরেজি দক্ষতা যাচাইয়ের জন্য অত্যন্ত জনপ্রিয়। ২০২৫ সালে TOEFL পরীক্ষায় বেশ কিছু গুরুত্বপূর্ণ পরিবর্তন এসেছে যা বাংলাদেশী শিক্ষার্থীদের জন্য আরও সুবিধাজনক করেছে।
                 </p>
-                <div className="bg-blue-50 border border-blue-200 rounded p-4 mt-4 flex items-start gap-2">
-                    <span className="text-xl mr-2">🌞</span>
+                <div className="bg-green-50 border border-green-200 rounded p-4 mt-4 flex items-start gap-2">
+                    <span className="text-xl mr-2">🚀</span>
                     <div>
-                        <div className="font-bold text-blue-600 mb-1">বিশাল আপডেট!!</div>
-                        <div className="text-blue-800">২০২৫ সালের মার্চ মাসে IELTS পরীক্ষার ফি আপডেট হয়েছে! আপডেটেড
-                            ফিগুলো এখনই দেখে নিন।
+                        <div className="font-bold text-green-600 mb-1">সর্বশেষ আপডেট!</div>
+                        <div className="text-green-800 space-y-1">
+                            <div>TOEFL iBT এর সময়কাল সংক্ষিপ্ত করা হয়েছে। পরীক্ষার্থীরা এখন ২ ঘন্টায় পরীক্ষা সম্পন্ন করতে পারবেন। পরীক্ষায় একটি নতুন টেস্ট ফরম্যাটও অন্তর্ভুক্ত করা হয়েছে।</div>
+                            <div>TOEFL iBT ফি এখন বৃদ্ধি পেয়ে ২৪,০০০ টাকা হয়েছে।</div>
+                            <div>অস্ট্রেলিয়া সব ভিসার জন্য TOEFL স্কোর গ্রহণ করছে, যা ETS ২০২৪ সালের মে মাসে ঘোষণা করেছে।</div>
                         </div>
                     </div>
                 </div>
             </BlogHeaderSection>
-            <IeltsCarouselSection data={ieltsCarouselData}/>
+            <CustomCarouselSection data={ieltsCarouselData}/>
             <WhatIsIeltsSection/>
             <IeltsScoreSection/>
             <IeltsExamFormatSection/>
@@ -110,7 +110,7 @@ export default function  IeltsOverviewPage() {
             <IeltsTestCenterResultEligibilitySection/>
             <IeltsBandScoreMoreInfoSection/>
             <NextStepsSection/>
-            <AllInfoTables/>
+            <IeltsAllInfoTables/>
             <FAQAccordion
                 title={"বেশি জিজ্ঞাসিত প্রশ্ন"}
                 data={faqs}

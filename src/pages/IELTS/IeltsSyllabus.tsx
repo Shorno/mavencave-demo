@@ -1,5 +1,5 @@
 import BlogHeaderSection from "@/components/ielts/blog-header";
-import IeltsCarouselSection from "@/components/ielts/Ielts-carousel-section.tsx";
+import CustomCarouselSection from "@/components/ielts/CustomCarouselSection.tsx";
 import {ieltsCarouselData} from "@/data/carousle-data.ts";
 import IeltsExamPatternSection from "@/components/ielts/syllabus/IeltsExamPatternSection.tsx";
 import IeltsAcademicWritingSection from "@/components/ielts/syllabus/IeltsAcademicWritingSection.tsx";
@@ -10,7 +10,7 @@ import IeltsGeneralTrainingSyllabusSection from "@/components/ielts/syllabus/Iel
 import IeltsGeneralTrainingReadingSection from "@/components/ielts/syllabus/IeltsGeneralTrainingReadingSection.tsx";
 import IeltsGeneralTrainingWritingSection from "@/components/ielts/syllabus/IeltsGeneralTrainingWritingSection.tsx";
 import NextStepsSection from "@/components/ielts/next-steps.tsx";
-import AllInfoTables from "@/components/ielts/all-info-table.tsx";
+import IeltsAllInfoTables from "@/components/ielts/all-info-table.tsx";
 import IeltsLifeSkillsSection from "@/components/ielts/syllabus/IeltsLifeSkillsSection.tsx";
 
 const customSegments = [
@@ -57,7 +57,7 @@ export default function IeltsSyllabus() {
                     surprises on test day.
                 </p>
             </BlogHeaderSection>
-            <IeltsCarouselSection data={ieltsCarouselData}/>
+            <CustomCarouselSection data={ieltsCarouselData}/>
             <IeltsExamPatternSection/>
             <IeltsAcademicWritingSection/>
             <IeltsAcademicReadingSection/>
@@ -68,7 +68,7 @@ export default function IeltsSyllabus() {
             <IeltsGeneralTrainingWritingSection/>
             <IeltsLifeSkillsSection/>
             <NextStepsSection/>
-            <AllInfoTables/>
+            <IeltsAllInfoTables/>
         </>
     )
 }

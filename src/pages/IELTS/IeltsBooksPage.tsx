@@ -1,9 +1,9 @@
 import BlogHeaderSection from "@/components/ielts/blog-header.tsx";
-import IeltsCarouselSection from "@/components/ielts/Ielts-carousel-section.tsx";
+import CustomCarouselSection from "@/components/ielts/CustomCarouselSection.tsx";
 import IeltsBooksListSection from "@/components/ielts/books-list.tsx";
 import IeltsTipsSection from "@/components/ielts/tips.tsx";
 import NextStepsSection from "@/components/ielts/next-steps.tsx";
-import AllInfoTables from "@/components/ielts/all-info-table.tsx";
+import IeltsAllInfoTables from "@/components/ielts/all-info-table.tsx";
 import FAQAccordion, {type FAQItem} from "@/components/study-abroad/FAQAccordion.tsx";
 import {ieltsCarouselData} from "@/data/carousle-data.ts";
 
@@ -88,11 +88,11 @@ export default function IeltsBooksPage() {
                     আপনার IELTS যাত্রাকে সহজ করে তুলবে এবং উচ্চ স্কোর পেতে সহায়ক হবে।
                 </p>
             </BlogHeaderSection>
-            <IeltsCarouselSection data={ieltsCarouselData}/>
+            <CustomCarouselSection data={ieltsCarouselData}/>
             <IeltsBooksListSection/>
             <IeltsTipsSection/>
             <NextStepsSection/>
-            <AllInfoTables/>
+            <IeltsAllInfoTables/>
             <FAQAccordion
                 title={"বেশি জিজ্ঞাসিত প্রশ্ন"}
                 data={faqs}

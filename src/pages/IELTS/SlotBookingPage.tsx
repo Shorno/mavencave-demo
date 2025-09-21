@@ -1,5 +1,5 @@
 import BlogHeaderSection from "@/components/ielts/blog-header.tsx";
-import IeltsCarouselSection from "@/components/ielts/Ielts-carousel-section.tsx";
+import CustomCarouselSection from "@/components/ielts/CustomCarouselSection.tsx";
 import {ieltsCarouselData} from "@/data/carousle-data.ts";
 import IeltsSlotBookingModesSection from "@/components/ielts/slot-booking/IeltsSlotBookingModesSection.tsx";
 import IeltsSlotBookingFeeSection from "@/components/ielts/slot-booking/IeltsSlotBookingFeeSection.tsx";
@@ -7,7 +7,7 @@ import IeltsSlotBookingDocumentsSection from "@/components/ielts/slot-booking/Ie
 import IeltsSlotBookingWhenWhereSection from "@/components/ielts/slot-booking/IeltsSlotBookingWhenWhereSection.tsx";
 import IeltsSlotChangingSection from "@/components/ielts/slot-booking/IeltsSlotChangingSection.tsx";
 import NextStepsSection from "@/components/ielts/next-steps.tsx";
-import AllInfoTables from "@/components/ielts/all-info-table.tsx";
+import IeltsAllInfoTables from "@/components/ielts/all-info-table.tsx";
 import FAQAccordion from "@/components/study-abroad/FAQAccordion.tsx";
 
 const customSegments = [
@@ -104,14 +104,14 @@ export default function SlotBookingPage() {
                     We will decode each method so that you can choose the one that best suits you. Let’s start!
                 </p>
             </BlogHeaderSection>
-            <IeltsCarouselSection data={ieltsCarouselData}/>
+            <CustomCarouselSection data={ieltsCarouselData}/>
             <IeltsSlotBookingModesSection/>
             <IeltsSlotBookingFeeSection/>
             <IeltsSlotBookingDocumentsSection/>
             <IeltsSlotBookingWhenWhereSection/>
             <IeltsSlotChangingSection/>
             <NextStepsSection/>
-            <AllInfoTables/>
+            <IeltsAllInfoTables/>
             <FAQAccordion title={"বেশি জিজ্ঞাসিত প্রশ্ন"} data={ieltsSlotFaq} className={"bg-white p-4 md:p-8 rounded-xl"}/>
         </>
     )
