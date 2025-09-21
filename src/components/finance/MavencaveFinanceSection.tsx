@@ -1,5 +1,3 @@
-import React from 'react';
-
 const MavencaveFinanceSection = () => {
     const features = [
         "কোনো জামানত প্রয়োজন নেই",
