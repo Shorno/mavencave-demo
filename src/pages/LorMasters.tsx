@@ -1,5 +1,5 @@
 import BlogHeaderSection from "@/components/ielts/blog-header";
-import IeltsCarouselSection from "@/components/ielts/Ielts-carousel-section.tsx";
+import CustomCarouselSection from "@/components/ielts/CustomCarouselSection.tsx";
 import {ieltsCarouselData} from "@/data/carousle-data.ts";
 import FAQAccordion, {type FAQItem} from "@/components/study-abroad/FAQAccordion.tsx";
 import WhatIsLORSection from "@/components/lor-masters/WhatIsLORSection.tsx";
@@ -139,7 +139,7 @@ export default function LorMasters() {
                 </div>
             </BlogHeaderSection>
 
-            <IeltsCarouselSection data={ieltsCarouselData}/>
+            <CustomCarouselSection data={ieltsCarouselData}/>
             <LorIntroSection/>
             <WhatIsLORSection/>
             <LorImportanceAndFormatSection/>

@@ -1,7 +1,7 @@
-import IeltsCarouselSection from "@/components/ielts/Ielts-carousel-section.tsx";
+import CustomCarouselSection from "@/components/ielts/CustomCarouselSection.tsx";
 import {ieltsCarouselData} from "@/data/carousle-data.ts";
 import BlogHeaderSection from "@/components/ielts/blog-header.tsx";
-import AllInfoTables from "@/components/ielts/all-info-table.tsx";
+import IeltsAllInfoTables from "@/components/ielts/all-info-table.tsx";
 import IeltsRegistrationOptionsSection from "@/components/ielts/registration/IeltsRegistrationOptionsSection.tsx";
 import IeltsRegistrationFeeSection from "@/components/ielts/registration/IeltsRegistrationFeeSection.tsx";
 import IeltsRegistrationDocumentsSection from "@/components/ielts/registration/IeltsRegistrationDocumentsSection.tsx";
@@ -32,12 +32,12 @@ export default function IeltsRegistrationPage() {
                     বিভিন্ন ফরম্যাট, পরিবর্তনশীল নীতি, এবং কঠোর শর্তাবলী বিবেচনা করে, রেজিস্ট্রেশন প্রক্রিয়া বোঝা আগের চেয়ে অনেক বেশি গুরুত্বপূর্ণ। আপনি উচ্চশিক্ষার জন্য, পেশাগত নিবন্ধনের জন্য, বা অভিবাসনের জন্য আবেদন করলেও, এই গাইড আপনাকে আত্মবিশ্বাসের সঙ্গে রেজিস্ট্রেশন করতে সাহায্য করবে।
                 </p>
             </BlogHeaderSection>
-            <IeltsCarouselSection data={ieltsCarouselData}/>
+            <CustomCarouselSection data={ieltsCarouselData}/>
             <IeltsRegistrationOptionsSection/>
             <IeltsRegistrationFeeSection/>
             <IeltsRegistrationDocumentsSection/>
             <NextStepsSection/>
-            <AllInfoTables/>
+            <IeltsAllInfoTables/>
         </>
     )
 }

@@ -4,7 +4,7 @@ import IeltsGeneralTrainingTypeSection from "@/components/ielts/types/IeltsGener
 import IeltsLifeSkillsUkviTypeSection from "@/components/ielts/types/IeltsLifeSkillsUkviTypeSection.tsx";
 import IeltsAcademicVsGeneralSection from "@/components/ielts/types/IeltsAcademicVsGeneralSection.tsx";
 import NextStepsSection from "@/components/ielts/next-steps.tsx";
-import AllInfoTables from "@/components/ielts/all-info-table.tsx";
+import IeltsAllInfoTables from "@/components/ielts/all-info-table.tsx";
 import FAQAccordion, {type FAQItem} from "@/components/study-abroad/FAQAccordion.tsx";
 
 const customSegments = [
@@ -90,7 +90,7 @@ export default function IeltsTypesPage() {
             <IeltsLifeSkillsUkviTypeSection/>
             <IeltsAcademicVsGeneralSection/>
             <NextStepsSection/>
-            <AllInfoTables/>
+            <IeltsAllInfoTables/>
             <FAQAccordion title={"বেশি জিজ্ঞাসিত প্রশ্ন"} data={faqs}/>
         </>
     )

@@ -3,7 +3,7 @@ type NextStepCardProps = {
     href: string;
 };
 
-function NextStepCard({ title, href }: NextStepCardProps) {
+function NextStepCard({title, href}: NextStepCardProps) {
     return (
         <a
             href={href}
@@ -14,7 +14,8 @@ function NextStepCard({ title, href }: NextStepCardProps) {
         <span className="inline-flex items-center gap-1 text-blue-600 font-semibold text-base hover:underline">
           এখনই পড়ুন
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="inline">
-            <path d="M5 12h14M12 5l7 7-7 7" stroke="#2563eb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M5 12h14M12 5l7 7-7 7" stroke="#2563eb" strokeWidth="2" strokeLinecap="round"
+                  strokeLinejoin="round"/>
           </svg>
         </span>
             </div>
@@ -22,19 +23,23 @@ function NextStepCard({ title, href }: NextStepCardProps) {
     );
 }
 
-const nextSteps = [
-    { title: "IELTS পরীক্ষার ধরন", href: "/ielts/type" },
-    { title: "IELTS যোগ্যতা", href: "/ielts/eligibility" },
-    { title: "IELTS ব্যান্ড স্কোর", href: "/ielts/band-score" },
+const ieltsNextSteps = [
+    {title: "IELTS পরীক্ষার ধরন", href: "/ielts/type"},
+    {title: "IELTS যোগ্যতা", href: "/ielts/eligibility"},
+    {title: "IELTS ব্যান্ড স্কোর", href: "/ielts/band-score"},
 ];
 
-export default function NextStepsSection() {
+interface NextStepsSectionProps {
+    nextSteps?: { title: string; href: string }[];
+}
+
+export default function NextStepsSection({nextSteps = ieltsNextSteps}: NextStepsSectionProps) {
     return (
         <section className="bg-white p-4 rounded-xl mx-auto my-8">
             <h2 className="text-2xl md:text-3xl font-bold mb-8">পরবর্তী ধাপ</h2>
             <div className="flex flex-col md:flex-row gap-5">
-                {nextSteps.map(({ title, href }) => (
-                    <NextStepCard key={title} title={title} href={href} />
+                {nextSteps.map(({title, href}) => (
+                    <NextStepCard key={title} title={title} href={href}/>
                 ))}
             </div>
         </section>

@@ -1,9 +1,9 @@
 import BlogHeaderSection from "@/components/ielts/blog-header.tsx";
-import IeltsCarouselSection from "@/components/ielts/Ielts-carousel-section.tsx";
+import CustomCarouselSection from "@/components/ielts/CustomCarouselSection.tsx";
 import {ieltsCarouselData} from "@/data/carousle-data.ts";
 import IeltsEligibilitySection from "@/components/ielts/eligibility/IeltsEligibilitySection.tsx";
 import IeltsQualificationScoreSection from "@/components/ielts/eligibility/IeltsQualificationScoreSection.tsx";
-import AllInfoTables from "@/components/ielts/all-info-table.tsx";
+import IeltsAllInfoTables from "@/components/ielts/all-info-table.tsx";
 import NextStepsSection from "@/components/ielts/next-steps.tsx";
 
 const customSegments = [
@@ -33,11 +33,11 @@ export default function IeltsEligibilityPage() {
                     এই গাইডে আমরা প্রতিটি সেকশনের জন্য গুরুত্বপূর্ণ কৌশল এবং সর্বশেষ পরামর্শ নিয়ে আলোচনা করব, যেন আপনি আত্মবিশ্বাসের সঙ্গে IELTS পরীক্ষার মুখোমুখি হতে পারেন।
                 </p>
             </BlogHeaderSection>
-            <IeltsCarouselSection data={ieltsCarouselData}/>
+            <CustomCarouselSection data={ieltsCarouselData}/>
             <IeltsEligibilitySection/>
             <IeltsQualificationScoreSection/>
             <NextStepsSection/>
-            <AllInfoTables/>
+            <IeltsAllInfoTables/>
         </>
     )
 }

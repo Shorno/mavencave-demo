@@ -47,6 +47,11 @@ import YaleUniversity from "@/pages/YaleUniversity.tsx";
 import OxfordUniversity from "./pages/Universities/OxfordUniversity";
 import CambridgeUniversity from "./pages/Universities/CambridgeUnversity";
 import MIT from "./pages/Universities/MIT";
+import CostPage from "@/pages/CostPage.tsx";
+import FinancePage from "@/pages/FinancePage.tsx";
+import TOEFLPage from "@/pages/TOEFLPage.tsx";
+import GREPage from "@/pages/GREPage.tsx";
+import PTEPage from "@/pages/PTEPage.tsx";
 
 
 function App() {
@@ -82,6 +87,9 @@ function App() {
                     <Route path={"/ielts-speaking"} element={<Speaking/>}/>
                     <Route path={"/ielts-writing"} element={<Writing/>}/>
                     <Route path={"/ielts-practice"} element={<IeltsPractice/>}/>
+                    <Route path={"/toefl"} element={<TOEFLPage/>}/>
+                    <Route path={"/gre"} element={<GREPage/>}/>
+                    <Route path={"/pte"} element={<PTEPage/>}/>
                 </Route>
                 <Route path={"/university/stanford"} element={<StanfordUniversity/>}/>
                 <Route path={"/university/yale"} element={<YaleUniversity/>}/>
@@ -104,6 +112,8 @@ function App() {
                 <Route path={"/mavencave-advantage"} element={<MavencaveAdvantage/>}/>
                 <Route path={"/mavencave-freeClass"} element={<MavencaveFreeClass/>}/>
                 <Route path={"/ielts-resources"} element={<PracticeResources/>}/>
+                <Route path={"/cost"} element={<CostPage/>}/>
+                <Route path={"/finance"} element={<FinancePage/>}/>
             </Route>
         </Routes>
     )
