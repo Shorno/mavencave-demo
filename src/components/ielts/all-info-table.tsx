@@ -82,7 +82,7 @@ const ieltsCentersBangladesh = [
         { label: "নড়াইলের IELTS পরীক্ষার কেন্দ্র ও তারিখ", href: "#" },
     ],
 ];
-export default function AllInfoTables() {
+export default function IeltsAllInfoTables() {
     return (
         <div className="py-4">
             <InfoTableSection title="IELTS সংক্রান্ত গুরুত্বপূর্ণ তথ্য" data={ieltsImportantInfo} />

@@ -18,7 +18,7 @@ interface IeltsCarouselSectionProps {
 }
 
 
-export default function IeltsCarouselSection({data}: IeltsCarouselSectionProps) {
+export default function CustomCarouselSection({data}: IeltsCarouselSectionProps) {
     return (
         <section className={"bg-white p-4 my-10 rounded-xl"}>
             <h2 className="text-3xl font-bold mb-4">এই পৃষ্ঠায় <span className="inline-block align-middle ml-2">→</span>

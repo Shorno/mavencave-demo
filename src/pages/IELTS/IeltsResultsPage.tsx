@@ -1,8 +1,8 @@
 import BlogHeaderSection from "@/components/ielts/blog-header.tsx";
-import IeltsCarouselSection from "@/components/ielts/Ielts-carousel-section.tsx";
+import CustomCarouselSection from "@/components/ielts/CustomCarouselSection.tsx";
 import {ieltsCarouselData} from "@/data/carousle-data.ts";
 import NextStepsSection from "@/components/ielts/next-steps.tsx";
-import AllInfoTables from "@/components/ielts/all-info-table.tsx";
+import IeltsAllInfoTables from "@/components/ielts/all-info-table.tsx";
 import IeltsResultCheckSection from "@/components/ielts/results/IeltsResultCheckSection.tsx";
 import IeltsBandScoreCalculationSection from "@/components/ielts/results/IeltsBandScoreCalculationSection.tsx";
 import IeltsEorSection from "@/components/ielts/results/IeltsEorSection.tsx";
@@ -42,12 +42,12 @@ export default function IeltsResultsPage() {
                     </ul>
                 </div>
             </BlogHeaderSection>
-            <IeltsCarouselSection data={ieltsCarouselData}/>
+            <CustomCarouselSection data={ieltsCarouselData}/>
             <IeltsResultCheckSection/>
             <IeltsBandScoreCalculationSection/>
             <IeltsEorSection/>
             <NextStepsSection/>
-            <AllInfoTables/>
+            <IeltsAllInfoTables/>
         </>
     )
 }
