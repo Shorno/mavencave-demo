@@ -323,6 +323,10 @@ export const navigationItems: NavigationItem[] = [
         hasDropdown: true,
         dropdownItems: [
             {
+                label: "ওভারভিউ",
+                href: "/exams/overview",
+            },
+            {
                 label: "আইইএলটিএস",
                 href: "/exams/ielts",
                 hasDropdown: true,
@@ -333,11 +337,15 @@ export const navigationItems: NavigationItem[] = [
                         hasDropdown: true,
                         dropdownItems: [
                             { label: "আইইএলটিএস ওভারভিউ", href: "/exams/ielts/overview" },
+                            { label: "আইইএলটিএস ধরন", href: "/exams/ielts/types" },
                             { label: "আইইএলটিএস যোগ্যতা", href: "/exams/ielts/eligibility" },
                             { label: "আইইএলটিএস রেজিস্ট্রেশন", href: "/exams/ielts/registration" },
                             { label: "আইইএলটিএস ফলাফল", href: "/exams/ielts/results" },
                             { label: "আইইএলটিএস সিলেবাস", href: "/exams/ielts/syllabus" },
-                            { label: "আইইএলটিএস স্লট বুকিং", href: "/exams/ielts/slot-booking" },
+                            { label: "আইইএলটিএস পরীক্ষার তারিখ", href: "/exams/ielts/dates" },
+                            { label: "আইইএলটিএস পরীক্ষার ফি", href: "/exams/ielts/fees" },
+                            { label: "আইইএলটিএস পরীক্ষার কেন্দ্র", href: "/exams/ielts/centers" },
+
                         ],
                     },
                     {
@@ -486,6 +494,37 @@ export const navigationItems: NavigationItem[] = [
                     },
                 ],
             },
+            {
+                label: "PTE",
+                href: "/exams/PTE",
+                hasDropdown: true,
+                dropdownItems: [
+                    {
+                        label: "পরীক্ষার বিবরণ",
+                        href: "/exams/PTE/overview",
+                        hasDropdown: true,
+                        dropdownItems: [
+                            { label: "PTE ওভারভিউ", href: "/exams/pte/overview" },
+                            { label: "PTE যোগ্যতা", href: "/exams/toefl/eligibility" },
+                            { label: "PTE রেজিস্ট্রেশন", href: "/exams/toefl/registration" },
+                            { label: "PTE সিলেবাস", href: "/exams/toefl/syllabus" },
+                            { label: "PTE স্লট বুকিং", href: "/exams/toefl/slot-booking" },
+                        ],
+                    },
+                    {
+                        label: "অনুশীলন",
+                        href: "/exams/toefl/practice",
+                        hasDropdown: true,
+                        dropdownItems: [
+                            { label: "পড়া অংশ", href: "/exams/toefl/practice/reading" },
+                            { label: "শোনা অংশ", href: "/exams/toefl/practice/listening" },
+                            { label: "বলা অংশ", href: "/exams/toefl/practice/speaking" },
+                            { label: "লেখার অংশ", href: "/exams/toefl/practice/writing" },
+                        ],
+                    },
+                ],
+            },
+
 
             {
                 label: "জিআরই",
