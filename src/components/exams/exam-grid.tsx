@@ -28,14 +28,14 @@ const exams = [
         title: "TOEFL",
         description: "TOEFL একটি আন্তর্জাতিক ইংরেজি দক্ষতা মূল্যায়ন পরীক্ষা যা বিশ্ববিদ্যালয়ে ভর্তি, বিশেষ করে যুক্তরাষ্ট্রে পড়াশোনার জন্য প্রয়োজন হয়।",
         linkLabel: "শুরু করুন",
-        href: "/exams/toefl/practice",
+        href: "/exams/toefl/overview",
     },
     {
         flag: newZealandFlag,
         title: "GRE",
         description: "মাস্টার্স ও পিএইচডি প্রোগ্রামে ভর্তি হওয়ার জন্য একটি স্ট্যান্ডার্ড পরীক্ষা, যা মৌলিক গাণিতিক, বিশ্লেষণী ও মৌখিক দক্ষতা যাচাই করে।",
         linkLabel: "শুরু করুন",
-        href: "/exams/gre/practice",
+        href: "/exams/gre/overview",
     },
     {
         flag: usaFlag,
