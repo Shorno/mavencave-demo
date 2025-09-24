@@ -221,7 +221,9 @@ export default function Navbar() {
 
                     <div className="hidden md:block">
                         <Button size="xl" className="font-medium px-6 bg-blue-600 hover:bg-blue-700 text-white">
-                            সাইন ইন
+                            <Link to={"/login"}>
+                                সাইন ইন
+                            </Link>
                         </Button>
                     </div>
 
@@ -256,10 +258,13 @@ export default function Navbar() {
                                     <div className="p-6 border-t bg-gray-50 mt-auto">
                                         <div className="w-full">
                                             <Button
+                                                asChild
                                                 className="w-full py-3 text-base font-medium bg-blue-600 hover:bg-blue-700 text-white min-w-0"
                                                 onClick={() => setIsOpen(false)}
                                             >
-                                                সাইন ইন
+                                                <Link to={"/login"}>
+                                                    সাইন ইন
+                                                </Link>
                                             </Button>
                                         </div>
                                     </div>

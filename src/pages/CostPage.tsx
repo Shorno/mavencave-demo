@@ -301,7 +301,7 @@ const CostPage: React.FC = () => {
                                             আপনার শহর নির্বাচন করুন
                                         </Label>
                                         <Select value={city} onValueChange={handleCityChange} disabled={!country}>
-                                            <SelectTrigger className="h-12 border-gray-300 rounded-lg w-full">
+                                            <SelectTrigger className="h-12! border-gray-300 rounded-lg w-full">
                                                 <SelectValue placeholder="আপনার শহর খুঁজুন"/>
                                             </SelectTrigger>
                                             <SelectContent>
@@ -353,7 +353,7 @@ const CostPage: React.FC = () => {
                                             value={fun > 0 ? fun.toString() : ""}
                                             onValueChange={handleFunChange}
                                         >
-                                            <SelectTrigger className="h-12 border-gray-300 rounded-lg w-full">
+                                            <SelectTrigger className="h-12! border-gray-300 rounded-lg w-full">
                                                 <SelectValue placeholder="নির্বাচন করুন"/>
                                             </SelectTrigger>
                                             <SelectContent>
