@@ -1,6 +1,6 @@
 import {ChevronLeft, ChevronRight, ArrowRight} from "lucide-react"
 import {Button} from "@/components/ui/button"
-import FourCardGrid from "@/components/four-card-grid.tsx";
+import Counsellor from "@/components/counsellor.tsx";
 
 const experts = [
     {
@@ -63,7 +63,7 @@ export default function ExpertsSection() {
                     </div>
                 </div>
 
-                <FourCardGrid items={experts}/>
+                <Counsellor items={experts}/>
 
                 <div className="text-center">
                     <Button

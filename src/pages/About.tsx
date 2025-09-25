@@ -1,6 +1,6 @@
 import {Button} from "@/components/ui/button"
 import {motion} from "motion/react"
-import FourCardGrid from "@/components/four-card-grid.tsx";
+import Counsellor from "@/components/counsellor.tsx";
 import {ChevronLeft, ChevronRight} from "lucide-react";
 import {Card, CardContent} from "@/components/ui/card.tsx";
 import {useState} from "react";
@@ -271,7 +271,7 @@ export default function AboutPage() {
             </motion.div>
             <div className={"max-w-7xl mx-auto px-4 lg:px-6"}>
                 <p className={"text-center text-xl sm:text-3xl lg:text-4xl font-semibold py-8"}>আমাদের পরামর্শদাতা</p>
-                <FourCardGrid items={advisors}/>
+                <Counsellor items={advisors}/>
                 <div className={"py-8 mb-16"}>
                     <p className={"text-center  sm:text-3xl lg:text-4xl font-semibold py-8"}>
                         বিশ্বজুড়ে বিনিয়োগকারীদের বিশ্বাস অর্জন করেছে

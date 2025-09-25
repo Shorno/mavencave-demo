@@ -59,6 +59,7 @@ const faqs = [
         ),
     },
 ];
+
 export default function SOPPhD() {
     return (
         <>
