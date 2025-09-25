@@ -49,6 +49,9 @@ import TOEFLPage from "@/pages/TOEFLPage.tsx";
 import GREPage from "@/pages/GREPage.tsx";
 import PTEPage from "@/pages/PTEPage.tsx";
 import ColumbiaUniversity from "@/pages/Universities/ColumbiaUniversity.tsx";
+import DigestPage from "@/pages/DigestPage.tsx";
+import USAMastersPage from "@/pages/USAMastersPage.tsx";
+import CounsellorPage from "@/pages/CounsellorPage.tsx";
 
 
 function App() {
@@ -106,6 +109,9 @@ function App() {
                 <Route path={"/ielts-resources"} element={<PracticeResources/>}/>
                 <Route path={"/cost"} element={<CostPage/>}/>
                 <Route path={"/finance"} element={<FinancePage/>}/>
+                <Route path={"/mavencave-digest"} element={<DigestPage/>}/>
+                <Route path={"/us-masters"} element={<USAMastersPage/>}/>
+                <Route path={"/counsellor"} element={<CounsellorPage/>}/>
             </Route>
         </Routes>
     )

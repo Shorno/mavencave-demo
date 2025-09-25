@@ -1,5 +1,5 @@
 
-const FourCardGrid = ({ items } : {items: any}) => {
+const Counsellor = ({ items } : {items: any}) => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {items.map((item:any, index: number) => (
@@ -43,4 +43,4 @@ const FourCardGrid = ({ items } : {items: any}) => {
     );
 };
 
-export default FourCardGrid;
+export default Counsellor;
