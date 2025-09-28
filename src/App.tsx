@@ -52,6 +52,11 @@ import ColumbiaUniversity from "@/pages/Universities/ColumbiaUniversity.tsx";
 import DigestPage from "@/pages/DigestPage.tsx";
 import USAMastersPage from "@/pages/USAMastersPage.tsx";
 import CounsellorPage from "@/pages/CounsellorPage.tsx";
+import UniversityOfBritishColumbia from "@/pages/Universities/BritishColumbia.tsx";
+import McGillUniversity from "@/pages/Universities/McGillUniversity.tsx";
+import UniversityOfAlberta from "@/pages/Universities/UniversityOfAlberta.tsx";
+import UniversityOfMontreal from "@/pages/Universities/UniversityOfMontreal.tsx";
+import UniversityOfOttawa from "@/pages/Universities/UniversityOfOttawa.tsx";
 
 
 function App() {
@@ -92,7 +97,12 @@ function App() {
                 <Route path={"/study-abroad/uk/universities/oxford-university"} element={<OxfordUniversity/>}/>
                 <Route path={"/study-abroad/uk/universities/cambridge-university"} element={<CambridgeUniversity/>}/>
                 <Route path={"/study-abroad/usa/universities/columbia-university"} element={<ColumbiaUniversity/>}/>
+                <Route path={"/study-abroad/usa/universities/british-columbia-university"} element={<UniversityOfBritishColumbia/>}/>
                 <Route path={"/study-abroad/usa/universities/mit"} element={<MIT/>}/>
+                <Route path={"/study-abroad/usa/universities/mcgill"} element={<McGillUniversity/>}/>
+                <Route path={"/study-abroad/usa/universities/alberta"} element={<UniversityOfAlberta/>}/>
+                <Route path={"/study-abroad/usa/universities/montreal"} element={<UniversityOfMontreal/>}/>
+                <Route path={"/study-abroad/usa/universities/ottawa"} element={<UniversityOfOttawa/>}/>
                 <Route element={<AuthLayout/>}>
                     <Route path={"/signup"} element={<SignUpPage/>}/>
                     <Route path={"/login"} element={<LoginPage/>}/>
