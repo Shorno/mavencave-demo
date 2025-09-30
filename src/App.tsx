@@ -58,6 +58,14 @@ import UniversityOfAlberta from "@/pages/Universities/UniversityOfAlberta.tsx";
 import UniversityOfMontreal from "@/pages/Universities/UniversityOfMontreal.tsx";
 import UniversityOfOttawa from "@/pages/Universities/UniversityOfOttawa.tsx";
 
+import MonashUniversity from "./pages/Universities/MonashUniversity";
+import SydneyUniversity from "./pages/Universities/SydneyUniversity";
+
+
+import QueenslandUniversity from "./pages/Universities/QueenslandUniversity";
+import MaccuireUniversity from "./pages/Universities/MaccuireUniversiy";
+import MelboureUniversity from "./pages/Universities/MelbourneUniversity";
+
 
 function App() {
     useScrollToTop()
@@ -103,6 +111,11 @@ function App() {
                 <Route path={"/study-abroad/usa/universities/alberta"} element={<UniversityOfAlberta/>}/>
                 <Route path={"/study-abroad/usa/universities/montreal"} element={<UniversityOfMontreal/>}/>
                 <Route path={"/study-abroad/usa/universities/ottawa"} element={<UniversityOfOttawa/>}/>
+                <Route path={"/study-abroad/usa/universities/maccuire"} element={<MaccuireUniversity/>}/>
+                <Route path={"/study-abroad/usa/universities/monash"} element={<MonashUniversity/>}/>
+                <Route path={"/study-abroad/usa/universities/sydney"} element={<SydneyUniversity/>}/>
+                <Route path={"/study-abroad/usa/universities/melbourne"} element={<MelboureUniversity/>}/>
+                <Route path={"/study-abroad/usa/universities/queensland"} element={<QueenslandUniversity/>}/>
                 <Route element={<AuthLayout/>}>
                     <Route path={"/signup"} element={<SignUpPage/>}/>
                     <Route path={"/login"} element={<LoginPage/>}/>
