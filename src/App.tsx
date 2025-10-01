@@ -65,6 +65,11 @@ import SydneyUniversity from "./pages/Universities/SydneyUniversity";
 import QueenslandUniversity from "./pages/Universities/QueenslandUniversity";
 import MaccuireUniversity from "./pages/Universities/MaccuireUniversiy";
 import MelboureUniversity from "./pages/Universities/MelbourneUniversity";
+import UniversityOfManchester from "@/pages/Universities/Manchester.tsx";
+import UniversityOfEdinburgh from "@/pages/Universities/UniversityOfEdinburgh.tsx";
+import KingsCollegeLondon from "@/pages/Universities/KingsCollegeLondon.tsx";
+import ImperialCollegeLondon from "@/pages/Universities/ImperialCollegeLondon.tsx";
+import UniversityOfToronto from "@/pages/Universities/UniversityOfToronto.tsx";
 
 
 function App() {
@@ -113,9 +118,15 @@ function App() {
                 <Route path={"/study-abroad/usa/universities/ottawa"} element={<UniversityOfOttawa/>}/>
                 <Route path={"/study-abroad/usa/universities/maccuire"} element={<MaccuireUniversity/>}/>
                 <Route path={"/study-abroad/usa/universities/monash"} element={<MonashUniversity/>}/>
-                <Route path={"/study-abroad/usa/universities/sydney"} element={<SydneyUniversity/>}/>
+                <Route path={"/study-abroad/usa/universities/"} element={<SydneyUniversity/>}/>
                 <Route path={"/study-abroad/usa/universities/melbourne"} element={<MelboureUniversity/>}/>
                 <Route path={"/study-abroad/usa/universities/queensland"} element={<QueenslandUniversity/>}/>
+                <Route path={"/study-abroad/usa/universities/manchester"} element={<UniversityOfManchester/>}/>
+                <Route path={"/study-abroad/usa/universities/edinburgh"} element={<UniversityOfEdinburgh/>}/>
+                <Route path={"/study-abroad/usa/universities/edinburgh"} element={<UniversityOfEdinburgh/>}/>
+                <Route path={"/study-abroad/usa/universities/king's-college"} element={<KingsCollegeLondon/>}/>
+                <Route path={"/study-abroad/usa/universities/imperial-college"} element={<ImperialCollegeLondon/>}/>
+                <Route path={"/study-abroad/usa/universities/toronto"} element={<UniversityOfToronto/>}/>
                 <Route element={<AuthLayout/>}>
                     <Route path={"/signup"} element={<SignUpPage/>}/>
                     <Route path={"/login"} element={<LoginPage/>}/>
