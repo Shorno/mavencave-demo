@@ -65,6 +65,11 @@ import SydneyUniversity from "./pages/Universities/SydneyUniversity";
 import QueenslandUniversity from "./pages/Universities/QueenslandUniversity";
 import MaccuireUniversity from "./pages/Universities/MaccuireUniversiy";
 import MelboureUniversity from "./pages/Universities/MelbourneUniversity";
+import UniversityOfManchester from "@/pages/Universities/Manchester.tsx";
+import UniversityOfEdinburgh from "@/pages/Universities/UniversityOfEdinburgh.tsx";
+import KingsCollegeLondon from "@/pages/Universities/KingsCollegeLondon.tsx";
+import ImperialCollegeLondon from "@/pages/Universities/ImperialCollegeLondon.tsx";
+import UniversityOfToronto from "@/pages/Universities/UniversityOfToronto.tsx";
 
 
 function App() {
@@ -100,22 +105,35 @@ function App() {
                     <Route path={"/exams/gre/overview"} element={<GREPage/>}/>
                     <Route path={"/exams/pte/overview"} element={<PTEPage/>}/>
                 </Route>
-                <Route path={"/study-abroad/usa/universities/stanford-university"} element={<StanfordUniversity/>}/>
-                <Route path={"/study-abroad/usa/universities/yale-university"} element={<YaleUniversity/>}/>
-                <Route path={"/study-abroad/uk/universities/oxford-university"} element={<OxfordUniversity/>}/>
-                <Route path={"/study-abroad/uk/universities/cambridge-university"} element={<CambridgeUniversity/>}/>
-                <Route path={"/study-abroad/usa/universities/columbia-university"} element={<ColumbiaUniversity/>}/>
-                <Route path={"/study-abroad/usa/universities/british-columbia-university"} element={<UniversityOfBritishColumbia/>}/>
-                <Route path={"/study-abroad/usa/universities/mit"} element={<MIT/>}/>
-                <Route path={"/study-abroad/usa/universities/mcgill"} element={<McGillUniversity/>}/>
-                <Route path={"/study-abroad/usa/universities/alberta"} element={<UniversityOfAlberta/>}/>
-                <Route path={"/study-abroad/usa/universities/montreal"} element={<UniversityOfMontreal/>}/>
-                <Route path={"/study-abroad/usa/universities/ottawa"} element={<UniversityOfOttawa/>}/>
-                <Route path={"/study-abroad/usa/universities/maccuire"} element={<MaccuireUniversity/>}/>
-                <Route path={"/study-abroad/usa/universities/monash"} element={<MonashUniversity/>}/>
-                <Route path={"/study-abroad/usa/universities/sydney"} element={<SydneyUniversity/>}/>
-                <Route path={"/study-abroad/usa/universities/melbourne"} element={<MelboureUniversity/>}/>
-                <Route path={"/study-abroad/usa/universities/queensland"} element={<QueenslandUniversity/>}/>
+                {/* USA */}
+                <Route path="/study-abroad/usa/universities/stanford-university" element={<StanfordUniversity />} />
+                <Route path="/study-abroad/usa/universities/yale-university" element={<YaleUniversity />} />
+                <Route path="/study-abroad/usa/universities/columbia-university" element={<ColumbiaUniversity />} />
+                <Route path="/study-abroad/usa/universities/mit" element={<MIT />} />
+
+                {/* UK */}
+                <Route path="/study-abroad/uk/universities/oxford-university" element={<OxfordUniversity />} />
+                <Route path="/study-abroad/uk/universities/cambridge-university" element={<CambridgeUniversity />} />
+                <Route path="/study-abroad/uk/universities/manchester-university" element={<UniversityOfManchester />} />
+                <Route path="/study-abroad/uk/universities/edinburgh-university" element={<UniversityOfEdinburgh />} />
+                <Route path="/study-abroad/uk/universities/kings-college-london" element={<KingsCollegeLondon />} />
+                <Route path="/study-abroad/uk/universities/imperial-college-london" element={<ImperialCollegeLondon />} />
+
+                {/* Canada */}
+                <Route path="/study-abroad/canada/universities/ubc" element={<UniversityOfBritishColumbia />} />
+                <Route path="/study-abroad/canada/universities/mcgill-university" element={<McGillUniversity />} />
+                <Route path="/study-abroad/canada/universities/university-of-alberta" element={<UniversityOfAlberta />} />
+                <Route path="/study-abroad/canada/universities/university-of-montreal" element={<UniversityOfMontreal />} />
+                <Route path="/study-abroad/canada/universities/university-of-ottawa" element={<UniversityOfOttawa />} />
+                <Route path="/study-abroad/canada/universities/university-of-toronto" element={<UniversityOfToronto />} />
+
+                {/* Australia */}
+                <Route path="/study-abroad/australia/universities/macquarie-university" element={<MaccuireUniversity />} />
+                <Route path="/study-abroad/australia/universities/monash-university" element={<MonashUniversity />} />
+                <Route path="/study-abroad/australia/universities/university-of-sydney" element={<SydneyUniversity />} />
+                <Route path="/study-abroad/australia/universities/university-of-melbourne" element={<MelboureUniversity />} />
+                <Route path="/study-abroad/australia/universities/uq" element={<QueenslandUniversity />} />
+
                 <Route element={<AuthLayout/>}>
                     <Route path={"/signup"} element={<SignUpPage/>}/>
                     <Route path={"/login"} element={<LoginPage/>}/>
