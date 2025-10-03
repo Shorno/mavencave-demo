@@ -70,6 +70,7 @@ import UniversityOfEdinburgh from "@/pages/Universities/UniversityOfEdinburgh.ts
 import KingsCollegeLondon from "@/pages/Universities/KingsCollegeLondon.tsx";
 import ImperialCollegeLondon from "@/pages/Universities/ImperialCollegeLondon.tsx";
 import UniversityOfToronto from "@/pages/Universities/UniversityOfToronto.tsx";
+import BerlineCity from "./components/Citywise-University/BerlineCity";
 
 
 function App() {
@@ -126,6 +127,8 @@ function App() {
                 <Route path="/study-abroad/canada/universities/university-of-montreal" element={<UniversityOfMontreal />} />
                 <Route path="/study-abroad/canada/universities/university-of-ottawa" element={<UniversityOfOttawa />} />
                 <Route path="/study-abroad/canada/universities/university-of-toronto" element={<UniversityOfToronto />} />
+                {/* Germany */}
+                <Route path="/berline-university" element={<BerlineCity />} />
 
                 {/* Australia */}
                 <Route path="/study-abroad/australia/universities/macquarie-university" element={<MaccuireUniversity />} />
