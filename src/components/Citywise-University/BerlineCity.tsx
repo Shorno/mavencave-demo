@@ -135,7 +135,7 @@ const BerlineCity: React.FC = () => {
   <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
     <h1 className="text-2xl sm:text-3xl text-blue-600 font-bold pb-4">
       
-  ডাবলিন, লেইনস্টারের সেরা বিশ্ববিদ্যালয়: ২০২৫ সালের জন্য ফি, কোর্স এবং র‍্যাঙ্কিং
+  বার্লিন, জার্মানির সেরা বিশ্ববিদ্যালয়: ২০২৫ সালের জন্য ফি, কোর্স এবং র‍্যাঙ্কিং
     </h1>
     <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
       বিশ্বের শীর্ষস্থানীয় কিছু বিশ্ববিদ্যালয় যুক্তরাষ্ট্রে অবস্থিত এবং এসব
