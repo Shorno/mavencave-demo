@@ -1,4 +1,4 @@
-import {useEffect, useMemo, useState} from 'react';
+import {useMemo, useState, useEffect} from 'react';
 import {ArrowLeft, ArrowRight, Search,} from 'lucide-react';
 import {Button} from '@/components/ui/button';
 import {Input} from '@/components/ui/input';
@@ -191,35 +191,40 @@ const educationArticlesData = [
 export default function TopUniversities() {
     const {country, city} = useParams<UniversityParams>();
 
-
     const [searchQuery, setSearchQuery] = useState('');
+
     const [selectedFilters, setSelectedFilters] = useState<FilterState>({
         degree: [],
         location: [],
-        cities: ["নিউ ইয়র্ক"],
+        cities: [],
         scholarships: false,
         rating: null
     });
 
+    useEffect(() => {
+        if (city) {
+            setSelectedFilters(prev => ({
+                ...prev,
+                cities: [city]
+            }));
+        }
+    }, [city]);
+
     const filteredUniversities = useMemo(() => {
         let filtered = universities;
 
-        // First filter by URL params (country and city)
-        if (country && city) {
+        if (country) {
             filtered = filtered.filter(university =>
-                university.country === country &&
-                university.city === city
+                university.country === country
             );
         }
 
-        // Then filter by selected cities from sidebar
         if (selectedFilters.cities.length > 0) {
             filtered = filtered.filter(university =>
-                selectedFilters.cities.includes(university.location)
+                selectedFilters.cities.includes(university.city)
             );
         }
 
-        // Filter by search query
         if (searchQuery.trim()) {
             filtered = filtered.filter(university =>
                 university.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -228,24 +233,7 @@ export default function TopUniversities() {
         }
 
         return filtered;
-    }, [country, city, selectedFilters.cities, searchQuery]);
-
-    useEffect(() => {
-        if (city && country) {
-            // Get all universities for this city
-            const cityUniversities = universities.filter(uni =>
-                uni.country === country && uni.city === city
-            );
-
-            // Get unique locations for this city
-            const cityLocations = [...new Set(cityUniversities.map(uni => uni.location))];
-
-            setSelectedFilters(prev => ({
-                ...prev,
-                cities: cityLocations  // Auto-select all locations for the current city
-            }));
-        }
-    }, [city, country]);
+    }, [country, selectedFilters.cities, searchQuery]);
 
     if (!country || !city) {
         return <div className="min-h-screen flex items-center justify-center">
@@ -360,4 +348,3 @@ export default function TopUniversities() {
         </div>
     );
 };
-

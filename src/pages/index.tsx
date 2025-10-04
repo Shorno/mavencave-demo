@@ -51,7 +51,7 @@ import GREPage from "@/pages/GREPage.tsx";
 import PTEPage from "@/pages/PTEPage.tsx";
 import ColumbiaUniversity from "@/pages/Universities/ColumbiaUniversity.tsx";
 import DigestPage from "@/pages/DigestPage.tsx";
-import USAMastersPage from "@/pages/USAMastersPage.tsx";
+// import USAMastersPage from "@/pages/USAMastersPage.tsx";
 import CounsellorPage from "@/pages/CounsellorPage.tsx";
 import UniversityOfBritishColumbia from "@/pages/Universities/BritishColumbia.tsx";
 import McGillUniversity from "@/pages/Universities/McGillUniversity.tsx";
@@ -126,7 +126,7 @@ export {
     PTEPage,
     ColumbiaUniversity,
     DigestPage,
-    USAMastersPage,
+    // USAMastersPage,
     CounsellorPage,
     UniversityOfBritishColumbia,
     McGillUniversity,

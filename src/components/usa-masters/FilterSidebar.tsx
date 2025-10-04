@@ -1,8 +1,9 @@
 import {ChevronDown, ChevronUp, Filter, X} from "lucide-react"
 import {Card, CardContent, CardHeader} from "@/components/ui/card"
 import {Checkbox} from "@/components/ui/checkbox"
-import {useState} from "react"
+import {useState, useMemo} from "react"
 import {universities} from "@/data/universities.ts";
+import {useParams} from "react-router";
 
 interface FilterSidebarProps {
     filters: {
@@ -16,6 +17,8 @@ interface FilterSidebarProps {
 }
 
 export default function FilterSidebar({filters, onFiltersChange}: FilterSidebarProps) {
+    const {country} = useParams<{country: string; city: string}>();
+
     const [openSections, setOpenSections] = useState({
         degree: false,
         subject: false,
@@ -25,9 +28,23 @@ export default function FilterSidebar({filters, onFiltersChange}: FilterSidebarP
         admission: false,
     })
 
-    const cityOptions = [...new Set(universities.map(university => university.location))]
+    const relevantUniversities = universities.filter(uni =>
+        uni.country === country
+    );
 
-    console.log(cityOptions)
+    const cityOptions = useMemo(() => {
+        const cityMap = new Map<string, string>();
+        relevantUniversities.forEach(uni => {
+            if (!cityMap.has(uni.city)) {
+                cityMap.set(uni.city, uni.location);
+            }
+        });
+        return Array.from(cityMap.entries())
+            .map(([value, label]) => ({ value, label }))
+            .sort((a, b) => a.label.localeCompare(b.label));
+    }, [relevantUniversities]);
+
+
 
     const toggleSection = (section: keyof typeof openSections) => {
         setOpenSections((prev) => ({...prev, [section]: !prev[section]}))
@@ -40,10 +57,10 @@ export default function FilterSidebar({filters, onFiltersChange}: FilterSidebarP
         })
     }
 
-    const handleCityToggle = (city: string) => {
-        const updatedCities = filters.cities.includes(city)
-            ? filters.cities.filter(c => c !== city)
-            : [...filters.cities, city]
+    const handleCityToggle = (cityValue: string) => {
+        const updatedCities = filters.cities.includes(cityValue)
+            ? filters.cities.filter(c => c !== cityValue)
+            : [...filters.cities, cityValue]
 
         onFiltersChange({
             ...filters,
@@ -56,6 +73,11 @@ export default function FilterSidebar({filters, onFiltersChange}: FilterSidebarP
             ...filters,
             cities: filters.cities.filter(c => c !== cityToRemove)
         })
+    }
+
+    const getCityLabel = (cityValue: string) => {
+        const city = cityOptions.find(opt => opt.value === cityValue);
+        return city ? city.label : cityValue;
     }
 
 
@@ -85,12 +107,12 @@ export default function FilterSidebar({filters, onFiltersChange}: FilterSidebarP
                     {filters.cities.length > 0 && (
                         <div className="mb-4 rounded-lg bg-gray-50 p-3">
                             <div className="flex flex-wrap gap-2">
-                                {filters.cities.map((city) => (
-                                    <div key={city}
+                                {filters.cities.map((cityValue) => (
+                                    <div key={cityValue}
                                          className="inline-flex items-center gap-2 bg-white px-2 py-1 rounded-md border text-sm">
-                                        <span>{city}</span>
+                                        <span>{getCityLabel(cityValue)}</span>
                                         <button
-                                            onClick={() => removeCityFilter(city)}
+                                            onClick={() => removeCityFilter(cityValue)}
                                             className="text-gray-500 hover:text-gray-700"
                                         >
                                             <X className="h-3 w-3"/>
@@ -146,16 +168,16 @@ export default function FilterSidebar({filters, onFiltersChange}: FilterSidebarP
                         </button>
                         {openSections.cities && (
                             <div className="mt-4 space-y-3">
-                                {cityOptions.map((city) => (
-                                    <div key={city} className="flex items-center space-x-3">
+                                {cityOptions.map((cityOption) => (
+                                    <div key={cityOption.value} className="flex items-center space-x-3">
                                         <Checkbox
-                                            id={city}
-                                            checked={filters.cities.includes(city)}
-                                            onCheckedChange={() => handleCityToggle(city)}
+                                            id={cityOption.value}
+                                            checked={filters.cities.includes(cityOption.value)}
+                                            onCheckedChange={() => handleCityToggle(cityOption.value)}
                                             className="data-[state=checked]:border-purple-600 data-[state=checked]:bg-purple-600"
                                         />
-                                        <label htmlFor={city} className="cursor-pointer select-none text-sm">
-                                            {city}
+                                        <label htmlFor={cityOption.value} className="cursor-pointer select-none text-sm">
+                                            {cityOption.label}
                                         </label>
                                     </div>
                                 ))}
