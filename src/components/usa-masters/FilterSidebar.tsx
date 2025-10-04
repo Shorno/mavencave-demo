@@ -1,153 +1,213 @@
-import { ChevronDown, Filter } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Checkbox } from '@/components/ui/checkbox';
-
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import {ChevronDown, ChevronUp, Filter, X} from "lucide-react"
+import {Card, CardContent, CardHeader} from "@/components/ui/card"
+import {Checkbox} from "@/components/ui/checkbox"
+import {useState, useMemo} from "react"
+import {universities} from "@/data/universities.ts";
+import {useParams} from "react-router";
 
 interface FilterSidebarProps {
     filters: {
         degree: string[];
         location: string[];
+        cities: string[];
         scholarships: boolean;
         rating: number | null;
     };
-    //@ts-ignore
-    onFiltersChange: (filters: any) => void;
+    onFiltersChange: (filters: FilterSidebarProps['filters']) => void;
 }
 
-const FilterSidebar: React.FC<FilterSidebarProps> = () => {
-    const degreeOptions = [
-        { id: 'masters', label: 'মাস্টার্স', checked: true },
-        { id: 'phd', label: 'পিএইচডি', checked: false },
-        { id: 'undergrad', label: 'আন্ডারগ্র্যাজুয়েট', checked: false },
-        { id: 'diploma', label: 'ডিপ্লোমা', checked: false }
-    ];
+export default function FilterSidebar({filters, onFiltersChange}: FilterSidebarProps) {
+    const {country} = useParams<{country: string; city: string}>();
 
-    const locationOptions = [
-        'আমেরিকা',
-        'কানাডা',
-        'অস্ট্রেলিয়া',
-        'যুক্তরাজ্য',
-        'জার্মানি'
-    ];
+    const [openSections, setOpenSections] = useState({
+        degree: false,
+        subject: false,
+        courses: false,
+        cities: true,
+        duration: false,
+        admission: false,
+    })
+
+    const relevantUniversities = universities.filter(uni =>
+        uni.country === country
+    );
+
+    const cityOptions = useMemo(() => {
+        const cityMap = new Map<string, string>();
+        relevantUniversities.forEach(uni => {
+            if (!cityMap.has(uni.city)) {
+                cityMap.set(uni.city, uni.location);
+            }
+        });
+        return Array.from(cityMap.entries())
+            .map(([value, label]) => ({ value, label }))
+            .sort((a, b) => a.label.localeCompare(b.label));
+    }, [relevantUniversities]);
+
+
+
+    const toggleSection = (section: keyof typeof openSections) => {
+        setOpenSections((prev) => ({...prev, [section]: !prev[section]}))
+    }
+
+    const clearAllFilters = () => {
+        onFiltersChange({
+            ...filters,
+            cities: []
+        })
+    }
+
+    const handleCityToggle = (cityValue: string) => {
+        const updatedCities = filters.cities.includes(cityValue)
+            ? filters.cities.filter(c => c !== cityValue)
+            : [...filters.cities, cityValue]
+
+        onFiltersChange({
+            ...filters,
+            cities: updatedCities
+        })
+    }
+
+    const removeCityFilter = (cityToRemove: string) => {
+        onFiltersChange({
+            ...filters,
+            cities: filters.cities.filter(c => c !== cityToRemove)
+        })
+    }
+
+    const getCityLabel = (cityValue: string) => {
+        const city = cityOptions.find(opt => opt.value === cityValue);
+        return city ? city.label : cityValue;
+    }
+
 
     return (
-        <div className="space-y-4">
-            {/* Filter Header */}
+        <div className="w-full max-w-md px-4 sticky top-4">
             <Card>
-                <CardHeader className="pb-3">
-                    <CardTitle className="flex items-center gap-2 text-lg">
-                        <Filter className="h-5 w-5" />
-                        ফিল্টারসমূহ
-                    </CardTitle>
+                {/* Filter Header */}
+                <CardHeader className="shadow-md">
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2 text-lg font-normal">
+                            <Filter className="h-5 w-5"/>
+                            ফিল্টারসমূহ
+                        </div>
+                        {filters.cities.length > 0 && (
+                            <button
+                                onClick={clearAllFilters}
+                                className="text-sm font-medium text-purple-600 hover:text-purple-700"
+                            >
+                                সব মুছে ফেলুন
+                            </button>
+                        )}
+                    </div>
                 </CardHeader>
-            </Card>
 
-            {/* Degree Type Filter */}
-            <Card>
-                <CardHeader className="pb-3">
-                    <CardTitle className="text-base">সা বরণ করি</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                    <div className="space-y-2">
-                        {degreeOptions.map((option) => (
-                            <div key={option.id} className="flex items-center space-x-2">
-                                <Checkbox
-                                    id={option.id}
-                                    checked={option.checked}
-                                    className="data-[state=checked]:bg-purple-600 data-[state=checked]:border-purple-600"
-                                />
-                                <label
-                                    htmlFor={option.id}
-                                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                                >
-                                    {option.label}
-                                </label>
+                <CardContent className="space-y-0">
+                    {/* Selected Filter Tags */}
+                    {filters.cities.length > 0 && (
+                        <div className="mb-4 rounded-lg bg-gray-50 p-3">
+                            <div className="flex flex-wrap gap-2">
+                                {filters.cities.map((cityValue) => (
+                                    <div key={cityValue}
+                                         className="inline-flex items-center gap-2 bg-white px-2 py-1 rounded-md border text-sm">
+                                        <span>{getCityLabel(cityValue)}</span>
+                                        <button
+                                            onClick={() => removeCityFilter(cityValue)}
+                                            className="text-gray-500 hover:text-gray-700"
+                                        >
+                                            <X className="h-3 w-3"/>
+                                        </button>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
+                        </div>
+                    )}
+
+                    {/* Degree Type Filter */}
+                    <div className="pb-4">
+                        <button
+                            onClick={() => toggleSection("degree")}
+                            className="flex w-full items-center justify-between text-left"
+                        >
+                            <span className="text-base font-normal">১ম বর্ষের কি</span>
+                            <ChevronDown className="h-4 w-4"/>
+                        </button>
+                    </div>
+
+                    {/* Subject Filter */}
+                    <div className="border-t py-4">
+                        <button
+                            onClick={() => toggleSection("subject")}
+                            className="flex w-full items-center justify-between text-left"
+                        >
+                            <span className="text-base font-normal">বিষয়</span>
+                            <ChevronDown className="h-4 w-4"/>
+                        </button>
+                    </div>
+
+                    {/* Courses Filter */}
+                    <div className="border-t py-4">
+                        <button
+                            onClick={() => toggleSection("courses")}
+                            className="flex w-full items-center justify-between text-left"
+                        >
+                            <span className="text-base font-normal">কোর্সসমূহ</span>
+                            <ChevronDown className="h-4 w-4"/>
+                        </button>
+                    </div>
+
+                    {/* Cities Filter */}
+                    <div className="border-t py-4">
+                        <button
+                            onClick={() => toggleSection("cities")}
+                            className="flex w-full items-center justify-between text-left"
+                        >
+                            <span className="text-base font-normal">শহরসমূহ</span>
+                            {openSections.cities ? <ChevronUp className="h-4 w-4"/> :
+                                <ChevronDown className="h-4 w-4"/>}
+                        </button>
+                        {openSections.cities && (
+                            <div className="mt-4 space-y-3">
+                                {cityOptions.map((cityOption) => (
+                                    <div key={cityOption.value} className="flex items-center space-x-3">
+                                        <Checkbox
+                                            id={cityOption.value}
+                                            checked={filters.cities.includes(cityOption.value)}
+                                            onCheckedChange={() => handleCityToggle(cityOption.value)}
+                                            className="data-[state=checked]:border-purple-600 data-[state=checked]:bg-purple-600"
+                                        />
+                                        <label htmlFor={cityOption.value} className="cursor-pointer select-none text-sm">
+                                            {cityOption.label}
+                                        </label>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Course Duration Filter */}
+                    <div className="border-t py-4">
+                        <button
+                            onClick={() => toggleSection("duration")}
+                            className="flex w-full items-center justify-between text-left"
+                        >
+                            <span className="text-base font-normal">কোর্সের মেয়াদ</span>
+                            <ChevronDown className="h-4 w-4"/>
+                        </button>
+                    </div>
+
+                    {/* Admission Session Filter */}
+                    <div className="border-t py-4">
+                        <button
+                            onClick={() => toggleSection("admission")}
+                            className="flex w-full items-center justify-between text-left"
+                        >
+                            <span className="text-base font-normal">ভর্তি সেশন</span>
+                            <ChevronDown className="h-4 w-4"/>
+                        </button>
                     </div>
                 </CardContent>
             </Card>
-
-            {/* Subject Areas */}
-            <Card>
-                <CardHeader className="pb-3">
-                    <CardTitle className="text-base">বিষয়</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <Collapsible>
-                        <CollapsibleTrigger className="flex items-center justify-between w-full text-left">
-                            <span className="text-sm">বিষয় বাছাই করুন</span>
-                            <ChevronDown className="h-4 w-4" />
-                        </CollapsibleTrigger>
-                        <CollapsibleContent className="space-y-2 mt-2">
-                            <div className="text-sm text-gray-600">
-                                ইঞ্জিনিয়ারিং, বিজনেস, কম্পিউটার সায়েন্স...
-                            </div>
-                        </CollapsibleContent>
-                    </Collapsible>
-                </CardContent>
-            </Card>
-
-            {/* Location Filter */}
-            <Card>
-                <CardHeader className="pb-3">
-                    <CardTitle className="text-base">কেন্দ্রসমূহ</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <Collapsible>
-                        <CollapsibleTrigger className="flex items-center justify-between w-full text-left">
-                            <span className="text-sm">অবস্থান</span>
-                            <ChevronDown className="h-4 w-4" />
-                        </CollapsibleTrigger>
-                        <CollapsibleContent className="space-y-2 mt-2">
-                            {locationOptions.map((location) => (
-                                <div key={location} className="flex items-center space-x-2">
-                                    <Checkbox id={location} />
-                                    <label htmlFor={location} className="text-sm">{location}</label>
-                                </div>
-                            ))}
-                        </CollapsibleContent>
-                    </Collapsible>
-                </CardContent>
-            </Card>
-
-            {/* Scholarship Filter */}
-            <Card>
-                <CardHeader className="pb-3">
-                    <CardTitle className="text-base">শহরসমূহ</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <Collapsible>
-                        <CollapsibleTrigger className="flex items-center justify-between w-full text-left">
-                            <span className="text-sm">কোন্‌ নেওয়াল</span>
-                            <ChevronDown className="h-4 w-4" />
-                        </CollapsibleTrigger>
-                        <CollapsibleContent className="space-y-2 mt-2">
-                            <div className="text-sm text-gray-600">
-                                নিউ ইয়র্ক, লস অ্যাঞ্জেলেস, শিকাগো...
-                            </div>
-                        </CollapsibleContent>
-                    </Collapsible>
-                </CardContent>
-            </Card>
-
-            {/* Study Level */}
-            <Card>
-                <CardHeader className="pb-3">
-                    <CardTitle className="text-base">ভর্তি দেবল</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <Collapsible>
-                        <CollapsibleTrigger className="flex items-center justify-between w-full text-left">
-                            <span className="text-sm">বর্তি দেবল</span>
-                            <ChevronDown className="h-4 w-4" />
-                        </CollapsibleTrigger>
-                    </Collapsible>
-                </CardContent>
-            </Card>
         </div>
-    );
-};
-
-export default FilterSidebar;
+    )
+}
