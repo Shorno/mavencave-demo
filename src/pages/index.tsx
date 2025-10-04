@@ -32,6 +32,45 @@ import MavencaveAdvantage from "@/components/MavencaveAdvantage/MavencaveAdvanta
 import MavencaveFreeClass from "@/components/MavencaveFreeClass/MavencaveFreeClass";
 import Listening from "@/components/ielts/Listening/Listening.tsx";
 import Reading from "@/components/ielts/Reading/Reading.tsx";
+import IeltsExamDate from "@/components/ielts/IeltsExamDate/IeltsExamDate";
+import IeltsPractice from "@/components/ielts/IeltsPractice/IeltsPractice";
+import IeltsFees from "@/components/ielts/IeltsFees/IeltsFees";
+import IeltsTestCenters from "@/components/ielts/IeltsTestCenters/IeltsTestCenters";
+import Speaking from "@/components/ielts/Speaking/Speaking";
+import PracticeResources from "@/components/ielts/PracticeResources/PracticeResources";
+import Writing from "@/components/ielts/Writing/Writing";
+import StanfordUniversity from "@/pages/Universities/StanfordUniversity.tsx";
+import YaleUniversity from "@/pages/Universities/YaleUniversity.tsx";
+import OxfordUniversity from "@/pages/Universities/OxfordUniversity";
+import CambridgeUniversity from "@/pages/Universities/CambridgeUnversity";
+import MIT from "@/pages/Universities/MIT";
+import CostPage from "@/pages/CostPage.tsx";
+import FinancePage from "@/pages/FinancePage.tsx";
+import TOEFLPage from "@/pages/TOEFLPage.tsx";
+import GREPage from "@/pages/GREPage.tsx";
+import PTEPage from "@/pages/PTEPage.tsx";
+import ColumbiaUniversity from "@/pages/Universities/ColumbiaUniversity.tsx";
+import DigestPage from "@/pages/DigestPage.tsx";
+import USAMastersPage from "@/pages/USAMastersPage.tsx";
+import CounsellorPage from "@/pages/CounsellorPage.tsx";
+import UniversityOfBritishColumbia from "@/pages/Universities/BritishColumbia.tsx";
+import McGillUniversity from "@/pages/Universities/McGillUniversity.tsx";
+import UniversityOfAlberta from "@/pages/Universities/UniversityOfAlberta.tsx";
+import UniversityOfMontreal from "@/pages/Universities/UniversityOfMontreal.tsx";
+import UniversityOfOttawa from "@/pages/Universities/UniversityOfOttawa.tsx";
+
+import MonashUniversity from "@/pages/Universities/MonashUniversity";
+import SydneyUniversity from "@/pages/Universities/SydneyUniversity";
+
+
+import QueenslandUniversity from "@/pages/Universities/QueenslandUniversity";
+import MaccuireUniversity from "@/pages/Universities/MaccuireUniversiy";
+import MelboureUniversity from "@/pages/Universities/MelbourneUniversity";
+import UniversityOfManchester from "@/pages/Universities/Manchester.tsx";
+import UniversityOfEdinburgh from "@/pages/Universities/UniversityOfEdinburgh.tsx";
+import KingsCollegeLondon from "@/pages/Universities/KingsCollegeLondon.tsx";
+import ImperialCollegeLondon from "@/pages/Universities/ImperialCollegeLondon.tsx";
+import UniversityOfToronto from "@/pages/Universities/UniversityOfToronto.tsx";
 
 export {
     HomePage,
@@ -67,5 +106,41 @@ export {
     MavencaveAdvantage,
     MavencaveFreeClass,
     Listening,
-    Reading
+    Reading,
+    IeltsExamDate,
+    IeltsPractice,
+    IeltsFees,
+    IeltsTestCenters,
+    Speaking,
+    PracticeResources,
+    Writing,
+    StanfordUniversity,
+    YaleUniversity,
+    OxfordUniversity,
+    CambridgeUniversity,
+    MIT,
+    CostPage,
+    FinancePage,
+    TOEFLPage,
+    GREPage,
+    PTEPage,
+    ColumbiaUniversity,
+    DigestPage,
+    USAMastersPage,
+    CounsellorPage,
+    UniversityOfBritishColumbia,
+    McGillUniversity,
+    UniversityOfAlberta,
+    UniversityOfMontreal,
+    UniversityOfOttawa,
+    MonashUniversity,
+    SydneyUniversity,
+    QueenslandUniversity,
+    MaccuireUniversity,
+    MelboureUniversity,
+    UniversityOfManchester,
+    UniversityOfEdinburgh,
+    KingsCollegeLondon,
+    ImperialCollegeLondon,
+    UniversityOfToronto
 }

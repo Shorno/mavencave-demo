@@ -5,12 +5,13 @@ import {Input} from '@/components/ui/input';
 
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from '@/components/ui/select';
 import SearchStats from "@/components/usa-masters/SearchStats.tsx";
-import UniversityCard, {type University} from "@/components/usa-masters/UniversityCard.tsx";
+import UniversityCard from "@/components/usa-masters/UniversityCard.tsx";
 import FilterSidebar from "@/components/usa-masters/FilterSidebar.tsx";
 import ExploreCoursesSection from "@/components/usa-masters/ExploreCoursesSection.tsx";
 import FAQAccordion from "@/components/study-abroad/FAQAccordion.tsx";
 import StudyOptionsAccordion from "@/components/usa-masters/StudyOptionsAccordion.tsx";
 import {ArticleCard} from "@/components/digest/ArticleCard.tsx";
+import type {University} from "@/data/universities.ts";
 
 const universities: University[] = [
     {
