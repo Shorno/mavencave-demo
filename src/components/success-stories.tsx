@@ -1,0 +1,152 @@
+import { useState } from "react"
+import { ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react'
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+
+export const stories = [
+    {
+        image: "/images/success1.webp",
+        quote: "মেডেনকোটের থেকে যুক্তরাজ্য উচ্চশিক্ষার জন্য ভিসায় কি কি প্রয়োজন পরিবর্তিত হয়েছে",
+    },
+    {
+        image: "/images/success2.webp",
+        quote: "মেডেনকোট এখানে ৮৫% সফিক ভিসা সফলতা রেট আপনাজ করেছেন",
+    },
+    {
+        image: "/images/success3.webp",
+        quote: "রিলেট অনুযায়ী, বেসিকভাগ শিক্ষার্থী এখানে চিটউটর এর সহায়তায় ব্যান্ড ৭+ স্কোর করেছেন",
+    },
+]
+
+
+export default function SuccessStoriesSection() {
+    const [currentSlide, setCurrentSlide] = useState(0)
+    const [showMore, setShowMore] = useState(false)
+
+
+    const nextSlide = () => {
+        setCurrentSlide((prev) => (prev + 1) % stories.length)
+    }
+
+    const prevSlide = () => {
+        setCurrentSlide((prev) => (prev - 1 + stories.length) % stories.length)
+    }
+
+    return (
+        <section className="bg-gray-50 py-16 px-4">
+            <div className="max-w-7xl mx-auto">
+                <div className="mb-16">
+                    <div className="text-center mb-12">
+                        <h2 className="text-gray-900 text-3xl md:text-4xl font-bold">স্বপ্ন পূরণের গল্পগুলো</h2>
+                    </div>
+
+                    <div className="relative">
+                        <Button
+                            variant="secondary"
+                            size="icon"
+                            className="absolute left-2 md:-left-10 top-1/2 -translate-y-1/2 z-10 rounded-full w-10 h-10 md:w-12 md:h-12 bg-blue-600 hover:bg-blue-700 text-white border-0"
+                            onClick={prevSlide}
+                        >
+                            <ChevronLeft className="h-4 w-4 md:h-5 md:w-5"/>
+                        </Button>
+
+                        <Button
+                            variant="secondary"
+                            size="icon"
+                            className="absolute right-2 md:-right-10 top-1/2 -translate-y-1/2 z-10 rounded-full w-10 h-10 md:w-12 md:h-12 bg-blue-600 hover:bg-blue-700 text-white border-0"
+                            onClick={nextSlide}
+                        >
+                            <ChevronRight className="h-4 w-4 md:h-5 md:w-5"/>
+                        </Button>
+
+                        <div className="md:hidden px-8">
+                            <Card className="bg-white border-0 shadow-lg">
+                                <CardContent className="p-0 -mt-4">
+                                    <div className="relative rounded-lg">
+                                        <img
+                                            src={stories[currentSlide].image || "/placeholder.svg"}
+                                            alt="Success story"
+                                            className="w-full h-64 p-2 object-cover rounded-lg"
+                                        />
+                                    </div>
+                                    <div className="p-6">
+                                        <p className="text-gray-700 text-sm leading-relaxed">"{stories[currentSlide].quote}"</p>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        </div>
+
+                        <div className="hidden md:grid md:grid-cols-3 gap-8 px-16">
+                            {stories.map((story, index) => (
+                                <Card
+                                    key={index}
+                                    className={`bg-white border-0 shadow-lg transition-all duration-300 ${
+                                        index === currentSlide ? "scale-105" : "scale-100 opacity-70"
+                                    }`}
+                                >
+                                    <CardContent className="p-0 -mt-4">
+                                        <div className="relative rounded-lg">
+                                            <img
+                                                src={story.image || "/placeholder.svg"}
+                                                alt="Success story"
+                                                className="w-full h-64 p-2 object-cover rounded-lg"
+                                            />
+                                        </div>
+                                        <div className="p-6">
+                                            <p className="text-gray-700 text-sm leading-relaxed">"{story.quote}"</p>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            ))}
+                        </div>
+
+                        <div className="flex justify-center mt-8 space-x-2">
+                            {stories.map((_, index) => (
+                                <button
+                                    key={index}
+                                    className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                                        index === currentSlide ? "bg-blue-600" : "bg-gray-300"
+                                    }`}
+                                    onClick={() => setCurrentSlide(index)}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="text-center container max-w-6xl mx-auto bg-gray-100 py-8 px-6 rounded-lg">
+                    <h3 className="text-gray-900 text-2xl md:text-3xl font-bold mb-6">
+                        মেডেনকোট : বিদেশে উচ্চশিক্ষার জন্য আপনার বিশ্বাসযোগ্য গাইড
+                    </h3>
+                    <div className="text-gray-600 leading-relaxed">
+                        <p className="mb-4">
+                            বিদেশে উচ্চশিক্ষা এখন আর শুধু স্বপ্ন নয়, বরং বাস্তবতা তবে শুধু একটি বিশ্বাসযোগ্য গাইডেরই
+                            প্রয়োজন; প্রয়োজন সঠিক তথ্য, পরিকল্পনা
+                            ও সঠিক দিকনির্দেশনা। ঠিক সেখানেই মেডেনকোট হতে পারে পথপ্রদর্শক এবং অনুপ্রেরণা। ভর্তি থেকে
+                            শুরু পর্যন্ত, মেডেনকোট-এর অভিজ্ঞ
+                            এক্সপার্ট টিম আপনাকে গাইড করবে প্রতিটি ধাপে—যাতে আপনি সহজেই পৌঁছে যেতে পারেন আপনার কাঙ্ক্ষিত
+                            লক্ষ্যে।
+                        </p>
+                        {showMore && (
+                            <p className="mb-4">
+                                আমাদের বিশেষজ্ঞ দল আপনাকে সঠিক বিশ্ববিদ্যালয় নির্বাচন, আবেদন প্রক্রিয়া, ভিসা আবেদন এবং
+                                অন্যান্য সকল বিষয়ে সহায়তা প্রদান করে
+                                থাকে। আমরা আপনার স্বপ্নের বিশ্ববিদ্যালয়ে ভর্তি হওয়ার জন্য প্রয়োজনীয় সকল পদক্ষেপে
+                                আপনার পাশে থাকি।
+                            </p>
+                        )}
+                    </div>
+                    <Button
+                        variant="ghost"
+                        className="text-blue-600 hover:text-blue-700 hover:bg-blue-50 mt-4"
+                        onClick={() => setShowMore(!showMore)}
+                    >
+                        {showMore ? "কম দেখুন" : "আরও পড়ুন"}
+                        <ChevronDown
+                            className={`ml-2 h-4 w-4 transition-transform duration-300 ${showMore ? "rotate-180" : ""}`}/>
+                    </Button>
+                </div>
+            </div>
+        </section>
+    )
+}
