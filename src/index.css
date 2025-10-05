@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Bengali font utility */
-.font-bengali { 
-  font-family: 'Hind Siliguri', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-}
-=======
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -177,4 +167,3 @@
 body {
     font-family: "Baloo Da 2", sans-serif;
 }
->>>>>>> e11f14d45e919666315b18387da795819b2e74b6
