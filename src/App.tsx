@@ -68,7 +68,7 @@ import {
     UniversityOfToronto
 } from "@/pages";
 import useScrollToTop from "@/hooks/useScrollToTop.tsx";
-<<<<<<< HEAD
+
 import IeltsExamDate from "./components/ielts/IeltsExamDate/IeltsExamDate";
 import IeltsPractice from "./components/ielts/IeltsPractice/IeltsPractice";
 import IeltsFees from "./components/ielts/IeltsFees/IeltsFees";
@@ -111,6 +111,7 @@ import UniversityOfToronto from "@/pages/Universities/UniversityOfToronto.tsx";
 import BerlineCity from "./components/Citywise-University/BerlineCity";
 
 import TopUniversities from "@/layout/TopUniversities.tsx";
+import EventPage from "./components/EventPage/EventPage";
 
 
 function App() {
@@ -162,7 +163,7 @@ function App() {
                 <Route path="/study-abroad/uk/universities/imperial-college-london" element={<ImperialCollegeLondon/>}/>
 
                 {/* Canada */}
-<<<<<<< HEAD
+
                 <Route path="/study-abroad/canada/universities/ubc" element={<UniversityOfBritishColumbia />} />
                 <Route path="/study-abroad/canada/universities/mcgill-university" element={<McGillUniversity />} />
                 <Route path="/study-abroad/canada/universities/university-of-alberta" element={<UniversityOfAlberta />} />
@@ -209,6 +210,7 @@ function App() {
                 <Route path={"/mavencave-digest"} element={<DigestPage/>}/>
                 {/*<Route path={"/us-masters"} element={<USAMastersPage/>}/>*/}
                 <Route path={"/testimonials/counseling"} element={<CounsellorPage/>}/>
+                <Route path={"/testimonials/event"} element={<EventPage/>}/>
             </Route>
         </Routes>
     )
