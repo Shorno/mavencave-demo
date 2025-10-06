@@ -49,7 +49,6 @@ import {
     PTEPage,
     ColumbiaUniversity,
     DigestPage,
-    // USAMastersPage,
     CounsellorPage,
     UniversityOfBritishColumbia,
     McGillUniversity,
@@ -157,9 +156,8 @@ function App() {
                 <Route path={"/calculator/cost"} element={<CostPage/>}/>
                 <Route path={"/products/finance"} element={<FinancePage/>}/>
                 <Route path={"/mavencave-digest"} element={<DigestPage/>}/>
-                {/*<Route path={"/us-masters"} element={<USAMastersPage/>}/>*/}
                 <Route path={"/testimonials/counseling"} element={<CounsellorPage/>}/>
-                <Route path={"/testimonials/event"} element={<EventPage/>}/>
+                <Route path={"/event"} element={<EventPage/>}/>
             </Route>
         </Routes>
     )
