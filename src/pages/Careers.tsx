@@ -1,4 +1,3 @@
-import React from 'react';
 import image from '/images/Bristy/vitaly-gariev-6UEyCVPkjys-unsplash.jpg';
 import image1 from '/images/Bristy/vitaly-gariev-92gc5wLdtnY-unsplash.jpg';
 import image2 from '/images/Bristy/mapbox-zU6tCBzO0Ig-unsplash.jpg';
