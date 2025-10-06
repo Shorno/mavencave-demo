@@ -69,6 +69,7 @@ import {
 } from "@/pages";
 import useScrollToTop from "@/hooks/useScrollToTop.tsx";
 import TopUniversities from "@/layout/TopUniversities.tsx";
+import MastersTopCourses from "@/layout/MastersTopCourses.tsx";
 
 
 function App() {
@@ -81,6 +82,7 @@ function App() {
                 <Route path={"blog"} element={<BlogPage/>}/>
                 {/*<Route path={"/study-abroad/usa/cities/new-york"} element={<StudyAbroad/>}/>*/}
                 <Route path={"/study-abroad/:country/cities/:city"} element={<TopUniversities/>}/>
+                <Route path={"study-abroad/:country/courses/:course"} element={<MastersTopCourses/>}/>
                 <Route path={"mavencave-ai"} element={<MavenCaveAi/>}/>
                 <Route path={"resources/sop"} element={<SOP/>}/>
                 <Route element={<IeltsBlogLayout/>}>
