@@ -70,6 +70,7 @@ import {
 import useScrollToTop from "@/hooks/useScrollToTop.tsx";
 import TopUniversities from "@/layout/TopUniversities.tsx";
 import MastersTopCourses from "@/layout/MastersTopCourses.tsx";
+import EventPage from "./components/EventPage/EventPage";
 
 
 function App() {
@@ -158,6 +159,7 @@ function App() {
                 <Route path={"/mavencave-digest"} element={<DigestPage/>}/>
                 {/*<Route path={"/us-masters"} element={<USAMastersPage/>}/>*/}
                 <Route path={"/testimonials/counseling"} element={<CounsellorPage/>}/>
+                <Route path={"/testimonials/event"} element={<EventPage/>}/>
             </Route>
         </Routes>
     )
