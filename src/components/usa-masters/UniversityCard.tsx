@@ -3,17 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Trophy, MapPin } from 'lucide-react';
 import {useIsMobile} from "@/hooks/use-mobile.ts";
-
-export interface University {
-    id: string;
-    name: string;
-    location: string;
-    logo: string;
-    englishName : string
-    qsRank: number;
-    tuitionFee: string;
-    ieltsScore: number;
-}
+import type {University} from "@/data/universities.ts";
 
 interface UniversityCardProps {
     university: University;
