@@ -98,6 +98,7 @@ const EventCard: React.FC<{ event: Event }> = ({ event }) => (
         src={event.imageUrl}
         alt={event.title}
         className="object-cover w-full h-full transition duration-500 ease-in-out transform hover:scale-105"
+        //@ts-ignore
         onError={(e: any) => e.target.src = 'https://placehold.co/400x250/ccc/333?text=Image+Not+Found'} 
       />
      
