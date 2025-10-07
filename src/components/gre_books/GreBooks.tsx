@@ -145,6 +145,7 @@ html,body{overflow-x:hidden}`;
     const REDUCED = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
+    //@ts-ignore
     const $ = (s: string, r: ParentNode = root) =>
       r.querySelector<HTMLElement>(s)!;
     const $$ = (s: string, r: ParentNode = root) =>

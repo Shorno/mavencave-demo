@@ -9,7 +9,7 @@
 
 
 // --- Tailwind Class Definitions for Consistency & Responsiveness ---
-const PageContainer = "min-h-screen bg-gray-50 p-4 md:p-8";
+const PageContainer = "";
 const ContentWrapper = "max-w-4xl mx-auto";
 const SectionBox = "my-6 p-5 md:p-8 bg-white rounded-lg shadow-xl border border-indigo-100";
 const SectionHeader = "text-xl md:text-2xl font-bold text-indigo-800 mb-4 border-b pb-2 border-indigo-200";

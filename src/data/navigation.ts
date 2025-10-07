@@ -415,11 +415,10 @@ export const navigationItems: NavigationItem[] = [
                         href: "/exams/duolingo/overview",
                         hasDropdown: true,
                         dropdownItems: [
-                            { label: "ডুয়োলিঙ্গো ওভারভিউ", href: "/exams/duolingo/overview" },
-                            { label: "ডুয়োলিঙ্গো যোগ্যতা", href: "/exams/duolingo/eligibility" },
-                            { label: "ডুয়োলিঙ্গো রেজিস্ট্রেশন", href: "/exams/duolingo/registration" },
                             { label: "ডুয়োলিঙ্গো সিলেবাস", href: "/exams/duolingo/syllabus" },
-                            { label: "ডুয়োলিঙ্গো স্লট বুকিং", href: "/exams/duolingo/slot-booking" },
+                            { label: "ডুয়োলিঙ্গো ফি", href: "/exams/duolingo/fees" },
+                            { label: "ডুয়োলিঙ্গো প্রস্তুতি", href: "/exams/duolingo/preparation" },
+                            { label: "ডুয়োলিঙ্গো নমুনা প্রশ্ন", href: "/exams/duolingo/sample" },
                         ],
                     },
                     {

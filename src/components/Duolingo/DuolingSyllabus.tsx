@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+//@ts-nocheck
+import  { useState } from 'react';
 import { ChevronDownIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
 
 
@@ -183,7 +184,7 @@ const DuolingoSyllabus = () => {
     const ListStyle = "list-disc list-inside space-y-2 text-gray-700 ml-4 text-sm md:text-base";
 
     return (
-        <div className="min-h-screen bg-gray-50 p-4 md:p-8">
+        <div className="min-h-screen">
             <div className="max-w-4xl mx-auto">
                 
                 {/* 1. Overall Pattern Overview */}
