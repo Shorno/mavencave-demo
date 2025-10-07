@@ -64,12 +64,14 @@ import {
     UniversityOfEdinburgh,
     KingsCollegeLondon,
     ImperialCollegeLondon,
-    UniversityOfToronto
+    UniversityOfToronto,
+    
 } from "@/pages";
 import useScrollToTop from "@/hooks/useScrollToTop.tsx";
 import TopUniversities from "@/layout/TopUniversities.tsx";
 import MastersTopCourses from "@/layout/MastersTopCourses.tsx";
 import EventPage from "./components/EventPage/EventPage";
+import GreBooks from "@/components/gre_books/GreBooks";
 
 
 function App() {
@@ -158,6 +160,7 @@ function App() {
                 <Route path={"/mavencave-digest"} element={<DigestPage/>}/>
                 <Route path={"/testimonials/counseling"} element={<CounsellorPage/>}/>
                 <Route path={"/event"} element={<EventPage/>}/>
+                <Route path={"/gre/books"} element={<GreBooks/>}/>
             </Route>
         </Routes>
     )
