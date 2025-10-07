@@ -72,6 +72,10 @@ import TopUniversities from "@/layout/TopUniversities.tsx";
 import MastersTopCourses from "@/layout/MastersTopCourses.tsx";
 import EventPage from "./components/EventPage/EventPage";
 import GreBooks from "@/components/gre_books/GreBooks";
+import DuolingoFees from "./components/Duolingo/DuolingFees";
+import DuolingoGuidePage from "./components/Duolingo/DuolingoGuidePage";
+import SampleQuestionPage from "./components/Duolingo/SampleQuestionPage";
+import DuolingoSyllabusPage from "./components/Duolingo/DuolingoSyllabusPage";
 
 
 function App() {
@@ -108,6 +112,11 @@ function App() {
                     <Route path={"/exams/toefl/overview"} element={<TOEFLPage/>}/>
                     <Route path={"/exams/gre/overview"} element={<GREPage/>}/>
                     <Route path={"/exams/pte/overview"} element={<PTEPage/>}/>
+                    {/* Duolingo */}
+                      <Route path={"/exams/duolingo/fees"} element={<DuolingoFees/>}/>
+                      <Route path={"/exams/duolingo/guide"} element={<DuolingoGuidePage/>}/>
+                      <Route path={"/exams/duolingo/sample-question"} element={<SampleQuestionPage/>}/>
+                      <Route path={"/exams/duolingo/duolingo-syllabus"} element={<DuolingoSyllabusPage/>}/>
                 </Route>
                 {/* USA */}
                 <Route path="/study-abroad/usa/universities/stanford-university" element={<StanfordUniversity/>}/>
