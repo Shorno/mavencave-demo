@@ -76,6 +76,10 @@ import DuolingoFees from "./components/Duolingo/DuolingFees";
 import DuolingoGuidePage from "./components/Duolingo/DuolingoGuidePage";
 import SampleQuestionPage from "./components/Duolingo/SampleQuestionPage";
 import DuolingoSyllabusPage from "./components/Duolingo/DuolingoSyllabusPage";
+import ToeflPrep from "@/components/TOEFL_pages/ToeflPrep";
+import ToeflRegistration from "@/components/TOEFL_pages/ToeflRegistration";
+import ToeflResult from "@/components/TOEFL_pages/ToeflResult";
+import ToeflSyllabus from "@/components/TOEFL_pages/ToeflSyllabus";
 
 
 function App() {
@@ -170,6 +174,10 @@ function App() {
                 <Route path={"/testimonials/counseling"} element={<CounsellorPage/>}/>
                 <Route path={"/event"} element={<EventPage/>}/>
                 <Route path={"/gre/books"} element={<GreBooks/>}/>
+                <Route path={"/exams/toefl/registration"} element={<ToeflRegistration/>}/>
+                <Route path={"/exams/toefl/syllabus"} element={<ToeflSyllabus/>}/>
+                <Route path={"/exams/toefl/preparation"} element={<ToeflPrep/>}/>
+                <Route path={"/exams/toefl/result"} element={<ToeflResult/>}/>
             </Route>
         </Routes>
     )
