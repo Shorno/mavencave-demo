@@ -80,6 +80,7 @@ import ToeflPrep from "@/components/TOEFL_pages/ToeflPrep";
 import ToeflRegistration from "@/components/TOEFL_pages/ToeflRegistration";
 import ToeflResult from "@/components/TOEFL_pages/ToeflResult";
 import ToeflSyllabus from "@/components/TOEFL_pages/ToeflSyllabus";
+import PteBooks from "@/components/pte_books/PteBooks";
 import GmatOverviewPage from "./components/GMAT/GmatOverviewPage";
 import GmatPrepPage from "./components/GMAT/GmatPrepPage";
 import GmatRegistrationPage from "./components/GMAT/GmatRegistrationPage";
@@ -189,6 +190,7 @@ function App() {
                 <Route path={"/exams/toefl/syllabus"} element={<ToeflSyllabus/>}/>
                 <Route path={"/exams/toefl/preparation"} element={<ToeflPrep/>}/>
                 <Route path={"/exams/toefl/result"} element={<ToeflResult/>}/>
+                <Route path={"/pte/books"} element={<PteBooks/>}/>
             </Route>
         </Routes>
     )
