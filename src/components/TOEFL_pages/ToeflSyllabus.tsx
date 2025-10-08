@@ -1,5 +1,5 @@
 
-import React, { useRef, useCallback, useState } from "react";
+import  { useRef, useCallback, useState } from "react";
 
 export default function ToeflSyllabus() {
   const railRef = useRef<HTMLDivElement | null>(null);
