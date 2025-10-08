@@ -81,6 +81,11 @@ import ToeflRegistration from "@/components/TOEFL_pages/ToeflRegistration";
 import ToeflResult from "@/components/TOEFL_pages/ToeflResult";
 import ToeflSyllabus from "@/components/TOEFL_pages/ToeflSyllabus";
 import PteBooks from "@/components/pte_books/PteBooks";
+import GmatOverviewPage from "./components/GMAT/GmatOverviewPage";
+import GmatPrepPage from "./components/GMAT/GmatPrepPage";
+import GmatRegistrationPage from "./components/GMAT/GmatRegistrationPage";
+import GmatSampleQuesPage from "./components/GMAT/GmatSampleQuesPage";
+import GmatSyllabusPage from "./components/GMAT/GmatSyllabusPage";
 
 
 function App() {
@@ -122,6 +127,12 @@ function App() {
                       <Route path={"/exams/duolingo/preparation"} element={<DuolingoGuidePage/>}/>
                       <Route path={"/exams/duolingo/sample"} element={<SampleQuestionPage/>}/>
                       <Route path={"/exams/duolingo/syllabus"} element={<DuolingoSyllabusPage/>}/>
+                      {/* GMAT */}
+                      <Route path={"/exams/gmat/overview"} element={<GmatOverviewPage/>}/>
+                      <Route path={"/exams/gmat/preparation"} element={<GmatPrepPage/>}/>
+                      <Route path={"/exams/gmat/registration"} element={<GmatRegistrationPage/>}/>
+                      <Route path={"/exams/gmat/sample-question"} element={<GmatSampleQuesPage/>}/>
+                      <Route path={"/exams/gmat/syllabus"} element={<GmatSyllabusPage/>}/>
                 </Route>
                 {/* USA */}
                 <Route path="/study-abroad/usa/universities/stanford-university" element={<StanfordUniversity/>}/>
