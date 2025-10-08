@@ -64,12 +64,28 @@ import {
     UniversityOfEdinburgh,
     KingsCollegeLondon,
     ImperialCollegeLondon,
-    UniversityOfToronto
+    UniversityOfToronto,
+    
 } from "@/pages";
 import useScrollToTop from "@/hooks/useScrollToTop.tsx";
 import TopUniversities from "@/layout/TopUniversities.tsx";
 import MastersTopCourses from "@/layout/MastersTopCourses.tsx";
 import EventPage from "./components/EventPage/EventPage";
+import GreBooks from "@/components/gre_books/GreBooks";
+import DuolingoFees from "./components/Duolingo/DuolingFees";
+import DuolingoGuidePage from "./components/Duolingo/DuolingoGuidePage";
+import SampleQuestionPage from "./components/Duolingo/SampleQuestionPage";
+import DuolingoSyllabusPage from "./components/Duolingo/DuolingoSyllabusPage";
+import ToeflPrep from "@/components/TOEFL_pages/ToeflPrep";
+import ToeflRegistration from "@/components/TOEFL_pages/ToeflRegistration";
+import ToeflResult from "@/components/TOEFL_pages/ToeflResult";
+import ToeflSyllabus from "@/components/TOEFL_pages/ToeflSyllabus";
+import PteBooks from "@/components/pte_books/PteBooks";
+import GmatOverviewPage from "./components/GMAT/GmatOverviewPage";
+import GmatPrepPage from "./components/GMAT/GmatPrepPage";
+import GmatRegistrationPage from "./components/GMAT/GmatRegistrationPage";
+import GmatSampleQuesPage from "./components/GMAT/GmatSampleQuesPage";
+import GmatSyllabusPage from "./components/GMAT/GmatSyllabusPage";
 
 
 function App() {
@@ -106,6 +122,17 @@ function App() {
                     <Route path={"/exams/toefl/overview"} element={<TOEFLPage/>}/>
                     <Route path={"/exams/gre/overview"} element={<GREPage/>}/>
                     <Route path={"/exams/pte/overview"} element={<PTEPage/>}/>
+                    {/* Duolingo */}
+                      <Route path={"/exams/duolingo/fees"} element={<DuolingoFees/>}/>
+                      <Route path={"/exams/duolingo/preparation"} element={<DuolingoGuidePage/>}/>
+                      <Route path={"/exams/duolingo/sample"} element={<SampleQuestionPage/>}/>
+                      <Route path={"/exams/duolingo/syllabus"} element={<DuolingoSyllabusPage/>}/>
+                      {/* GMAT */}
+                      <Route path={"/exams/gmat/overview"} element={<GmatOverviewPage/>}/>
+                      <Route path={"/exams/gmat/preparation"} element={<GmatPrepPage/>}/>
+                      <Route path={"/exams/gmat/registration"} element={<GmatRegistrationPage/>}/>
+                      <Route path={"/exams/gmat/sample-question"} element={<GmatSampleQuesPage/>}/>
+                      <Route path={"/exams/gmat/syllabus"} element={<GmatSyllabusPage/>}/>
                 </Route>
                 {/* USA */}
                 <Route path="/study-abroad/usa/universities/stanford-university" element={<StanfordUniversity/>}/>
@@ -158,6 +185,12 @@ function App() {
                 <Route path={"/mavencave-digest"} element={<DigestPage/>}/>
                 <Route path={"/testimonials/counseling"} element={<CounsellorPage/>}/>
                 <Route path={"/event"} element={<EventPage/>}/>
+                <Route path={"/gre/books"} element={<GreBooks/>}/>
+                <Route path={"/exams/toefl/registration"} element={<ToeflRegistration/>}/>
+                <Route path={"/exams/toefl/syllabus"} element={<ToeflSyllabus/>}/>
+                <Route path={"/exams/toefl/preparation"} element={<ToeflPrep/>}/>
+                <Route path={"/exams/toefl/result"} element={<ToeflResult/>}/>
+                <Route path={"/pte/books"} element={<PteBooks/>}/>
             </Route>
         </Routes>
     )
