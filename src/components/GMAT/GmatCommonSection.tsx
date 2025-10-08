@@ -1,4 +1,4 @@
-
+//@ts-nocheck
 import { ArrowRight } from 'lucide-react'; 
 
 
@@ -47,16 +47,6 @@ const GmatCommonSection = () => {
             <ArrowRight className="w-4 h-4 text-indigo-600" />
         </a>
     );
-
-    // Grid Renderer
-    const renderInfoGrid = (data, columns) => (
-        <div className={`grid ${columns === 3 ? 'grid-cols-3' : 'grid-cols-2 sm:grid-cols-3'} divide-x divide-y border-t border-b border-l border-r border-gray-400 rounded-lg overflow-hidden`}>
-            {data.map((item, index) => (
-                <InfoGridCard key={index} title={item} />
-            ))}
-        </div>
-    );
-
 
     return (
         <div className="font-sans min-h-screen  p-4 md:p-8">

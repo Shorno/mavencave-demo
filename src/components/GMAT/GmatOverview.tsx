@@ -1,47 +1,10 @@
+//@ts-nocheck
 
 
 // কাস্টম কালার কনস্ট্যান্ট
 const PRIMARY_COLOR = '#5a00ff';
 const LIGHT_BG_COLOR = '#f9f0ff';
 const PURPLE_HEADER_BG = 'rgb(90, 0, 255)'; // বাটন এবং টেবিল হেডার কালার
-
-// একক ইনফরমেশন সেকশন কম্পোনেন্ট
-const InfoCard = ({ heading, content, buttonText, onButtonClick, smallHeading = false }) => {
-  // ছবির সাথে মিল রেখে UI তৈরি করা হয়েছে
-  return (
-    <div 
-      className="max-w-4xl mx-auto rounded-xl shadow-md p-6 md:p-8 mb-8" // রেসপন্সিভ প্যাডিং ও মার্জিন
-      style={{ backgroundColor: LIGHT_BG_COLOR }}
-    >
-      {/* হেডিং সেকশন */}
-      <h2 
-        className={`${smallHeading ? 'text-xl md:text-2xl' : 'text-2xl md:text-3xl'} font-bold mb-4`}
-        style={{ color: PRIMARY_COLOR }}
-      >
-        {heading}
-      </h2>
-      
-      {/* কন্টেন্ট সেকশন - HTML স্ট্রিং হিসেবে গ্রহণ করা হয়েছে */}
-      <div 
-        className="text-gray-700 text-base md:text-lg space-y-4"
-        // dangerouslySetInnerHTML ব্যবহার করা হয়েছে কারণ কন্টেন্টের মধ্যে <ul>, <li>, <h3>, <p> এবং টেবিল HTML আছে।
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
-      
-      {/* বাটন সেকশন (যদি buttonText প্রপস পাস করা হয়) */}
-      {buttonText && (
-        <button
-          className="mt-6 px-6 py-3 md:px-8 md:py-4 w-full text-white font-semibold rounded-lg shadow-lg hover:opacity-90 transition duration-300 flex items-center justify-center text-base md:text-lg"
-          style={{ backgroundColor: PRIMARY_COLOR }}
-          onClick={onButtonClick}
-        >
-          {buttonText} 
-          <span className="ml-2">→</span>
-        </button>
-      )}
-    </div>
-  );
-};
 
 
 

@@ -1,5 +1,3 @@
-
-
 import FAQAccordion, {type FAQItem} from "@/components/study-abroad/FAQAccordion.tsx";
 
 import GmatSyllabus from "./GmatSyllabus";
