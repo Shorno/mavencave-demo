@@ -650,10 +650,10 @@ export const navigationItems: NavigationItem[] = [
                         hasDropdown: true,
                         dropdownItems: [
                             {label: "জিম্যাট ওভারভিউ", href: "/exams/gmat/overview"},
-                            {label: "জিম্যাট যোগ্যতা", href: "/exams/gmat/eligibility"},
+                            {label: "জিম্যাট প্রস্তুতি", href: "/exams/gmat/preparation"},
                             {label: "জিম্যাট রেজিস্ট্রেশন", href: "/exams/gmat/registration"},
                             {label: "জিম্যাট সিলেবাস", href: "/exams/gmat/syllabus"},
-                            {label: "জিম্যাট স্লট বুকিং", href: "/exams/gmat/slot-booking"},
+                            {label: "জিম্যাট নমুনা প্রশ্ন", href: "/exams/gmat/sample-question"},
                         ],
                     },
                     {

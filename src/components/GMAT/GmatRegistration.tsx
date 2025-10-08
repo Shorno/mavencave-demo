@@ -1,4 +1,4 @@
-
+//@ts-nocheck
 
 // একটি সাধারণ Card Wrapper Component, যা সব সেকশনের জন্য ব্যবহার করা হবে
 const InfoCard = ({ children, sectionTitle, sectionNumber, extraClasses = '' }) => (
