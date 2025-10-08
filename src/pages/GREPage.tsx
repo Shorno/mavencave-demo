@@ -106,7 +106,6 @@ export default function GREPage(){
             <NextStepsSection nextSteps={greNextSteps}/>
             <InfoTableSection title="GRE সংক্রান্ত গুরুত্বপূর্ণ তথ্য" data={greImportantInfo} />
 
-
         </>
     )
 }

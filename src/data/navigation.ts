@@ -528,11 +528,10 @@ export const navigationItems: NavigationItem[] = [
                         href: "/exams/sat/overview",
                         hasDropdown: true,
                         dropdownItems: [
-                            {label: "এস.এ.টি ওভারভিউ", href: "/exams/sat/overview"},
-                            {label: "এস.এ.টি যোগ্যতা", href: "/exams/sat/eligibility"},
-                            {label: "এস.এ.টি রেজিস্ট্রেশন", href: "/exams/sat/registration"},
-                            {label: "এস.এ.টি সিলেবাস", href: "/exams/sat/syllabus"},
-                            {label: "এস.এ.টি স্লট বুকিং", href: "/exams/sat/slot-booking"},
+                            {label: "SAT যোগ্যতা", href: "/exams/sat/eligibility"},
+                            {label: "SAT রেজিস্ট্রেশন", href: "/exams/sat/registration"},
+                            {label: "SAT সিলেবাস", href: "/exams/sat/syllabus"},
+                            {label: "SAT প্রস্তুতি", href: "/exams/sat/preparation"},
                         ],
                     },
                     {
