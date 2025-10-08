@@ -528,7 +528,6 @@ export const navigationItems: NavigationItem[] = [
                         href: "/exams/sat/overview",
                         hasDropdown: true,
                         dropdownItems: [
-                            {label: "SAT ওভারভিউ", href: "/exams/sat/overview"},
                             {label: "SAT যোগ্যতা", href: "/exams/sat/eligibility"},
                             {label: "SAT রেজিস্ট্রেশন", href: "/exams/sat/registration"},
                             {label: "SAT সিলেবাস", href: "/exams/sat/syllabus"},
