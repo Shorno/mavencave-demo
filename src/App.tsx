@@ -114,9 +114,9 @@ function App() {
                     <Route path={"/exams/pte/overview"} element={<PTEPage/>}/>
                     {/* Duolingo */}
                       <Route path={"/exams/duolingo/fees"} element={<DuolingoFees/>}/>
-                      <Route path={"/exams/duolingo/guide"} element={<DuolingoGuidePage/>}/>
-                      <Route path={"/exams/duolingo/sample-question"} element={<SampleQuestionPage/>}/>
-                      <Route path={"/exams/duolingo/duolingo-syllabus"} element={<DuolingoSyllabusPage/>}/>
+                      <Route path={"/exams/duolingo/preparation"} element={<DuolingoGuidePage/>}/>
+                      <Route path={"/exams/duolingo/sample"} element={<SampleQuestionPage/>}/>
+                      <Route path={"/exams/duolingo/syllabus"} element={<DuolingoSyllabusPage/>}/>
                 </Route>
                 {/* USA */}
                 <Route path="/study-abroad/usa/universities/stanford-university" element={<StanfordUniversity/>}/>

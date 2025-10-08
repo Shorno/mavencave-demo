@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { useState } from 'react';
 
 /**
@@ -314,7 +315,7 @@ const SampleQuestion = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 sm:p-8 flex justify-center items-start font-sans">
+    <div className="min-h-screen flex justify-center items-start font-sans">
       {/* Main Content Card (Responsive Width, matching light purple background) */}
       <div className="w-full max-w-4xl bg-white p-6 sm:p-8 lg:p-10 rounded-2xl shadow-xl border border-violet-50">
 
