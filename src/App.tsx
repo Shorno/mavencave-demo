@@ -86,6 +86,10 @@ import GmatPrepPage from "./components/GMAT/GmatPrepPage";
 import GmatRegistrationPage from "./components/GMAT/GmatRegistrationPage";
 import GmatSampleQuesPage from "./components/GMAT/GmatSampleQuesPage";
 import GmatSyllabusPage from "./components/GMAT/GmatSyllabusPage";
+import SATEligibilityPage from "@/pages/SAT/SATEligibilityPage.tsx";
+import SATRegistrationPage from "@/pages/SAT/SATRegistrationPage.tsx";
+import SATSyllabusPage from "@/pages/SAT/ SATSyllabusPage.tsx";
+import SATPreparationPage from "@/pages/SAT/SATPreparationPage.tsx";
 
 
 function App() {
@@ -121,6 +125,10 @@ function App() {
                     <Route path={"/exams/ielts/practice/all-in-one"} element={<IeltsPractice/>}/>
                     <Route path={"/exams/toefl/overview"} element={<TOEFLPage/>}/>
                     <Route path={"/exams/gre/overview"} element={<GREPage/>}/>
+                    <Route path={"/exams/sat/eligibility"} element={<SATEligibilityPage/>}/>
+                    <Route path={"/exams/sat/registration"} element={<SATRegistrationPage/>}/>
+                    <Route path={"/exams/sat/syllabus"} element={<SATSyllabusPage/>}/>
+                    <Route path={"/exams/sat/preparation"} element={<SATPreparationPage/>}/>
                     <Route path={"/exams/pte/overview"} element={<PTEPage/>}/>
                     {/* Duolingo */}
                       <Route path={"/exams/duolingo/fees"} element={<DuolingoFees/>}/>
