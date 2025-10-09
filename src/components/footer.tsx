@@ -151,6 +151,7 @@ const Footer = () => {
                 { name: "কাউন্সেলর এর সাথে কথা বলুন", to: "/counselor" },
                 { name: "টুইনিং প্রোগ্রামসমূহ", to: "/programs/twinning" },
                 { name: "কস্ট ক্যালকুলেটর", to: "/calculator/cost" },
+                { name: "CGPA ক্যালকুলেটর", to: "/calculator/cgpa" },
                 { name: "ব্লগ", to: "/blog" },
                 { name: "বিদেশে উচ্চশিক্ষার জন্য নলেজ সেন্টার", to: "/knowledge-center" },
                 { name: "ইভেন্ট", to: "/events" }

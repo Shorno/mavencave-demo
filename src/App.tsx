@@ -95,6 +95,10 @@ import GRERegistrationPage from "@/pages/GRE/GRERegistrationPage.tsx";
 import GRESyllabusPatternPage from "@/pages/GRE/GRESyllabusPage.tsx";
 import GRESlotBookingPage from "@/pages/GRE/GRESlotBookingPage.tsx";
 import GREPreparationPage from "@/pages/GRE/GREPreparationPage.tsx";
+import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage.tsx";
+import TermsAndConditionsPage from "@/pages/TermsAndConditionsPage.tsx";
+import RefundPolicyPage from "@/pages/RefundPolicyPage.tsx";
+import CGPACalculatorPage from "@/pages/CGPACalculatorPage.tsx";
 
 
 function App() {
@@ -113,7 +117,7 @@ function App() {
                 <Route element={<IeltsBlogLayout/>}>
                     <Route path={"/exams/ielts/overview"} element={<IeltsOverviewPage/>}/>
                     <Route path={"/exams/ielts/types"} element={<IeltsTypesPage/>}/>
-                    <Route path={"/exams/ielts/books"} element={<IeltsBooksPage/>}/>
+                    <Route path={"/resources/books/ielts"} element={<IeltsBooksPage/>}/>
                     <Route path={"/exams/ielts/eligibility"} element={<IeltsEligibilityPage/>}/>
                     <Route path={"/exams/ielts/registration"} element={<IeltsRegistrationPage/>}/>
                     <Route path={"/exams/ielts/results"} element={<IeltsResultsPage/>}/>
@@ -191,7 +195,7 @@ function App() {
                     <Route path={"/login"} element={<LoginPage/>}/>
                 </Route>
                 <Route path={"/visa-predictor"} element={<VisaPredictor/>}/>
-                <Route path={"/resources/books/ielts"} element={<CueCardPage/>}/>
+                <Route path={"/ielts-cue-cards"} element={<CueCardPage/>}/>
                 <Route path={"/exams/overview"} element={<ExamsPage/>}/>
                 <Route path={"/resources/sop/phd"} element={<SOPPhD/>}/>
                 <Route path={"/study-abroad/usa/universities/harvard-university"} element={<HarvardReact/>}/>
@@ -205,13 +209,17 @@ function App() {
                 <Route path={"/mavencave-digest"} element={<DigestPage/>}/>
                 <Route path={"/testimonials/counseling"} element={<CounsellorPage/>}/>
                 <Route path={"/event"} element={<EventPage/>}/>
-                <Route path={"/gre/books"} element={<GreBooks/>}/>
+                <Route path={"/resources/books/gre"} element={<GreBooks/>}/>
                 <Route path={"/exams/toefl/registration"} element={<ToeflRegistration/>}/>
                 <Route path={"/exams/toefl/syllabus"} element={<ToeflSyllabus/>}/>
                 <Route path={"/exams/toefl/preparation"} element={<ToeflPrep/>}/>
                 <Route path={"/exams/toefl/result"} element={<ToeflResult/>}/>
-                <Route path={"/pte/books"} element={<PteBooks/>}/>
-                <Route path={"/ielts/masterclass"} element={<IeltsMasterClass/>}/>
+                <Route path={"/resources/books/pte"} element={<PteBooks/>}/>
+                <Route path={"/offers/ielts-masterclass"} element={<IeltsMasterClass/>}/>
+                <Route path={"/privacy-policy"} element={<PrivacyPolicyPage/>}/>
+                <Route path={"/terms"} element={<TermsAndConditionsPage/>}/>
+                <Route path={"/refund-policy"} element={<RefundPolicyPage/>}/>
+                <Route path={"/calculator/cgpa"} element={<CGPACalculatorPage/>}/>
 
             </Route>
         </Routes>
