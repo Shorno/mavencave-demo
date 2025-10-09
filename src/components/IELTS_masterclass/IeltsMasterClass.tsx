@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-export default function IeltsLanding(): JSX.Element {
+export default function IeltsLanding() {
   // --- Pill groups state ---
   const [purpose, setPurpose] = useState<number | null>(null);
   const [who, setWho] = useState<number | null>(null);

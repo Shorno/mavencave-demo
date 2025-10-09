@@ -183,8 +183,7 @@ function App() {
                        element={<MaccuireUniversity/>}/>
                 <Route path="/study-abroad/australia/universities/monash-university" element={<MonashUniversity/>}/>
                 <Route path="/study-abroad/australia/universities/university-of-sydney" element={<SydneyUniversity/>}/>
-                <Route path="/study-abroad/australia/universities/university-of-melbourne"
-                       element={<MelboureUniversity/>}/>
+                <Route path="/study-abroad/australia/universities/university-of-melbourne" element={<MelboureUniversity/>}/>
                 <Route path="/study-abroad/australia/universities/uq" element={<QueenslandUniversity/>}/>
 
                 <Route element={<AuthLayout/>}>
