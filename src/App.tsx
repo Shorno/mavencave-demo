@@ -219,6 +219,7 @@ function App() {
                 <Route path={"/privacy-policy"} element={<PrivacyPolicyPage/>}/>
                 <Route path={"/terms"} element={<TermsAndConditionsPage/>}/>
                 <Route path={"/refund-policy"} element={<RefundPolicyPage/>}/>
+                {/*Calculator*/}
                 <Route path={"/calculator/cgpa"} element={<CGPACalculatorPage/>}/>
 
             </Route>
