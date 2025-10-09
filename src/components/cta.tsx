@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import {Link} from "react-router";
 
 export default function CTASection() {
     const counselorImages = [
@@ -79,7 +80,9 @@ export default function CTASection() {
                             size={"xl"}
                             className="bg-white text-blue-700 hover:bg-gray-100 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
                         >
-                            কাউন্সেলর এর সাথে কথা বলুন
+                            <Link to={"/testimonials/counseling"}>
+                                কাউন্সেলর এর সাথে কথা বলুন
+                            </Link>
                         </Button>
                     </div>
 
