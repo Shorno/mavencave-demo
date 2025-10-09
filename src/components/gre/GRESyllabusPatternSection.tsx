@@ -4,7 +4,7 @@ export default function GRESyllabusPatternSection() {
         <section className="max-w-7xl mx-auto py-8">
             <div className="bg-white rounded-xl p-6 shadow-sm">
                 <h2 className="text-2xl font-bold text-purple-600 mb-6">
-                    ৯. GRE সিলেবাস ও প্যাটার্ন: পরীক্ষায় কি থাকে?
+                    2. GRE সিলেবাস ও প্যাটার্ন: পরীক্ষায় কি থাকে?
                 </h2>
 
                 <div className="bg-purple-50 rounded-lg p-4 border border-purple-100 mb-6">
