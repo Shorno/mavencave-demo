@@ -65,7 +65,7 @@ import {
     KingsCollegeLondon,
     ImperialCollegeLondon,
     UniversityOfToronto,
-    
+
 } from "@/pages";
 import useScrollToTop from "@/hooks/useScrollToTop.tsx";
 import TopUniversities from "@/layout/TopUniversities.tsx";
@@ -90,6 +90,11 @@ import SATEligibilityPage from "@/pages/SAT/SATEligibilityPage.tsx";
 import SATRegistrationPage from "@/pages/SAT/SATRegistrationPage.tsx";
 import SATSyllabusPage from "@/pages/SAT/ SATSyllabusPage.tsx";
 import SATPreparationPage from "@/pages/SAT/SATPreparationPage.tsx";
+import IeltsMasterClass from "@/components/IELTS_masterclass/IeltsMasterClass.tsx";
+import GRERegistrationPage from "@/pages/GRE/GRERegistrationPage.tsx";
+import GRESyllabusPatternPage from "@/pages/GRE/GRESyllabusPage.tsx";
+import GRESlotBookingPage from "@/pages/GRE/GRESlotBookingPage.tsx";
+import GREPreparationPage from "@/pages/GRE/GREPreparationPage.tsx";
 
 
 function App() {
@@ -131,16 +136,24 @@ function App() {
                     <Route path={"/exams/sat/preparation"} element={<SATPreparationPage/>}/>
                     <Route path={"/exams/pte/overview"} element={<PTEPage/>}/>
                     {/* Duolingo */}
-                      <Route path={"/exams/duolingo/fees"} element={<DuolingoFees/>}/>
-                      <Route path={"/exams/duolingo/preparation"} element={<DuolingoGuidePage/>}/>
-                      <Route path={"/exams/duolingo/sample"} element={<SampleQuestionPage/>}/>
-                      <Route path={"/exams/duolingo/syllabus"} element={<DuolingoSyllabusPage/>}/>
-                      {/* GMAT */}
-                      <Route path={"/exams/gmat/overview"} element={<GmatOverviewPage/>}/>
-                      <Route path={"/exams/gmat/preparation"} element={<GmatPrepPage/>}/>
-                      <Route path={"/exams/gmat/registration"} element={<GmatRegistrationPage/>}/>
-                      <Route path={"/exams/gmat/sample-question"} element={<GmatSampleQuesPage/>}/>
-                      <Route path={"/exams/gmat/syllabus"} element={<GmatSyllabusPage/>}/>
+                    <Route path={"/exams/duolingo/fees"} element={<DuolingoFees/>}/>
+                    <Route path={"/exams/duolingo/preparation"} element={<DuolingoGuidePage/>}/>
+                    <Route path={"/exams/duolingo/sample"} element={<SampleQuestionPage/>}/>
+                    <Route path={"/exams/duolingo/syllabus"} element={<DuolingoSyllabusPage/>}/>
+                    {/* GMAT */}
+                    <Route path={"/exams/gmat/overview"} element={<GmatOverviewPage/>}/>
+                    <Route path={"/exams/gmat/preparation"} element={<GmatPrepPage/>}/>
+                    <Route path={"/exams/gmat/registration"} element={<GmatRegistrationPage/>}/>
+                    <Route path={"/exams/gmat/sample-question"} element={<GmatSampleQuesPage/>}/>
+                    <Route path={"/exams/gmat/syllabus"} element={<GmatSyllabusPage/>}/>
+
+                    {/*GRE*/}
+                    <Route path={"/exams/gre/registration"} element={<GRERegistrationPage/>}/>
+                    <Route path={"/exams/gre/syllabus"} element={<GRESyllabusPatternPage/>}/>
+                    <Route path={"/exams/gre/slot-booking"} element={<GRESlotBookingPage/>}/>
+                    <Route path={"/exams/gre/preparation"} element={<GREPreparationPage/>}/>
+
+
                 </Route>
                 {/* USA */}
                 <Route path="/study-abroad/usa/universities/stanford-university" element={<StanfordUniversity/>}/>
@@ -170,8 +183,7 @@ function App() {
                        element={<MaccuireUniversity/>}/>
                 <Route path="/study-abroad/australia/universities/monash-university" element={<MonashUniversity/>}/>
                 <Route path="/study-abroad/australia/universities/university-of-sydney" element={<SydneyUniversity/>}/>
-                <Route path="/study-abroad/australia/universities/university-of-melbourne"
-                       element={<MelboureUniversity/>}/>
+                <Route path="/study-abroad/australia/universities/university-of-melbourne" element={<MelboureUniversity/>}/>
                 <Route path="/study-abroad/australia/universities/uq" element={<QueenslandUniversity/>}/>
 
                 <Route element={<AuthLayout/>}>
@@ -199,6 +211,8 @@ function App() {
                 <Route path={"/exams/toefl/preparation"} element={<ToeflPrep/>}/>
                 <Route path={"/exams/toefl/result"} element={<ToeflResult/>}/>
                 <Route path={"/pte/books"} element={<PteBooks/>}/>
+                <Route path={"/ielts/masterclass"} element={<IeltsMasterClass/>}/>
+
             </Route>
         </Routes>
     )

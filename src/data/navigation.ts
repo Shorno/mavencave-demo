@@ -619,10 +619,10 @@ export const navigationItems: NavigationItem[] = [
                         hasDropdown: true,
                         dropdownItems: [
                             {label: "জিআরই ওভারভিউ", href: "/exams/gre/overview"},
-                            {label: "জিআরই যোগ্যতা", href: "/exams/gre/eligibility"},
                             {label: "জিআরই রেজিস্ট্রেশন", href: "/exams/gre/registration"},
                             {label: "জিআরই সিলেবাস", href: "/exams/gre/syllabus"},
                             {label: "জিআরই স্লট বুকিং", href: "/exams/gre/slot-booking"},
+                            {label: "জিআরই প্রস্তুতি", href: "/exams/gre/preparation"},
                         ],
                     },
                     {
