@@ -18,7 +18,7 @@ const Footer = () => {
     const accordionData = [
         {
             items: [
-                { value: "ielts-center", trigger: "IELTS টেস্ট সেন্টার", content: "IELTS পরীক্ষার কেন্দ্রসমূহ", to: "/ielts-test-centers" },
+                { value: "ielts-center", trigger: "IELTS টেস্ট সেন্টার", content: "IELTS পরীক্ষার কেন্দ্রসমূহ", to: "/exams/ielts/centers" },
                 { value: "calculators", trigger: "ক্যালকুলেটরসমূহ", content: "বিভিন্ন ক্যালকুলেটর টুলস", to: "/calculators" },
                 { value: "lor-sop", trigger: "LOR & SOP", content: "Letter of Recommendation ও Statement of Purpose", to: "/lor-sop" },
                 { value: "other-exams", trigger: "অন্যান্য পরীক্ষাসমূহ", content: "বিভিন্ন আন্তর্জাতিক পরীক্ষা", to: "/other-exams" }
@@ -28,7 +28,7 @@ const Footer = () => {
             items: [
                 { value: "free-counseling", trigger: "ফ্রি কাউন্সেলিং", content: "বিনামূল্যে শিক্ষা পরামর্শ", to: "/free-counseling" },
                 { value: "ielts-coaching", trigger: "IELTS কোচিং", content: "পেশাদার IELTS প্রশিক্ষণ", to: "/ielts-coaching" },
-                { value: "duolingo", trigger: "Duolingo English Test", content: "Duolingo পরীক্ষার প্রস্তুতি", to: "/duolingo-test" },
+                { value: "duolingo", trigger: "Duolingo English Test", content: "Duolingo পরীক্ষার প্রস্তুতি", to: "/exams/duolingo/preparation" },
                 { value: "top-universities", trigger: "শীর্ষ বিশ্ববিদ্যালয়সমূহ", content: "বিশ্বের সেরা বিশ্ববিদ্যালয়", to: "/top-universities" }
             ]
         },
