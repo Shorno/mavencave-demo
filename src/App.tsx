@@ -99,6 +99,19 @@ import PrivacyPolicyPage from "@/pages/PrivacyPolicyPage.tsx";
 import TermsAndConditionsPage from "@/pages/TermsAndConditionsPage.tsx";
 import RefundPolicyPage from "@/pages/RefundPolicyPage.tsx";
 import CGPACalculatorPage from "@/pages/CGPACalculatorPage.tsx";
+import UKMastersInfo from "./components/BlogsDetails/UKMastersInfo";
+
+import CoursesBlog from "./components/BlogsDetails/CoursesBlog";
+import ExamBlog from "./components/BlogsDetails/ExamBlog/ExamBlog";
+
+
+
+import CostBlog from "./components/BlogsDetails/CostBlog";
+import CollegeBlog from "./components/BlogsDetails/CollegeBlog";
+
+
+
+
 
 
 function App() {
@@ -109,6 +122,15 @@ function App() {
                 <Route index element={<HomePage/>}/>
                 <Route path={"about"} element={<AboutPage/>}/>
                 <Route path={"blog"} element={<BlogPage/>}/>
+                {/* blog details pages */}
+                <Route path={"blogDetails"} element={<UKMastersInfo/>}/>
+                <Route path={"collegeBlog"} element={<CollegeBlog/>}/>
+               
+                <Route path={"courses-blogs"} element={<CoursesBlog/>}/>
+                <Route path={"exam-blogs"} element={<ExamBlog/>}/>
+                <Route path={"cost-blogs"} element={<CostBlog/>}/>
+               
+               
                 {/*<Route path={"/study-abroad/usa/cities/new-york"} element={<StudyAbroad/>}/>*/}
                 <Route path={"/study-abroad/:country/cities/:city"} element={<TopUniversities/>}/>
                 <Route path={"study-abroad/:country/courses/:course"} element={<MastersTopCourses/>}/>
