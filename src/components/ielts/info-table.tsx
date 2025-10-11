@@ -5,6 +5,7 @@ import {
     TableRow,
 } from "@/components/ui/table";
 import {ArrowRight} from "lucide-react";
+import {Link} from "react-router";
 
 
 type InfoTableSectionProps = {
@@ -25,13 +26,13 @@ export default function InfoTableSection({title, data}: InfoTableSectionProps) {
                                         key={j}
                                         className="px-3 py-3 border-b whitespace-nowrap"
                                     >
-                                        <a
-                                            href={cell.href}
+                                        <Link
+                                            to={cell.href}
                                             className="flex items-center justify-between gap-2 hover:underline font-medium text-gray-900"
                                         >
                                             {cell.label}
                                             {cell.label ? <ArrowRight/> : null}
-                                        </a>
+                                        </Link>
                                     </TableCell>
                                 ))}
                             </TableRow>
