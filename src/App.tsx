@@ -108,6 +108,10 @@ import ExamBlog from "./components/BlogsDetails/ExamBlog/ExamBlog";
 
 import CostBlog from "./components/BlogsDetails/CostBlog";
 import CollegeBlog from "./components/BlogsDetails/CollegeBlog";
+import CounsellorHomePage from "./components/CounselorPage/CounsellorHomePage";
+
+import ReferralPage from "./components/CounselorPage/ReferralPage";
+import CounselingSection from "./components/CounselorPage/CouselingModal/CounselingSection";
 
 
 
@@ -129,7 +133,12 @@ function App() {
                 <Route path={"courses-blogs"} element={<CoursesBlog/>}/>
                 <Route path={"exam-blogs"} element={<ExamBlog/>}/>
                 <Route path={"cost-blogs"} element={<CostBlog/>}/>
-               
+               {/* cousellor pages */}
+               <Route path={"counsellor-home"} element={<CounsellorHomePage/>}/>
+               <Route path={"counsellor-modal"} element={<CounselingSection/>}/>
+               <Route path={"counsellor-referral"} element={<ReferralPage/>}/>
+              
+
                
                 {/*<Route path={"/study-abroad/usa/cities/new-york"} element={<StudyAbroad/>}/>*/}
                 <Route path={"/study-abroad/:country/cities/:city"} element={<TopUniversities/>}/>
