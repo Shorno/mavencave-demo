@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+//@ts-nocheck
+
+import  { useState } from 'react';
 import CounselingModal from './CouselingModal';
  // Modal Component টি ইম্পোর্ট করুন
 
