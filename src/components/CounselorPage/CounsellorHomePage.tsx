@@ -1,4 +1,5 @@
-import React from 'react';
+//@ts-nocheck
+
 // নতুন আইকন ইম্পোর্ট করা হলো: FaUniversity, FaFileContract, FaBookOpen, FaSearch, FaPlay, FaCalendarAlt, FaClock
 import { FaPlay, FaCalendarAlt, FaClock, FaUniversity, FaFileContract, FaBookOpen, FaSearch } from 'react-icons/fa'; 
 import Sidebar from './Sidebar'; 

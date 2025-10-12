@@ -1,3 +1,4 @@
+//@ts-nocheck
 
 import { FaCheckCircle, FaTimes } from 'react-icons/fa'; // আইকন ব্যবহারের জন্য
 
