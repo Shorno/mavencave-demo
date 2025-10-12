@@ -2,7 +2,6 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Trophy, MapPin } from 'lucide-react';
-import {useIsMobile} from "@/hooks/use-mobile.ts";
 import type {University} from "@/data/universities.ts";
 
 interface UniversityCardProps {
@@ -10,7 +9,6 @@ interface UniversityCardProps {
 }
 
 const UniversityCard: React.FC<UniversityCardProps> = ({ university }) => {
-    const isMobile = useIsMobile()
     return (
         <Card className="hover:shadow-lg transition-shadow duration-200 bg-white h-full">
             <CardContent className="p-4 sm:p-6 h-full">
@@ -72,17 +70,15 @@ const UniversityCard: React.FC<UniversityCardProps> = ({ university }) => {
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex items-center gap-3 pt-4 mt-auto">
+                    <div className="flex flex-col items-center gap-3 pt-4 mt-auto">
                         <Button
-                            size={isMobile? "sm" : "default"}
                             variant="outline"
-                            className="flex-1 rounded-full py-3 px-6"
+                            className="w-full rounded-full py-3 px-6"
                         >
                             আরও জানুন
                         </Button>
                         <Button
-                            size={isMobile? "sm" : "default"}
-                            className="flex-1 rounded-full"
+                            className="rounded-full w-full"
                         >
                             আপনার যোগ্যতা যাচাই করুন
                         </Button>
