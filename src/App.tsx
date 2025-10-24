@@ -103,10 +103,9 @@ import CounsellorHomePage from "./components/CounselorPage/CounsellorHomePage";
 
 import ReferralPage from "./components/CounselorPage/ReferralPage";
 import CounselingSection from "./components/CounselorPage/CouselingModal/CounselingSection";
-
-
-
-
+import AdminDashboardLayout from "@/layout/AdminDashboardLayout.tsx";
+import DashboardIndexPage from "@/pages/dashboard/admin/DashboardIndexPage.tsx";
+import UsersPage from "@/pages/dashboard/admin/UsersPage.tsx";
 
 
 function App() {
@@ -119,10 +118,10 @@ function App() {
                 <Route path={"blog"} element={<BlogPage/>}/>
                 {/* blog details pages */}
 
-               {/* cousellor pages */}
-               <Route path={"/counsellor-home"} element={<CounsellorHomePage/>}/>
-               <Route path={"/counsellor-modal"} element={<CounselingSection/>}/>
-               <Route path={"/counsellor-referral"} element={<ReferralPage/>}/>
+                {/* cousellor pages */}
+                <Route path={"/counsellor-home"} element={<CounsellorHomePage/>}/>
+                <Route path={"/counsellor-modal"} element={<CounselingSection/>}/>
+                <Route path={"/counsellor-referral"} element={<ReferralPage/>}/>
 
                 {/*<Route path={"/study-abroad/usa/cities/new-york"} element={<StudyAbroad/>}/>*/}
                 <Route path={"/study-abroad/:country/cities/:city"} element={<TopUniversities/>}/>
@@ -202,7 +201,8 @@ function App() {
                        element={<MaccuireUniversity/>}/>
                 <Route path="/study-abroad/australia/universities/monash-university" element={<MonashUniversity/>}/>
                 <Route path="/study-abroad/australia/universities/university-of-sydney" element={<SydneyUniversity/>}/>
-                <Route path="/study-abroad/australia/universities/university-of-melbourne" element={<MelboureUniversity/>}/>
+                <Route path="/study-abroad/australia/universities/university-of-melbourne"
+                       element={<MelboureUniversity/>}/>
                 <Route path="/study-abroad/australia/universities/uq" element={<QueenslandUniversity/>}/>
 
                 <Route element={<AuthLayout/>}>
@@ -237,6 +237,10 @@ function App() {
                 {/*Calculator*/}
                 <Route path={"/calculator/cgpa"} element={<CGPACalculatorPage/>}/>
 
+            </Route>
+            <Route path={"/admin/dashboard"} element={<AdminDashboardLayout/>}>
+                <Route index element={<DashboardIndexPage/>}/>
+                <Route path={"users"} element={<UsersPage/>}/>
             </Route>
         </Routes>
     )
