@@ -204,8 +204,8 @@ export default function UsersPage() {
   const totalPages = Math.ceil(total / PAGE_SIZE);
 
   return (
-    <div className="p-4 md:p-8 bg-gray-50 min-h-screen">
-      <div className="max-w-6xl mx-auto">
+    <div>
+      <div>
         <h1 className="text-2xl font-semibold text-blue-800 mb-6">ব্যবহারকারীরা</h1>
 
         {/* --- Header and Action Buttons --- */}

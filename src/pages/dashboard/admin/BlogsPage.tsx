@@ -189,8 +189,8 @@ export default function BlogsPage() {
   const totalPages = Math.ceil(total / PAGE_SIZE);
 
   return (
-    <div className="p-4 md:p-8 bg-gray-50 min-h-screen">
-      <div className="max-w-6xl mx-auto">
+    <div>
+      <div>
         {/* --- Top Cards Section (Mock Data for UI) --- */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
             <div className="p-4 bg-white rounded-lg shadow-sm border border-gray-200">

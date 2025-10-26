@@ -243,7 +243,7 @@ function App() {
             <Route path={"/admin/dashboard"} element={<AdminDashboardLayout/>}>
                 <Route index element={<DashboardIndexPage/>}/>
                 <Route path={"users"} element={<UsersPage/>}/>
-                <Route path={"adminBlogs"} element={<BlogsPage/>}/>
+                <Route path={"blogs"} element={<BlogsPage/>}/>
                
             </Route>
         </Routes>
