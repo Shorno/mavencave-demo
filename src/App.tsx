@@ -106,6 +106,8 @@ import CounselingSection from "./components/CounselorPage/CouselingModal/Counsel
 import AdminDashboardLayout from "@/layout/AdminDashboardLayout.tsx";
 import DashboardIndexPage from "@/pages/dashboard/admin/DashboardIndexPage.tsx";
 import UsersPage from "@/pages/dashboard/admin/UsersPage.tsx";
+import BlogsPage from "./pages/dashboard/admin/BlogsPage";
+
 
 
 function App() {
@@ -241,6 +243,8 @@ function App() {
             <Route path={"/admin/dashboard"} element={<AdminDashboardLayout/>}>
                 <Route index element={<DashboardIndexPage/>}/>
                 <Route path={"users"} element={<UsersPage/>}/>
+                <Route path={"adminBlogs"} element={<BlogsPage/>}/>
+               
             </Route>
         </Routes>
     )
