@@ -107,7 +107,7 @@ import AdminDashboardLayout from "@/layout/AdminDashboardLayout.tsx";
 import DashboardIndexPage from "@/pages/dashboard/admin/DashboardIndexPage.tsx";
 import UsersPage from "@/pages/dashboard/admin/UsersPage.tsx";
 import BlogsPage from "./pages/dashboard/admin/BlogsPage";
-import AdminOverview from "./pages/dashboard/admin/AdminOverview";
+
 
 
 function App() {
@@ -244,7 +244,7 @@ function App() {
                 <Route index element={<DashboardIndexPage/>}/>
                 <Route path={"users"} element={<UsersPage/>}/>
                 <Route path={"adminBlogs"} element={<BlogsPage/>}/>
-                <Route path={"overview"} element={<AdminOverview/>}/>
+               
             </Route>
         </Routes>
     )
