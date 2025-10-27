@@ -16,7 +16,6 @@ import {
   Check,
   Pencil,
   Trash2,
-  BarChart3,
 } from "lucide-react";
 
 // Structural ref type that accepts any HTMLElement-based ref
@@ -374,7 +373,9 @@ const AdsDashboard: React.FC = () => {
                     <td className="px-6 py-4">{row.date}</td>
                     <td className="relative px-6 py-4">
                       <button
-                        ref={(el) => (statusBtnRefs.current[row.id] = el)}
+                        ref={(el) => {
+                          statusBtnRefs.current[row.id] = el;
+                        }}
                         onClick={() =>
                           setOpenStatusFor(
                             openStatusFor === row.id ? null : row.id
@@ -430,7 +431,9 @@ const AdsDashboard: React.FC = () => {
                     </td>
                     <td className="relative px-6 py-4">
                       <button
-                        ref={(el) => (actionBtnRefs.current[row.id] = el)}
+                        ref={(el) => {
+                          actionBtnRefs.current[row.id] = el;
+                        }}
                         onClick={() =>
                           setOpenActionsFor(
                             openActionsFor === row.id ? null : row.id
