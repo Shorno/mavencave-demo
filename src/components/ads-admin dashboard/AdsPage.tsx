@@ -10,7 +10,6 @@ import {
   Check,
   Pencil,
   Trash2,
-  BarChart3,
 } from "lucide-react";
 
 export type Campaign = {
