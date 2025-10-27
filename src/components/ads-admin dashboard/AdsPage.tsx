@@ -16,8 +16,11 @@ import {
   Check,
   Pencil,
   Trash2,
+  BarChart3,
 } from "lucide-react";
 
+// Structural ref type that accepts any HTMLElement-based ref
+export type ElRef = { current: HTMLElement | null };
 export type Campaign = {
   id: string;
   title: string;
@@ -110,10 +113,7 @@ const StatCard = ({
   </div>
 );
 
-function useClickOutside(
-  ref: React.RefObject<HTMLElement>,
-  onClose: () => void
-) {
+function useClickOutside(ref: ElRef, onClose: () => void) {
   useEffect(() => {
     function handler(e: MouseEvent) {
       if (!ref.current || ref.current.contains(e.target as Node)) return;
@@ -131,10 +131,7 @@ function useClickOutside(
   }, [ref, onClose]);
 }
 
-function useFixedPosition(
-  open: boolean,
-  anchorRef: React.RefObject<HTMLElement>
-) {
+function useFixedPosition(open: boolean, anchorRef: ElRef) {
   const ref = useRef<HTMLDivElement>(null);
   useLayoutEffect(() => {
     if (!open || !ref.current || !anchorRef.current) return;
@@ -171,14 +168,14 @@ function SimpleDropdown<T>({
   onClose,
 }: {
   open: boolean;
-  anchorRef: React.RefObject<HTMLElement>;
+  anchorRef: ElRef;
   items: { key: T; label: React.ReactNode }[];
   value?: T;
   onSelect: (v: T) => void;
   onClose: () => void;
 }) {
   const ref = useFixedPosition(open, anchorRef);
-  useClickOutside(ref, onClose);
+  useClickOutside(ref as unknown as ElRef, onClose);
   if (!open) return null;
   return (
     <div
