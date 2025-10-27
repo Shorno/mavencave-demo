@@ -108,6 +108,7 @@ import DashboardIndexPage from "@/pages/dashboard/admin/DashboardIndexPage.tsx";
 import UsersPage from "@/pages/dashboard/admin/UsersPage.tsx";
 import BlogsPage from "./pages/dashboard/admin/BlogsPage";
 import AdsPage from "./components/ads-admin dashboard/AdsPage"
+import AiQueriesPage from "./components/Ai_Queries-admin dashboard/AiQueriesPage"
 
 
 
@@ -408,6 +409,7 @@ function App() {
           <Route path={"users"} element={<UsersPage />} />
           <Route path={"blogs"} element={<BlogsPage />} />
           <Route path={"Ads"} element={<AdsPage />} />
+          <Route path={"AiQueries"} element={<AiQueriesPage />} />
         </Route>
       </Routes>
     );
