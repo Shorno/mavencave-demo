@@ -104,12 +104,11 @@ import CounsellorHomePage from "./components/CounselorPage/CounsellorHomePage";
 import ReferralPage from "./components/CounselorPage/ReferralPage";
 import CounselingSection from "./components/CounselorPage/CouselingModal/CounselingSection";
 import AdminDashboardLayout from "@/layout/AdminDashboardLayout.tsx";
-import DashboardIndexPage from "@/pages/dashboard/admin/DashboardIndexPage.tsx";
 import UsersPage from "@/pages/dashboard/admin/UsersPage.tsx";
 import BlogsPage from "./pages/dashboard/admin/BlogsPage";
+import DashboardOverview from "./pages/dashboard/admin/DashBoardOverview";
 import AdsPage from "./components/ads-admin dashboard/AdsPage"
 import AiQueriesPage from "./components/Ai_Queries-admin dashboard/AiQueriesPage"
-
 
 
 function App() {
@@ -354,65 +353,66 @@ function App() {
             element={<QueenslandUniversity />}
           />
 
-          <Route element={<AuthLayout />}>
-            <Route path={"/signup"} element={<SignUpPage />} />
-            <Route path={"/login"} element={<LoginPage />} />
-          </Route>
-          <Route path={"/visa-predictor"} element={<VisaPredictor />} />
-          <Route path={"/ielts-cue-cards"} element={<CueCardPage />} />
-          <Route path={"/exams/overview"} element={<ExamsPage />} />
-          <Route path={"/resources/sop/phd"} element={<SOPPhD />} />
-          <Route
-            path={"/study-abroad/usa/universities/harvard-university"}
-            element={<HarvardReact />}
-          />
-          <Route path={"/careers"} element={<Careers />} />
-          <Route path={"/knowledge-center"} element={<KnowledgeCenter />} />
-          <Route
-            path={"/products/facilities"}
-            element={<MavencaveAdvantage />}
-          />
-          <Route
-            path={"/mavencave-freeClass"}
-            element={<MavencaveFreeClass />}
-          />
-          <Route path={"/ielts-resources"} element={<PracticeResources />} />
-          <Route path={"/calculator/cost"} element={<CostPage />} />
-          <Route path={"/products/finance"} element={<FinancePage />} />
-          <Route path={"/mavencave-digest"} element={<DigestPage />} />
-          <Route
-            path={"/testimonials/counseling"}
-            element={<CounsellorPage />}
-          />
-          <Route path={"/event"} element={<EventPage />} />
-          <Route path={"/resources/books/gre"} element={<GreBooks />} />
-          <Route
-            path={"/exams/toefl/registration"}
-            element={<ToeflRegistration />}
-          />
-          <Route path={"/exams/toefl/syllabus"} element={<ToeflSyllabus />} />
-          <Route path={"/exams/toefl/preparation"} element={<ToeflPrep />} />
-          <Route path={"/exams/toefl/result"} element={<ToeflResult />} />
-          <Route path={"/resources/books/pte"} element={<PteBooks />} />
-          <Route
-            path={"/offers/ielts-masterclass"}
-            element={<IeltsMasterClass />}
-          />
-          <Route path={"/privacy-policy"} element={<PrivacyPolicyPage />} />
-          <Route path={"/terms"} element={<TermsAndConditionsPage />} />
-          <Route path={"/refund-policy"} element={<RefundPolicyPage />} />
-          {/*Calculator*/}
-          <Route path={"/calculator/cgpa"} element={<CGPACalculatorPage />} />
-        </Route>
-        <Route path={"/admin/dashboard"} element={<AdminDashboardLayout />}>
-          <Route index element={<DashboardIndexPage />} />
-          <Route path={"users"} element={<UsersPage />} />
-          <Route path={"blogs"} element={<BlogsPage />} />
-          <Route path={"Ads"} element={<AdsPage />} />
-          <Route path={"AiQueries"} element={<AiQueriesPage />} />
-        </Route>
-      </Routes>
-    );
+                {/* Canada */}
+                <Route path="/study-abroad/canada/universities/ubc" element={<UniversityOfBritishColumbia/>}/>
+                <Route path="/study-abroad/canada/universities/mcgill-university" element={<McGillUniversity/>}/>
+                <Route path="/study-abroad/canada/universities/university-of-alberta" element={<UniversityOfAlberta/>}/>
+                <Route path="/study-abroad/canada/universities/university-of-montreal"
+                       element={<UniversityOfMontreal/>}/>
+                <Route path="/study-abroad/canada/universities/university-of-ottawa" element={<UniversityOfOttawa/>}/>
+                <Route path="/study-abroad/canada/universities/university-of-toronto" element={<UniversityOfToronto/>}/>
+
+                {/* Australia */}
+                <Route path="/study-abroad/australia/universities/macquarie-university"
+                       element={<MaccuireUniversity/>}/>
+                <Route path="/study-abroad/australia/universities/monash-university" element={<MonashUniversity/>}/>
+                <Route path="/study-abroad/australia/universities/university-of-sydney" element={<SydneyUniversity/>}/>
+                <Route path="/study-abroad/australia/universities/university-of-melbourne"
+                       element={<MelboureUniversity/>}/>
+                <Route path="/study-abroad/australia/universities/uq" element={<QueenslandUniversity/>}/>
+
+                <Route element={<AuthLayout/>}>
+                    <Route path={"/signup"} element={<SignUpPage/>}/>
+                    <Route path={"/login"} element={<LoginPage/>}/>
+                </Route>
+                <Route path={"/visa-predictor"} element={<VisaPredictor/>}/>
+                <Route path={"/ielts-cue-cards"} element={<CueCardPage/>}/>
+                <Route path={"/exams/overview"} element={<ExamsPage/>}/>
+                <Route path={"/resources/sop/phd"} element={<SOPPhD/>}/>
+                <Route path={"/study-abroad/usa/universities/harvard-university"} element={<HarvardReact/>}/>
+                <Route path={"/careers"} element={<Careers/>}/>
+                <Route path={"/knowledge-center"} element={<KnowledgeCenter/>}/>
+                <Route path={"/products/facilities"} element={<MavencaveAdvantage/>}/>
+                <Route path={"/mavencave-freeClass"} element={<MavencaveFreeClass/>}/>
+                <Route path={"/ielts-resources"} element={<PracticeResources/>}/>
+                <Route path={"/calculator/cost"} element={<CostPage/>}/>
+                <Route path={"/products/finance"} element={<FinancePage/>}/>
+                <Route path={"/mavencave-digest"} element={<DigestPage/>}/>
+                <Route path={"/testimonials/counseling"} element={<CounsellorPage/>}/>
+                <Route path={"/event"} element={<EventPage/>}/>
+                <Route path={"/resources/books/gre"} element={<GreBooks/>}/>
+                <Route path={"/exams/toefl/registration"} element={<ToeflRegistration/>}/>
+                <Route path={"/exams/toefl/syllabus"} element={<ToeflSyllabus/>}/>
+                <Route path={"/exams/toefl/preparation"} element={<ToeflPrep/>}/>
+                <Route path={"/exams/toefl/result"} element={<ToeflResult/>}/>
+                <Route path={"/resources/books/pte"} element={<PteBooks/>}/>
+                <Route path={"/offers/ielts-masterclass"} element={<IeltsMasterClass/>}/>
+                <Route path={"/privacy-policy"} element={<PrivacyPolicyPage/>}/>
+                <Route path={"/terms"} element={<TermsAndConditionsPage/>}/>
+                <Route path={"/refund-policy"} element={<RefundPolicyPage/>}/>
+                {/*Calculator*/}
+                <Route path={"/calculator/cgpa"} element={<CGPACalculatorPage/>}/>
+
+            </Route>
+            <Route path={"/admin/dashboard"} element={<AdminDashboardLayout/>}>
+                <Route index element={<DashboardOverview/>}/>
+                <Route path={"users"} element={<UsersPage/>}/>
+                <Route path={"blogs"} element={<BlogsPage/>}/>
+                <Route path={"ads"} element={<AdsPage/>}/>
+                <Route path={"aiqueries"} element={<AiQueriesPage/>}/>
+            </Route>
+        </Routes>
+    )
 }
 
 export default App
