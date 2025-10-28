@@ -104,7 +104,6 @@ import CounsellorHomePage from "./components/CounselorPage/CounsellorHomePage";
 import ReferralPage from "./components/CounselorPage/ReferralPage";
 import CounselingSection from "./components/CounselorPage/CouselingModal/CounselingSection";
 import AdminDashboardLayout from "@/layout/AdminDashboardLayout.tsx";
-import DashboardIndexPage from "@/pages/dashboard/admin/DashboardIndexPage.tsx";
 import UsersPage from "@/pages/dashboard/admin/UsersPage.tsx";
 import BlogsPage from "./pages/dashboard/admin/BlogsPage";
 import DashboardOverview from "./pages/dashboard/admin/DashBoardOverview";
@@ -242,11 +241,10 @@ function App() {
 
             </Route>
             <Route path={"/admin/dashboard"} element={<AdminDashboardLayout/>}>
-                <Route index element={<DashboardIndexPage/>}/>
+                <Route index element={<DashboardOverview/>}/>
                 <Route path={"users"} element={<UsersPage/>}/>
                 <Route path={"blogs"} element={<BlogsPage/>}/>
-                <Route path={"overview"} element={<DashboardOverview/>}/>
-               
+
             </Route>
         </Routes>
     )
