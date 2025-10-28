@@ -3,7 +3,8 @@ import axios from "axios";
 import CardsSection from "@/components/DashBoardOverviewComponents/CardSection";
 import UpdatesTable from "@/components/DashBoardOverviewComponents/UpdatesTable";
 import type { DashboardData } from "@/types/DashBoardTypes";
-import CountriesPieChart from "@/components/DashBoardOverviewComponents/CountryPieChart";
+import {CountriesChart} from "@/components/dashboard/admin/overview/CountriesChart.tsx";
+import {VisitorsChart} from "@/components/dashboard/admin/overview/VisitorsChart.tsx";
 
 const DashboardOverview: React.FC = () => {
   const [data, setData] = useState<DashboardData | null>(null);
@@ -29,8 +30,8 @@ const DashboardOverview: React.FC = () => {
       <CardsSection cards={data.cards} />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* <VisitorsBarChart visitors={data.visitors} /> */}
-        <CountriesPieChart countries={data.countries} />
+        <VisitorsChart/>
+       <CountriesChart/>
       </div>
 
       <UpdatesTable updates={data.updates} />
