@@ -107,6 +107,8 @@ import AdminDashboardLayout from "@/layout/AdminDashboardLayout.tsx";
 import UsersPage from "@/pages/dashboard/admin/UsersPage.tsx";
 import BlogsPage from "./pages/dashboard/admin/BlogsPage";
 import DashboardOverview from "./pages/dashboard/admin/DashBoardOverview";
+import AdsPage from "./components/ads-admin dashboard/AdsPage";
+import AIQueriesDashboard from "@/components/Ai_Queries-admin dashboard/AiQueriesPage.tsx";
 
 
 
@@ -244,7 +246,8 @@ function App() {
                 <Route index element={<DashboardOverview/>}/>
                 <Route path={"users"} element={<UsersPage/>}/>
                 <Route path={"blogs"} element={<BlogsPage/>}/>
-
+                <Route path={"ads"} element={<AdsPage/>}/>
+                <Route path={"ai-query"} element={<AIQueriesDashboard/>}/>
             </Route>
         </Routes>
     )
