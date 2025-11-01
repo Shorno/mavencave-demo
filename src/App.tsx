@@ -109,6 +109,8 @@ import BlogsPage from "./pages/dashboard/admin/BlogsPage";
 import DashboardOverview from "./pages/dashboard/admin/DashBoardOverview";
 import AdsPage from "./components/ads-admin dashboard/AdsPage";
 import AIQueriesDashboard from "@/components/Ai_Queries-admin dashboard/AiQueriesPage.tsx";
+import General from "./pages/dashboard/admin/General";
+import IntegrationPage from "./pages/dashboard/admin/IntegrationPage";
 
 
 
@@ -248,6 +250,8 @@ function App() {
                 <Route path={"blogs"} element={<BlogsPage/>}/>
                 <Route path={"ads"} element={<AdsPage/>}/>
                 <Route path={"ai-query"} element={<AIQueriesDashboard/>}/>
+                <Route path={"general"} element={<General/>}/>
+                <Route path={"integration"} element={<IntegrationPage/>}/>
             </Route>
         </Routes>
     )
