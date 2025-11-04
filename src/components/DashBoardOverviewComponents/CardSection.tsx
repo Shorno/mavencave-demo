@@ -1,16 +1,20 @@
 import React from "react";
-import type { DashboardCards } from "../../types/DashBoardTypes";
+import type { DashboardCards } from "@/types/DashBoardTypes.ts";
 
 interface Props {
   cards: DashboardCards;
 }
 
 const CardsSection: React.FC<Props> = ({ cards }) => {
+  if (!cards) {
+    return <div className="text-center text-gray-500">Loading cards...</div>;
+  }
+
   const cardItems = [
-    { title: "মোট ব্যবহারকারী", value: cards.totalUsers },
-    { title: "নতুন ব্যবহারকারী", value: cards.newUsers },
-    { title: "অ্যাকটিভ ব্যবহারকারী", value: cards.activeUsers },
-    { title: "পুরষ্কারপ্রাপ্ত ব্যবহারকারী", value: cards.rewardedUsers },
+    { title: "মোট ব্যবহারকারী", value: cards.totalUsers || 0 },
+    { title: "নতুন ব্যবহারকারী", value: cards.newUsers || 0 },
+    { title: "অ্যাকটিভ ব্যবহারকারী", value: cards.activeUsers || 0 },
+    { title: "পুরষ্কারপ্রাপ্ত ব্যবহারকারী", value: cards.rewardedUsers || 0 },
   ];
 
   return (
