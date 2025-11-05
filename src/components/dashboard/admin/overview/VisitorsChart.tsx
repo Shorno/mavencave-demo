@@ -32,7 +32,7 @@ const chartConfig = {
 
 export function VisitorsChart() {
     return (
-        <Card>
+        <Card className={"border-none"}>
             <CardHeader>
                 <CardTitle>পরিদর্শনকারী ব্যবহারকারী</CardTitle>
                 <CardDescription>এই সপ্তাহ</CardDescription>
