@@ -111,6 +111,8 @@ import AdsPage from "./components/ads-admin dashboard/AdsPage";
 import AIQueriesDashboard from "@/components/Ai_Queries-admin dashboard/AiQueriesPage.tsx";
 import General from "./pages/dashboard/admin/General";
 import IntegrationPage from "./pages/dashboard/admin/IntegrationPage";
+import SettingsPage from "@/pages/dashboard/admin/settings-page.tsx";
+import CoursesPage from "@/pages/dashboard/admin/courses-page.tsx";
 
 
 
@@ -250,6 +252,8 @@ function App() {
                 <Route path={"blogs"} element={<BlogsPage/>}/>
                 <Route path={"ads"} element={<AdsPage/>}/>
                 <Route path={"ai-query"} element={<AIQueriesDashboard/>}/>
+                <Route path={"courses"} element={<CoursesPage/>}/>
+                <Route path={"settings"} element={<SettingsPage/>}/>
                 <Route path={"general"} element={<General/>}/>
                 <Route path={"integration"} element={<IntegrationPage/>}/>
             </Route>
