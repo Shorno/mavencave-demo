@@ -1,14 +1,16 @@
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Trophy, MapPin } from 'lucide-react';
+import {Card, CardContent} from '@/components/ui/card';
+import {Button} from '@/components/ui/button';
+import {Trophy, MapPin, GraduationCap} from 'lucide-react';
 import type {University} from "@/data/universities.ts";
+import {Link} from "react-router";
 
 interface UniversityCardProps {
     university: University;
 }
 
-const UniversityCard: React.FC<UniversityCardProps> = ({ university }) => {
+
+const UniversityCard: React.FC<UniversityCardProps> = ({university}) => {
     return (
         <Card className="hover:shadow-lg transition-shadow duration-200 bg-white h-full">
             <CardContent className="p-4 sm:p-6 h-full">
@@ -22,10 +24,13 @@ const UniversityCard: React.FC<UniversityCardProps> = ({ university }) => {
                             className="w-12 h-12 object-cover rounded"
                             onError={(e) => {
                                 const target = e.target as HTMLImageElement;
-                                target.src = 'https://placehold.co/48'; // fallback
+                                target.style.display = 'none';
+                                target.nextElementSibling?.classList.remove('hidden');
                             }}
                         />
-
+                        <div className="hidden w-12 h-12 bg-purple-100 rounded flex items-center justify-center">
+                            <GraduationCap className="h-6 w-6 text-purple-600" />
+                        </div>
 
                         {/* University Info */}
                         <div className="flex-grow min-w-0">
@@ -33,7 +38,7 @@ const UniversityCard: React.FC<UniversityCardProps> = ({ university }) => {
                                 {university.name}
                             </h3>
                             <div className="flex items-center gap-2 text-gray-600">
-                                <MapPin className="h-4 w-4 text-purple-600 flex-shrink-0" />
+                                <MapPin className="h-4 w-4 text-purple-600 flex-shrink-0"/>
                                 <span className="text-sm">{university.location}</span>
                             </div>
                         </div>
@@ -45,7 +50,7 @@ const UniversityCard: React.FC<UniversityCardProps> = ({ university }) => {
                         <div>
                             <div className="text-sm text-gray-600 mb-2">কিউএস র‍্যাঙ্ক</div>
                             <div className="flex items-center justify-center gap-1">
-                                <Trophy className="h-4 w-4 text-purple-600" />
+                                <Trophy className="h-4 w-4 text-purple-600"/>
                                 <span className="text-lg font-semibold text-purple-600">
                                     {university.qsRank}
                                 </span>
@@ -75,7 +80,9 @@ const UniversityCard: React.FC<UniversityCardProps> = ({ university }) => {
                             variant="outline"
                             className="w-full rounded-full py-3 px-6"
                         >
-                            আরও জানুন
+                            <Link to={new URL(university.logo).origin} target={"_blank"}>
+                                আরও জানুন
+                            </Link>
                         </Button>
                         <Button
                             className="rounded-full w-full"
