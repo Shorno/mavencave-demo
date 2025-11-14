@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { type FormEvent, useEffect, useMemo, useState } from "react";
 import { NavLink } from "react-router";
 import { Loader2, Plus, Send, Trash2, Pencil } from "lucide-react";
 import { chatApi } from "@/lib/api";
