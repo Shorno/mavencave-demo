@@ -88,7 +88,7 @@ import GmatSampleQuesPage from "./components/GMAT/GmatSampleQuesPage";
 import GmatSyllabusPage from "./components/GMAT/GmatSyllabusPage";
 import SATEligibilityPage from "@/pages/SAT/SATEligibilityPage.tsx";
 import SATRegistrationPage from "@/pages/SAT/SATRegistrationPage.tsx";
-import SATSyllabusPage from "@/pages/SAT/ SATSyllabusPage.tsx";
+import SATSyllabusPage from "@/pages/SAT/SATSyllabusPage.tsx";
 import SATPreparationPage from "@/pages/SAT/SATPreparationPage.tsx";
 import IeltsMasterClass from "@/components/IELTS_masterclass/IeltsMasterClass.tsx";
 import GRERegistrationPage from "@/pages/GRE/GRERegistrationPage.tsx";
@@ -104,8 +104,10 @@ import CounsellorHomePage from "./components/CounselorPage/CounsellorHomePage";
 import ReferralPage from "./components/CounselorPage/ReferralPage";
 import CounselingSection from "./components/CounselorPage/CouselingModal/CounselingSection";
 import AdminDashboardLayout from "@/layout/AdminDashboardLayout.tsx";
+import ProtectedRoute from "@/components/ProtectedRoute";
 import UsersPage from "@/pages/dashboard/admin/UsersPage.tsx";
 import BlogsPage from "./pages/dashboard/admin/BlogsPage";
+import EventsPage from "./pages/dashboard/admin/EventsPage";
 import DashboardOverview from "./pages/dashboard/admin/DashBoardOverview";
 import AdsPage from "./components/ads-admin dashboard/AdsPage";
 import AIQueriesDashboard from "@/components/Ai_Queries-admin dashboard/AiQueriesPage.tsx";
@@ -246,16 +248,19 @@ function App() {
                 <Route path={"/calculator/cgpa"} element={<CGPACalculatorPage/>}/>
 
             </Route>
+            <Route element={<ProtectedRoute requiredRoles={['admin', 'content-manager', 'course-manager']}/>}>
             <Route path={"/admin/dashboard"} element={<AdminDashboardLayout/>}>
                 <Route index element={<DashboardOverview/>}/>
                 <Route path={"users"} element={<UsersPage/>}/>
                 <Route path={"blogs"} element={<BlogsPage/>}/>
+                <Route path={"events"} element={<EventsPage/>}/>
                 <Route path={"ads"} element={<AdsPage/>}/>
                 <Route path={"ai-query"} element={<AIQueriesDashboard/>}/>
                 <Route path={"courses"} element={<CoursesPage/>}/>
                 <Route path={"settings"} element={<SettingsPage/>}/>
                 <Route path={"general"} element={<General/>}/>
                 <Route path={"integration"} element={<IntegrationPage/>}/>
+            </Route>
             </Route>
         </Routes>
     )

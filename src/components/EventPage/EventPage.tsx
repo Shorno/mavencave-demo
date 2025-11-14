@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import UpcomingEvent from "./UpcomingEvent";
-import image1 from "../../../public/images/Bristy/Event455318Img-min-1024x615.jpg"
+const image1 = "/images/Bristy/Event455318Img-min-1024x615.jpg"
 
 interface FaqItem {
   id: number;

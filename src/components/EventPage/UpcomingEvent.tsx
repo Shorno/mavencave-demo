@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Users, Calendar, BarChart3, Star, ChevronDown, Clock, MapPin } from 'lucide-react';
+import { eventsApi } from "@/lib/api";
 
 // ডেটার জন্য TypeScript ইন্টারফেস
 interface Stat {
@@ -10,7 +11,7 @@ interface Stat {
 }
 
 interface Event {
-  id: number;
+  id: string;
   title: string;
   subtitle: string;
   imageUrl: string;
@@ -30,7 +31,7 @@ const stats: Stat[] = [
 
 const mockEvents: Event[] = [
   {
-    id: 1,
+    id: "m-1",
     title: 'অস্ট্রেলিয়া, বাংলাদেশ থেকে ইউএসএ',
     subtitle: 'ইভেন্ট ডিটেইলস',
     imageUrl: 'https://i.ibb.co.com/F4z2kvRH/attractive-successful-business-professional-holding-microphone-against-colored-background.jpg',
@@ -40,7 +41,7 @@ const mockEvents: Event[] = [
     participants: '৪.৮ রেটিং',
   },
   {
-    id: 2,
+    id: "m-2",
     title: 'গ্লোবাল স্টুডেন্ট জার্নি',
     subtitle: 'ওয়ার্কশপ',
     imageUrl: 'https://i.ibb.co.com/7tks6dpv/Getty-Images-1645070623-b65de84f8be543549c66c73fd28f41ab.jpg',
@@ -50,7 +51,7 @@ const mockEvents: Event[] = [
     participants: '৫.০ রেটিং',
   },
   {
-    id: 3,
+    id: "m-3",
     title: 'গ্লোবাল স্টাডি এক্সপো ২০২৩',
     subtitle: 'সেমিনার',
     imageUrl: 'https://i.ibb.co.com/zhqCCbbq/Image-2.webp',
@@ -146,6 +147,69 @@ const UpcomingEvent: React.FC = () => {
   const [selectedCountry, setSelectedCountry] = useState('');
   const [selectedProgram, setSelectedProgram] = useState('');
   const [selectedSubject, setSelectedSubject] = useState('');
+  const [events, setEvents] = useState<Event[]>(mockEvents);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    let isMounted = true;
+    const loadEvents = async () => {
+      try {
+        setIsLoading(true);
+        const response = await eventsApi.getAll();
+        const data = Array.isArray(response.data) ? response.data : [];
+        if (!isMounted) {
+          return;
+        }
+
+        const formatted: Event[] = data.map((event) => ({
+          id: event._id,
+          title: event.title,
+          subtitle: event.description ? event.description.slice(0, 60) + (event.description.length > 60 ? "..." : "") : 'ইভেন্ট ডিটেইলস',
+          imageUrl: event.image || 'https://placehold.co/400x250/ccc/333?text=Event',
+          date: event.date
+            ? new Date(event.date).toLocaleDateString("bn-BD", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })
+            : 'তারিখ নির্ধারিত হয়নি',
+          time: event.time || 'সময় নির্ধারিত হয়নি',
+          location: event.location || 'স্থান নির্ধারিত হয়নি',
+          participants: event.location ? `${event.location} থেকে নির্বাচিত` : 'নিবন্ধন চলমান',
+        }));
+
+        if (formatted.length === 0) {
+          setEvents(mockEvents);
+          return;
+        }
+
+        setEvents([...formatted, ...mockEvents]);
+      } catch (error) {
+        console.error("Failed to fetch events. Using fallback events.", error);
+        if (isMounted) {
+          setEvents(mockEvents);
+        }
+      } finally {
+        if (isMounted) {
+          setIsLoading(false);
+        }
+      }
+    };
+
+    loadEvents();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const filteredEvents = useMemo(() => {
+    return events.filter((event) => {
+      const matchesCountry = selectedCountry ? event.location.includes(selectedCountry) : true;
+      const matchesProgram = selectedProgram ? event.subtitle.includes(selectedProgram) : true;
+      const matchesSubject = selectedSubject ? event.title.includes(selectedSubject) : true;
+      return matchesCountry && matchesProgram && matchesSubject;
+    });
+  }, [events, selectedCountry, selectedProgram, selectedSubject]);
 
   return (
     <div className="font-['Inter'] min-h-screen bg-gray-50 pb-16">
@@ -200,9 +264,15 @@ const UpcomingEvent: React.FC = () => {
 
         {/* ৪. ইভেন্ট কার্ড সেকশন */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {mockEvents.map((event) => (
-            <EventCard key={event.id} event={event} />
-          ))}
+          {isLoading ? (
+            <p className="col-span-full text-center text-gray-500">ইভেন্ট লোড হচ্ছে...</p>
+          ) : filteredEvents.length ? (
+            filteredEvents.map((event) => (
+              <EventCard key={event.id} event={event} />
+            ))
+          ) : (
+            <p className="col-span-full text-center text-gray-500">কোনো ইভেন্ট পাওয়া যায়নি</p>
+          )}
         </div>
         
         {/* লোড মোর বাটন (ঐচ্ছিক) */}

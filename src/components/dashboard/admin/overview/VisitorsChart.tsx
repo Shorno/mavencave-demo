@@ -13,16 +13,6 @@ import {
     ChartTooltipContent,
 } from "@/components/ui/chart"
 
-const chartData = [
-    { day: "রবি", visitors: 90000 },
-    { day: "সোম", visitors: 30000 },
-    { day: "মঙ্গল", visitors: 45000 },
-    { day: "বুধ", visitors: 60000 },
-    { day: "বৃহস্পতি", visitors: 25000 },
-    { day: "শুক্র", visitors: 50000 },
-    { day: "শনি", visitors: 35000 },
-]
-
 const chartConfig = {
     visitors: {
         label: "দর্শক",
@@ -30,7 +20,26 @@ const chartConfig = {
     },
 } satisfies ChartConfig
 
-export function VisitorsChart() {
+type VisitorsChartProps = {
+    data?: { day: string; count: number }[]
+}
+
+const fallbackData = [
+    { day: "রবি", count: 90000 },
+    { day: "সোম", count: 30000 },
+    { day: "মঙ্গল", count: 45000 },
+    { day: "বুধ", count: 60000 },
+    { day: "বৃহস্পতি", count: 25000 },
+    { day: "শুক্র", count: 50000 },
+    { day: "শনি", count: 35000 },
+]
+
+export function VisitorsChart({ data }: VisitorsChartProps) {
+    const chartData = (data?.length ? data : fallbackData).map((item) => ({
+        day: item.day,
+        visitors: item.count,
+    }))
+
     return (
         <Card>
             <CardHeader>

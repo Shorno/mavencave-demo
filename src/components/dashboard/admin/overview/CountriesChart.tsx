@@ -13,15 +13,6 @@ import {
     ChartTooltipContent,
 } from "@/components/ui/chart"
 
-const chartData = [
-    { country: "অস্ট্রেলিয়া", percentage: 30, fill: "#6b7aff" },
-    { country: "জার্মানি", percentage: 12, fill: "#ffb078" },
-    { country: "যুক্তরাজ্য", percentage: 17, fill: "#5dd85d" },
-    { country: "আয়ারল্যান্ড", percentage: 7, fill: "#dd3333" },
-    { country: "কানাডা", percentage: 12, fill: "#ffd43d" },
-    { country: "যুক্তরাষ্ট্র", percentage: 22, fill: "#c969b9" },
-]
-
 const chartConfig = {
     percentage: {
         label: "শতাংশ",
@@ -48,10 +39,29 @@ const renderLegend = (props: any) => {
     );
 };
 
-export function CountriesChart() {
+type CountriesChartProps = {
+    data?: { name: string; value: number }[]
+}
+
+const fallbackCountries = [
+    { name: "অস্ট্রেলিয়া", value: 30, fill: "#6b7aff" },
+    { name: "জার্মানি", value: 12, fill: "#ffb078" },
+    { name: "যুক্তরাজ্য", value: 17, fill: "#5dd85d" },
+    { name: "আয়ারল্যান্ড", value: 7, fill: "#dd3333" },
+    { name: "কানাডা", value: 12, fill: "#ffd43d" },
+    { name: "যুক্তরাষ্ট্র", value: 22, fill: "#c969b9" },
+]
+
+export function CountriesChart({ data }: CountriesChartProps) {
+    const chartData = (data?.length ? data : fallbackCountries).map((item, index) => ({
+        country: item.name,
+        percentage: item.value,
+        fill: fallbackCountries[index % fallbackCountries.length].fill,
+    }))
+
     const totalPercentage = React.useMemo(() => {
         return chartData.reduce((acc, curr) => acc + curr.percentage, 0)
-    }, [])
+    }, [chartData])
 
     return (
         <Card>

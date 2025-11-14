@@ -3,10 +3,10 @@
 // নতুন আইকন ইম্পোর্ট করা হলো: FaUniversity, FaFileContract, FaBookOpen, FaSearch, FaPlay, FaCalendarAlt, FaClock
 import { FaPlay, FaCalendarAlt, FaClock, FaUniversity, FaFileContract, FaBookOpen, FaSearch } from 'react-icons/fa'; 
 import Sidebar from './Sidebar'; 
-import image1 from '../../../public/images/Bristy/entrepreneurs-meeting-office.jpg'
-import image2 from '../../../public/images/Bristy/front-view-smiley-man-holding-paper.jpg'
-import image3 from '../../../public/images/Bristy/portrait-smiling-male-student-holding-books.jpg'
-import image4 from '../../../public/images/Bristy/attractive-successful-business-professional-holding-microphone-against-colored-background.jpg'
+const image1 = '/images/Bristy/entrepreneurs-meeting-office.jpg'
+const image2 = '/images/Bristy/front-view-smiley-man-holding-paper.jpg'
+const image3 = '/images/Bristy/portrait-smiling-male-student-holding-books.jpg'
+const image4 = '/images/Bristy/attractive-successful-business-professional-holding-microphone-against-colored-background.jpg'
 
 // --- উপ-কম্পোনেন্ট: ১. ফিচার কার্ড ---
 

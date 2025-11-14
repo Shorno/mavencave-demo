@@ -8,10 +8,32 @@ import {User, Mail, Lock, Eye, EyeOff} from "lucide-react"
 import {useState} from "react"
 import GoogleIcon from "@/components/google-icon.tsx";
 import FacebookIcon from "@/components/facebook-icon.tsx";
-import {Link} from "react-router";
+import {Link, useNavigate} from "react-router";
+import { useAuth } from "@/hooks/useAuth";
+import { getOAuthUrl } from "@/lib/api";
 
 export default function SignUpPage() {
     const [showPassword, setShowPassword] = useState(false)
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [agree, setAgree] = useState(false)
+    const [submitting, setSubmitting] = useState(false)
+    const { register } = useAuth()
+    const navigate = useNavigate()
+
+    const onSubmit = async (e: React.FormEvent) => {
+        e.preventDefault()
+        if (submitting) return
+        setSubmitting(true)
+        try {
+            if (!agree) return
+            await register(name, email, password)
+            navigate("/", { replace: true })
+        } finally {
+            setSubmitting(false)
+        }
+    }
 
     return (
         <Card className="w-full max-w-md bg-white/95 backdrop-blur-sm shadow-xl border border-white/20">
@@ -25,7 +47,7 @@ export default function SignUpPage() {
                 </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-                <form className="space-y-5">
+                <form className="space-y-5" onSubmit={onSubmit}>
                     <div className="space-y-2">
                         <Label htmlFor="name" className="text-purple-700 font-medium">
                             আপনার নাম লিখুন
@@ -38,6 +60,8 @@ export default function SignUpPage() {
                                 type="text"
                                 placeholder="আপনার নাম লিখুন"
                                 className="pl-10 bg-white/90 border-gray-300 focus:border-purple-500 focus:ring-purple-500"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
                             />
                         </div>
                     </div>
@@ -54,6 +78,8 @@ export default function SignUpPage() {
                                 type="email"
                                 placeholder="আপনার ইমেইল লিখুন"
                                 className="pl-10 bg-white/90 border-gray-300 focus:border-purple-500 focus:ring-purple-500"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
                     </div>
@@ -70,6 +96,8 @@ export default function SignUpPage() {
                                 type={showPassword ? "text" : "password"}
                                 placeholder="আপনার পাসওয়ার্ড লিখুন"
                                 className="pl-10 pr-10 bg-white/90 border-gray-300 focus:border-purple-500 focus:ring-purple-500"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                             />
                             <Button
                                 type="button"
@@ -91,6 +119,8 @@ export default function SignUpPage() {
                         <Checkbox
                             id="terms"
                             className="border-gray-300 text-purple-600 focus:ring-purple-500 mt-0.5"
+                            checked={agree}
+                            onCheckedChange={(v) => setAgree(Boolean(v))}
                         />
                         <Label
                             htmlFor="terms"
@@ -103,8 +133,9 @@ export default function SignUpPage() {
                     <Button
                         type="submit"
                         className="w-full text-white font-medium py-6"
+                        disabled={submitting || !agree}
                     >
-                        সাইন আপ
+                        {submitting ? "সাইন আপ হচ্ছে..." : "সাইন আপ"}
                     </Button>
                 </form>
 
@@ -118,6 +149,8 @@ export default function SignUpPage() {
                     <Button
                         variant="outline"
                         className="w-full bg-white/90 border-gray-300 hover:bg-gray-50 py-6"
+                        type="button"
+                        onClick={() => (window.location.href = getOAuthUrl("google"))}
                     >
                         <GoogleIcon/>
                         গুগল দিয়ে সাইন আপ করুন
@@ -126,6 +159,8 @@ export default function SignUpPage() {
                     <Button
                         variant="outline"
                         className="w-full bg-white/90 border-gray-300 hover:bg-gray-50 py-6"
+                        type="button"
+                        onClick={() => (window.location.href = getOAuthUrl("facebook"))}
                     >
                         <FacebookIcon/>
                         ফেসবুক দিয়ে সাইন আপ করুন
