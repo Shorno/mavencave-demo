@@ -115,6 +115,7 @@ import General from "./pages/dashboard/admin/General";
 import IntegrationPage from "./pages/dashboard/admin/IntegrationPage";
 import SettingsPage from "@/pages/dashboard/admin/settings-page.tsx";
 import CoursesPage from "@/pages/dashboard/admin/courses-page.tsx";
+import EligibilityFirstPage from "./pages/Elegibility/ElegibilityFirstPage";
 
 
 
@@ -138,6 +139,7 @@ function App() {
                 <Route path={"study-abroad/:country/courses/:course"} element={<MastersTopCourses/>}/>
                 <Route path={"mavencave-ai"} element={<MavenCaveAi/>}/>
                 <Route path={"resources/sop"} element={<SOP/>}/>
+                <Route path={"resources/eligibility"} element={<EligibilityFirstPage/>}/>
                 <Route element={<IeltsBlogLayout/>}>
                     <Route path={"/exams/ielts/overview"} element={<IeltsOverviewPage/>}/>
                     <Route path={"/exams/ielts/types"} element={<IeltsTypesPage/>}/>

@@ -41,7 +41,7 @@ export function VisitorsChart({ data }: VisitorsChartProps) {
     }))
 
     return (
-        <Card>
+        <Card className={"border-none"}>
             <CardHeader>
                 <CardTitle>পরিদর্শনকারী ব্যবহারকারী</CardTitle>
                 <CardDescription>এই সপ্তাহ</CardDescription>

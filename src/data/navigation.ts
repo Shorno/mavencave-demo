@@ -670,7 +670,7 @@ export const navigationItems: NavigationItem[] = [
         ],
     },
 
-    {label: "ডাইজেস্ট", href: "/mavencave-digest"},
+    // {label: "ডাইজেস্ট", href: "/mavencave-digest"},
     {label: "মেভেনকেভ AI", href: "/mavencave-ai"},
     {label: "আমাদের সম্পর্কে", href: "/about"},
 ];

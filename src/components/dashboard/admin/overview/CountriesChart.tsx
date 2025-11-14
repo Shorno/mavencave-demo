@@ -3,8 +3,6 @@ import { Label, Pie, PieChart, Legend } from "recharts"
 import {
     Card,
     CardContent,
-    CardHeader,
-    CardTitle,
 } from "@/components/ui/card"
 import {
     type ChartConfig,
@@ -64,10 +62,7 @@ export function CountriesChart({ data }: CountriesChartProps) {
     }, [chartData])
 
     return (
-        <Card>
-            <CardHeader>
-                <CardTitle>জনপ্রিয় দেশসমূহ</CardTitle>
-            </CardHeader>
+        <Card className={"border-none"}>
             <CardContent>
                 <ChartContainer
                     config={chartConfig}
