@@ -116,6 +116,7 @@ import IntegrationPage from "./pages/dashboard/admin/IntegrationPage";
 import SettingsPage from "@/pages/dashboard/admin/settings-page.tsx";
 import CoursesPage from "@/pages/dashboard/admin/courses-page.tsx";
 import EligibilityFirstPage from "./pages/Elegibility/ElegibilityFirstPage";
+import BookAseat from "./pages/BookAseat/BookAseat";
 
 
 
@@ -264,6 +265,7 @@ function App() {
                 <Route path={"integration"} element={<IntegrationPage/>}/>
             </Route>
             </Route>
+            <Route path={"bookseat"} element={<BookAseat/>}/>
         </Routes>
     )
 }

@@ -1,6 +1,7 @@
 
 import React, { useState } from "react";
 import UpcomingEvent from "./UpcomingEvent";
+import { Link } from "react-router";
 const image1 = "/images/Bristy/Event455318Img-min-1024x615.jpg"
 
 interface FaqItem {
@@ -138,7 +139,7 @@ const EventPage: React.FC = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left */}
           <div className="lg:pr-10">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-4xl font-extrabold text-gray-900 leading-tight mb-6">
               বিদেশি পড়তে আগ্রহী শিক্ষার্থীদের উদ্দেশ্যে করা লাইভ ইভেন্ট।
             </h1>
             <p className="text-lg text-gray-600 mb-8">
@@ -167,9 +168,12 @@ const EventPage: React.FC = () => {
               </div>
             </div>
 
-            <button className="w-full sm:w-auto px-10 py-4 text-lg font-semibold text-white bg-[#7C3AED] rounded-lg shadow-lg hover:bg-[#6D28D9] transition duration-300 transform hover:scale-[1.02]">
+            <Link
+              to="/bookseat"
+              className="w-full sm:w-auto px-10 py-4 text-lg font-semibold text-white bg-[#7C3AED] rounded-lg shadow-lg hover:bg-[#6D28D9] transition duration-300 transform hover:scale-[1.02]"
+            >
               আগত ইভেন্টগুলো দেখুন
-            </button>
+            </Link>
           </div>
 
           {/* Right Image */}
@@ -183,7 +187,7 @@ const EventPage: React.FC = () => {
           </div>
         </div>
       </section>
-<UpcomingEvent></UpcomingEvent>
+      <UpcomingEvent></UpcomingEvent>
       {/* Why Attend */}
       <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
@@ -254,9 +258,8 @@ const EventPage: React.FC = () => {
                     strokeWidth={3}
                     stroke="currentColor"
                     fill="none"
-                    className={`w-6 h-6 text-[#7C3AED] transition-transform duration-300 ${
-                      activeFaqId === faq.id ? "rotate-180" : "rotate-0"
-                    }`}
+                    className={`w-6 h-6 text-[#7C3AED] transition-transform duration-300 ${activeFaqId === faq.id ? "rotate-180" : "rotate-0"
+                      }`}
                   >
                     <path
                       strokeLinecap="round"
