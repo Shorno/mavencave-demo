@@ -4,7 +4,7 @@ import { FaCheckCircle, FaTimes } from 'react-icons/fa'; // আইকন ব্�
 
 // ডামি ইমেজ সোর্স (আপনার আসল ইমেজের সোর্স দিন)
 // const ILLUSTRATION_SRC = "../../../";
-import image1 from '../../../../public/images/Bristy/8848686.jpg'
+const image1 = '/images/Bristy/8848686.jpg'
 
 // isOpen এবং onClose প্রপস গ্রহণ করছে (এটি আবশ্যক)
 const CounselingModal = ({ isOpen, onClose }) => {

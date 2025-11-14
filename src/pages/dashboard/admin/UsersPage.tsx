@@ -1,97 +1,119 @@
-import React, { useEffect, useState, } from 'react';
+import React, { useEffect, useState } from 'react';
+import { adminApi } from '@/lib/api';
+import { toast } from 'sonner';
 
-// --- Type Definition for a User ---
-// Note: Changed type name to UserType for clarity, although it follows your previous BlogsType structure for consistency.
 export type UserType = {
   _id: string;
   name: string;
   email: string;
-  country: string;
-  avatarUrl: string; // Placeholder for image
-  signUpDate: string; // ISO date or a date string
-  status: 'সক্রিয়' | 'নিষ্ক্রিয়' | string;
+  country?: string;
+  avatarUrl?: string;
+  status: 'active' | 'inactive';
+  role: 'user' | 'course-manager' | 'content-manager';
+  createdAt?: string;
 };
 
-// Dummy Data (Replace with API fetch later)
-const DUMMY_USERS: UserType[] = [
-    { _id: '1', name: 'সামিহা ইসলাম', email: 'samihaislam@gmail.com', country: 'অস্ট্রেলিয়া', avatarUrl: 'https://i.pravatar.cc/150?img=1', signUpDate: '১৭ অক্টোবর ২০২৩', status: 'সক্রিয়' },
-    { _id: '2', name: 'রায়া খানম', email: 'rayakhanom@gmail.com', country: 'আয়ারল্যান্ড', avatarUrl: 'https://i.pravatar.cc/150?img=2', signUpDate: '১৭ অক্টোবর ২০২৩', status: 'সক্রিয়' },
-    { _id: '3', name: 'ফাহিম আহমেদ', email: 'fahlmahmed@gmail.com', country: 'যুক্তরাষ্ট্র', avatarUrl: 'https://i.pravatar.cc/150?img=3', signUpDate: '১৬ অক্টোবর ২০২৩', status: 'সক্রিয়' },
-    { _id: '4', name: 'সাফিয়া আক্তার', email: 'safiamaakter@gmail.com', country: 'অস্ট্রেলিয়া', avatarUrl: 'https://i.pravatar.cc/150?img=4', signUpDate: '১৬ অক্টোবর ২০২৩', status: 'নিষ্ক্রিয়' },
-    { _id: '5', name: 'তানভীর হোসাইন', email: 'tanvirhossain@gmail.com', country: 'কানাডা', avatarUrl: 'https://i.pravatar.cc/150?img=5', signUpDate: '১৬ অক্টোবর ২০২৩', status: 'সক্রিয়' },
-    { _id: '6', name: 'রাফি রহমান', email: 'rafirahman@gmail.com', country: 'জার্মানি', avatarUrl: 'https://i.pravatar.cc/150?img=6', signUpDate: '১৫ অক্টোবর ২০২৩', status: 'সক্রিয়' },
-    { _id: '7', name: 'উম্মে হাবিবা', email: 'ummehabiba@gmail.com', country: 'যুক্তরাজ্য', avatarUrl: 'https://i.pravatar.cc/150?img=7', signUpDate: '১৫ অক্টোবর ২০২৩', status: 'সক্রিয়' },
-    { _id: '8', name: 'সুমাইয়া রহমান', email: 'sumaiya88@gmail.com', country: 'কানাডা', avatarUrl: 'https://i.pravatar.cc/150?img=8', signUpDate: '১৫ অক্টোবর ২০২৩', status: 'সক্রিয়' },
-    { _id: '9', name: 'তাওসীফ মোগনী', email: 'tawsif1708@gmail.com', country: 'অস্ট্রেলিয়া', avatarUrl: 'https://i.pravatar.cc/150?img=9', signUpDate: '১৪ অক্টোবর ২০২৩', status: 'নিষ্ক্রিয়' },
-    { _id: '10', name: 'দিলরুবা নূর', email: 'sinthianoor@gmail.com', country: 'যুক্তরাজ্য', avatarUrl: 'https://i.pravatar.cc/150?img=10', signUpDate: '১৪ অক্টোবর ২০২৩', status: 'সক্রিয়' },
-];
-
 const PAGE_SIZE = 10;
-const TOTAL_DUMMY_COUNT = 250; // Total count for pagination display
+
+const STATUS_LABELS: Record<UserType['status'], string> = {
+  active: 'সক্রিয়',
+  inactive: 'নিষ্ক্রিয়',
+};
+
+const ROLE_LABELS: Record<UserType['role'], string> = {
+  user: 'ব্যবহারকারী',
+  'course-manager': 'কোর্স ম্যানেজার',
+  'content-manager': 'কনটেন্ট ম্যানেজার',
+};
+
+const STATUS_FILTER_OPTIONS = [
+  { value: 'all', label: 'অবস্থা' },
+  { value: 'active', label: 'সক্রিয়' },
+  { value: 'inactive', label: 'নিষ্ক্রিয়' },
+] as const;
+
+const ROLE_OPTIONS = [
+  { value: 'user', label: 'ব্যবহারকারী' },
+  { value: 'course-manager', label: 'কোর্স ম্যানেজার' },
+  { value: 'content-manager', label: 'কনটেন্ট ম্যানেজার' },
+] as const;
+
+type FormState = {
+  name: string;
+  email: string;
+  country: string;
+  role: UserType['role'];
+  status: UserType['status'];
+  avatarUrl: string;
+};
+
+const DEFAULT_FORM: FormState = {
+  name: '',
+  email: '',
+  country: '',
+  role: 'user',
+  status: 'active',
+  avatarUrl: '',
+};
 
 export default function UsersPage() {
   const [users, setUsers] = useState<UserType[]>([]);
   const [query, setQuery] = useState('');
-  const [statusFilter, setStatusFilter] = useState<'all' | 'সক্রিয়' | 'নিষ্ক্রিয়'>('all');
+  const [statusFilter, setStatusFilter] = useState<'all' | 'active' | 'inactive'>('all');
   const [page, setPage] = useState(1);
-  const [total, setTotal] = useState(TOTAL_DUMMY_COUNT); // Using a fixed large number for better pagination feel
+  const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(false);
-  const [showAddModal, setShowAddModal] = useState(false);
-  const [newUserName, setNewUserName] = useState('');
-  const [newUserEmail, setNewUserEmail] = useState('');
-  const [showMenuId, setShowMenuId] = useState<string | null>(null); // For the action menu
+  const [showModal, setShowModal] = useState(false);
+  const [editingUser, setEditingUser] = useState<UserType | null>(null);
+  const [form, setForm] = useState<FormState>(DEFAULT_FORM);
+  const [refreshToken, setRefreshToken] = useState(0);
+  const [submitting, setSubmitting] = useState(false);
+  const [showMenuId, setShowMenuId] = useState<string | null>(null);
+  const [deletingId, setDeletingId] = useState<string | null>(null);
 
-  // --- 1. DATA FETCHING (API Integration Point) ---
   useEffect(() => {
+    let isMounted = true;
+    const fetchUsers = async () => {
+      setLoading(true);
+      try {
+        const params: Record<string, any> = {
+          page,
+          limit: PAGE_SIZE,
+        };
+        if (query) params.q = query;
+        if (statusFilter !== 'all') params.status = statusFilter;
+
+        const response = await adminApi.getUsers(params);
+        if (!isMounted) return;
+
+        const data = response.data;
+        setUsers(data.users || []);
+        setTotal(data.meta?.total || 0);
+      } catch (error: any) {
+        if (!isMounted) return;
+        const message = error?.response?.data?.message || 'ব্যবহারকারীর তথ্য লোড করতে ব্যর্থ হয়েছে।';
+        toast.error(message);
+        setUsers([]);
+        setTotal(0);
+      } finally {
+        if (isMounted) setLoading(false);
+      }
+    };
+
     fetchUsers();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [page, query, statusFilter]);
-
-  async function fetchUsers() {
-    setLoading(true);
-    
-    // 💡 NOTE: Replace with your actual backend API call
-    try {
-        // Example API URL construction:
-        const url = new URL('/api/admin/users', window.location.origin);
-        url.searchParams.set('page', String(page));
-        url.searchParams.set('pageSize', String(PAGE_SIZE));
-        if (query) url.searchParams.set('q', query);
-        if (statusFilter !== 'all') url.searchParams.set('status', statusFilter);
-        
-        // --- Dummy Data Logic (Simulate fetch and filtering) ---
-        await new Promise(resolve => setTimeout(resolve, 500)); 
-        
-        const filteredUsers = DUMMY_USERS.filter(u => 
-            (statusFilter === 'all' || u.status === statusFilter) &&
-            (u.name.toLowerCase().includes(query.toLowerCase()) || u.email.toLowerCase().includes(query.toLowerCase()))
-        );
-        
-        // Use filtered results if searching/filtering, otherwise use dummy for UI consistency
-        const usersToDisplay = (query || statusFilter !== 'all') ? filteredUsers : DUMMY_USERS;
-        
-        setUsers(usersToDisplay.slice(0, PAGE_SIZE)); // Display first PAGE_SIZE elements of the filtered list
-        setTotal((query || statusFilter !== 'all') ? filteredUsers.length : TOTAL_DUMMY_COUNT);
-        // -----------------------------------------------------
-
-    } catch (err) {
-      console.error('Failed to fetch users:', err);
-      setUsers([]);
-      setTotal(0);
-    } finally {
-      setLoading(false);
-    }
-  }
+    return () => {
+      isMounted = false;
+    };
+  }, [page, query, statusFilter, refreshToken]);
   
-  // --- 2. SEARCH & FILTER HANDLERS ---
   function handleSearchChange(e: React.ChangeEvent<HTMLInputElement>) {
     setQuery(e.target.value);
-    setPage(1); 
+    setPage(1);
   }
 
   function handleStatusChange(e: React.ChangeEvent<HTMLSelectElement>) {
-    setStatusFilter(e.target.value as 'all' | 'সক্রিয়' | 'নিষ্ক্রিয়');
-    setPage(1); 
+    setStatusFilter(e.target.value as 'all' | 'active' | 'inactive');
+    setPage(1);
   }
 
   // --- 3. EXPORT CSV FUNCTIONALITY ---
@@ -103,19 +125,23 @@ export default function UsersPage() {
   }
 
   function exportCSV() {
-    if (!users.length) return alert('Export করার জন্য কোনো ব্যবহারকারী নেই।');
-    
-    const headers = ['Name', 'Email', 'Country', 'SignUp Date', 'Status'];
+    if (!users.length) {
+      toast.error('Export করার জন্য কোনো ব্যবহারকারী নেই।');
+      return;
+    }
+
+    const headers = ['Name', 'Email', 'Country', 'SignUp Date', 'Status', 'Role'];
     const rows = users.map(u => [
       escapeCsv(u.name),
       escapeCsv(u.email),
-      escapeCsv(u.country),
-      escapeCsv(u.signUpDate),
-      escapeCsv(u.status),
+      escapeCsv(u.country || 'N/A'),
+      escapeCsv(u.createdAt ? new Date(u.createdAt).toLocaleDateString('bn-BD') : ''),
+      escapeCsv(STATUS_LABELS[u.status]),
+      escapeCsv(ROLE_LABELS[u.role]),
     ]);
 
     const csv = [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
-    
+
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -123,79 +149,82 @@ export default function UsersPage() {
     a.download = `users-page-${page}.csv`;
     a.click();
     URL.revokeObjectURL(url);
-    alert('CSV সফলভাবে ডাউনলোড হয়েছে!');
+    toast.success('CSV সফলভাবে ডাউনলোড হয়েছে!');
   }
   
   // --- 4. ADD NEW USER FUNCTIONALITY (API Integration Point) ---
- async function handleAddUser(e: React.FormEvent) {
-    e.preventDefault();
-    if (!newUserName || !newUserEmail) return alert('অনুগ্রহ করে নাম এবং ইমেইল দিন।');
-    
-    try {
-      // 💡 NOTE: Replace with your actual POST API call to create a new user
-      const payload = { 
-          name: newUserName, 
-          email: newUserEmail,
-          // Add other necessary fields (e.g., password, role)
-      };
-      
-      // ✅ API কলটি চালু করা হলো এবং payload ব্যবহার করা হলো
-      const res = await fetch('/api/admin/users', {
-         method: 'POST',
-         headers: { 'Content-Type': 'application/json' },
-         body: JSON.stringify(payload), // <-- payload এখন ব্যবহৃত হচ্ছে
-      });
-      
-      if (!res.ok) {
-          // যদি রেসপন্স ok না হয়, তবে এরর থ্রো করা হবে
-          const errorData = await res.json();
-          throw new Error(errorData.message || 'ব্যবহারকারী যোগ করতে ব্যর্থ হয়েছে');
-      }
-      
-      // const createdUser = await res.json(); 
-      
-      // Close modal and refresh list
-      setShowAddModal(false);
-      setNewUserName('');
-      setNewUserEmail('');
-      setPage(1);
-      fetchUsers(); // Re-fetch data to show the new user
-      
-      alert('নতুন ব্যবহারকারী সফলভাবে যোগ করা হয়েছে!');
+  const resetForm = () => {
+    setForm(DEFAULT_FORM);
+    setEditingUser(null);
+  };
 
-    } catch (err) {
-      console.error('Add User Failed:', err);
-      // এখানে API থেকে আসা এরর মেসেজটি দেখানো যেতে পারে
-      alert('ব্যবহারকারী যোগ করতে ব্যর্থ হয়েছে। ' + (err instanceof Error ? err.message : 'অনুগ্রহ করে সার্ভার লগ চেক করুন।'));
+  const openCreateModal = () => {
+    resetForm();
+    setShowModal(true);
+  };
+
+  const openEditModal = (user: UserType) => {
+    setEditingUser(user);
+    setForm({
+      name: user.name,
+      email: user.email,
+      country: user.country || '',
+      role: user.role,
+      status: user.status,
+      avatarUrl: user.avatarUrl || '',
+    });
+    setShowModal(true);
+  };
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!form.name || !form.email) {
+      toast.error('অনুগ্রহ করে নাম এবং ইমেইল দিন।');
+      return;
     }
-}
+
+    try {
+      setSubmitting(true);
+      if (editingUser) {
+        await adminApi.updateUser(editingUser._id, form);
+        toast.success('ব্যবহারকারী আপডেট হয়েছে।');
+      } else {
+        await adminApi.createUser(form);
+        toast.success('নতুন ব্যবহারকারী যোগ করা হয়েছে।');
+      }
+
+      setShowModal(false);
+      resetForm();
+      setPage(1);
+      setRefreshToken(token => token + 1);
+    } catch (error: any) {
+      const message = error?.response?.data?.message || 'ব্যবহারকারী সংরক্ষণ করা যায়নি।';
+      toast.error(message);
+    } finally {
+      setSubmitting(false);
+    }
+  }
 
   // --- 5. Action Handlers (Delete, Edit, etc.) ---
   async function handleDelete(userId: string) {
     if (!confirm('আপনি কি নিশ্চিত যে এই ব্যবহারকারীকে মুছে ফেলতে চান?')) return;
     setShowMenuId(null);
+    setDeletingId(userId);
     try {
-      // 💡 NOTE: Replace with your actual DELETE API call
-      // const res = await fetch(`/api/admin/users/${userId}`, { method: 'DELETE' });
-      // if (!res.ok) throw new Error('Delete failed');
-      
-      await new Promise(resolve => setTimeout(resolve, 300));
-      
-      // Optimistic refresh
-      setUsers(prev => prev.filter(u => u._id !== userId));
-      setTotal(prev => Math.max(0, prev - 1));
-      
-      alert('ব্যবহারকারী সফলভাবে মুছে ফেলা হয়েছে।');
-
-    } catch (err) {
-      console.error(err);
-      alert('ব্যবহারকারী মুছে ফেলা সম্ভব হয়নি।');
+      await adminApi.deleteUser(userId);
+      toast.success('ব্যবহারকারী মুছে ফেলা হয়েছে।');
+      setRefreshToken(token => token + 1);
+    } catch (error: any) {
+      const message = error?.response?.data?.message || 'ব্যবহারকারী মুছে ফেলা সম্ভব হয়নি।';
+      toast.error(message);
+    } finally {
+      setDeletingId(null);
     }
   }
   
-  function handleEdit(userId: string) {
-      alert(`Editing user: ${userId}`);
-      setShowMenuId(null);
+  function handleEdit(user: UserType) {
+    setShowMenuId(null);
+    openEditModal(user);
   }
 
   // --- 6. PAGINATION AND UI CALCULATIONS ---
@@ -221,7 +250,7 @@ export default function UsersPage() {
               এক্সপোর্ট CSV ফাইল
             </button>
             <button
-              onClick={() => setShowAddModal(true)}
+              onClick={openCreateModal}
               className="flex items-center px-4 py-2 bg-blue-700 text-white rounded-lg shadow-md hover:bg-blue-800 transition duration-150"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -245,11 +274,13 @@ export default function UsersPage() {
               </svg>
             </div>
             
-            <div className="relative">
-                <select value={statusFilter} onChange={handleStatusChange} className="border border-gray-300 px-4 py-2 rounded-lg appearance-none bg-white pr-10">
-                    <option value="all">অবস্থা</option>
-                    <option value="সক্রিয়">সক্রিয়</option>
-                    <option value="নিষ্ক্রিয়">নিষ্ক্রিয়</option>
+            <div className="relative w-full md:w-48">
+                <select value={statusFilter} onChange={handleStatusChange} className="w-full border border-gray-300 px-4 py-2 rounded-lg appearance-none bg-white pr-10">
+                    {STATUS_FILTER_OPTIONS.map(option => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
                 </select>
                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-500 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -265,6 +296,7 @@ export default function UsersPage() {
                   <th className="px-4 py-3 min-w-[200px]">ব্যবহারকারী</th>
                   <th className="px-4 py-3 min-w-[200px]">ইমেইল</th>
                   <th className="px-4 py-3 min-w-[120px]">পছন্দের দেশ</th>
+                  <th className="px-4 py-3 min-w-[120px]">ভূমিকা</th>
                   <th className="px-4 py-3 min-w-[150px]">সাইন-আপ তারিখ</th>
                   <th className="px-4 py-3 min-w-[100px]">অবস্থা</th>
                   <th className="px-4 py-3 min-w-[80px]">কার্যক্রম</th>
@@ -284,24 +316,29 @@ export default function UsersPage() {
                     <tr key={user._id} className="bg-white border-b hover:bg-gray-50">
                       <td className="px-4 py-3 font-medium text-gray-900 flex items-center">
                         <img 
-                          src={user.avatarUrl} 
+                          src={user.avatarUrl || `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(user.name)}`}
                           alt={user.name}
-                          className="w-8 h-8 rounded-full object-cover mr-3 flex-shrink-0"
-                          // Fallback to a generic icon if the image fails to load
-                          onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                          className="w-8 h-8 rounded-full object-cover mr-3 flex-shrink-0 bg-indigo-50"
+                          onError={(e) => {
+                            e.currentTarget.onerror = null;
+                            e.currentTarget.src = `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(user.name)}`;
+                          }}
                         />
                         {user.name}
                       </td>
                       <td className="px-4 py-3 text-gray-700">{user.email}</td>
-                      <td className="px-4 py-3">{user.country}</td>
-                      <td className="px-4 py-3">{user.signUpDate}</td>
+                      <td className="px-4 py-3">{user.country || 'অনির্ধারিত'}</td>
+                      <td className="px-4 py-3">{ROLE_LABELS[user.role]}</td>
+                      <td className="px-4 py-3">
+                        {user.createdAt ? new Date(user.createdAt).toLocaleDateString('bn-BD') : 'N/A'}
+                      </td>
                       <td className="px-4 py-3">
                         <span className={`px-3 py-1 text-xs font-semibold rounded-full ${
-                          user.status === 'সক্রিয়' 
+                          user.status === 'active' 
                             ? 'bg-green-100 text-green-800' 
                             : 'bg-red-100 text-red-800'
                         }`}>
-                          {user.status}
+                          {STATUS_LABELS[user.status]}
                         </span>
                       </td>
                       <td className="px-4 py-3 relative">
@@ -323,15 +360,16 @@ export default function UsersPage() {
                             >
                                 <button 
                                     className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-100"
-                                    onClick={() => handleEdit(user._id)}
+                                    onClick={() => handleEdit(user)}
                                 >
                                     সম্পাদনা করুন
                                 </button>
                                 <button 
-                                    className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50"
+                                    className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 disabled:opacity-60"
                                     onClick={() => handleDelete(user._id)}
+                                    disabled={deletingId === user._id}
                                 >
-                                    মুছে ফেলুন
+                                    {deletingId === user._id ? 'মুছছে...' : 'মুছে ফেলুন'}
                                 </button>
                             </div>
                         )}
@@ -371,46 +409,98 @@ export default function UsersPage() {
       </div>
 
       {/* --- Add New User Modal --- */}
-      {showAddModal && (
+      {showModal && (
         <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
-          <div className="absolute inset-0 bg-black opacity-40" onClick={() => setShowAddModal(false)} />
+          <div className="absolute inset-0 bg-black opacity-40" onClick={() => { setShowModal(false); resetForm(); }} />
           <div className="bg-white rounded-xl shadow-2xl w-full max-w-lg p-6 z-10 transform scale-100 transition-all duration-300">
-            <h2 className="text-xl font-medium mb-5 text-gray-800">নতুন ব্যবহারকারী যোগ করুন</h2>
-            <form onSubmit={handleAddUser} className="space-y-4">
+            <h2 className="text-xl font-medium mb-5 text-gray-800">
+              {editingUser ? 'ব্যবহারকারী সম্পাদনা করুন' : 'নতুন ব্যবহারকারী যোগ করুন'}
+            </h2>
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">নাম</label>
                 <input 
-                  value={newUserName} 
-                  onChange={e => setNewUserName(e.target.value)} 
+                  value={form.name} 
+                  onChange={e => setForm(prev => ({ ...prev, name: e.target.value }))}
                   className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:ring-blue-700 focus:border-blue-700" 
                   placeholder="ব্যবহারকারীর পুরো নাম"
-                  required
                 />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">ইমেইল</label>
                 <input 
                   type="email"
-                  value={newUserEmail} 
-                  onChange={e => setNewUserEmail(e.target.value)} 
+                  value={form.email} 
+                  onChange={e => setForm(prev => ({ ...prev, email: e.target.value }))}
                   className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:ring-blue-700 focus:border-blue-700" 
                   placeholder="example@email.com"
-                  required
                 />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">দেশ</label>
+                <input
+                  value={form.country}
+                  onChange={e => setForm(prev => ({ ...prev, country: e.target.value }))}
+                  className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:ring-blue-700 focus:border-blue-700"
+                  placeholder="বাংলাদেশ"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">প্রোফাইল ছবি URL</label>
+                <input
+                  value={form.avatarUrl}
+                  onChange={e => setForm(prev => ({ ...prev, avatarUrl: e.target.value }))}
+                  className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:ring-blue-700 focus:border-blue-700"
+                  placeholder="https://example.com/avatar.jpg"
+                />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">ভূমিকা</label>
+                  <select
+                    value={form.role}
+                    onChange={e => setForm(prev => ({ ...prev, role: e.target.value as UserType['role'] }))}
+                    className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:ring-blue-700 focus:border-blue-700 bg-white"
+                  >
+                    {ROLE_OPTIONS.map(option => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">অবস্থা</label>
+                  <select
+                    value={form.status}
+                    onChange={e => setForm(prev => ({ ...prev, status: e.target.value as UserType['status'] }))}
+                    className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:ring-blue-700 focus:border-blue-700 bg-white"
+                  >
+                    {STATUS_FILTER_OPTIONS.filter(option => option.value !== 'all').map(option => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </div>
               <div className="flex justify-end gap-3 pt-2">
                 <button 
                   type="button" 
-                  onClick={() => setShowAddModal(false)} 
+                  onClick={() => {
+                    setShowModal(false);
+                    resetForm();
+                  }} 
                   className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition"
                 >
                   বাতিল
                 </button>
                 <button 
                   type="submit" 
-                  className="px-4 py-2 bg-blue-700 text-white rounded-lg shadow-md hover:bg-blue-800 transition"
+                  disabled={submitting}
+                  className="px-4 py-2 bg-blue-700 text-white rounded-lg shadow-md hover:bg-blue-800 disabled:opacity-50 transition"
                 >
-                  যোগ করুন
+                  {submitting ? 'সংরক্ষণ হচ্ছে...' : editingUser ? 'আপডেট করুন' : 'যোগ করুন'}
                 </button>
               </div>
             </form>

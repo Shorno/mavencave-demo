@@ -14,7 +14,8 @@ import {
 import {Sheet, SheetContent, SheetTrigger} from "@/components/ui/sheet"
 import {type NavigationItem, navigationItems} from "@/data/navigation.ts";
 import {ExamLayout} from "@/components/exam-nav-layout.tsx";
-import {Link} from "react-router";
+import {Link, useNavigate} from "react-router";
+import { useAuth } from "@/hooks/useAuth";
 
 
 const MultiLevelDropdown = ({items}: { items: NavigationItem[] }) => {
@@ -144,6 +145,8 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
     const [expandedItems, setExpandedItems] = useState<string[]>([])
     const [examDropdownOpen, setExamDropdownOpen] = useState(false)
+    const { user, logout } = useAuth()
+    const navigate = useNavigate()
 
 
     const toggleExpanded = (itemLabel: string) => {
@@ -220,11 +223,38 @@ export default function Navbar() {
                     </div>
 
                     <div className="hidden md:block">
-                        <Button size="xl" className="font-medium px-6 bg-blue-600 hover:bg-blue-700 text-white">
-                            <Link to={"/login"}>
-                                সাইন ইন
-                            </Link>
-                        </Button>
+                        {user ? (
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <Button size="xl" className="font-medium px-6 bg-blue-600 hover:bg-blue-700 text-white">
+                                        {user.name}
+                                        <ChevronDown className="ml-2 h-4 w-4" />
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent align="end" className="w-48">
+                                    {['admin','content-manager','course-manager'].includes(user.role) && (
+                                        <DropdownMenuItem onSelect={() => navigate("/admin/dashboard")}>
+                                            প্রশাসনিক প্যানেল
+                                        </DropdownMenuItem>
+                                    )}
+                                    <DropdownMenuItem
+                                        className="text-red-600"
+                                        onSelect={() => {
+                                            logout()
+                                            navigate("/login")
+                                        }}
+                                    >
+                                        সাইন আউট
+                                    </DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
+                        ) : (
+                            <Button size="xl" className="font-medium px-6 bg-blue-600 hover:bg-blue-700 text-white">
+                                <Link to={"/login"}>
+                                    সাইন ইন
+                                </Link>
+                            </Button>
+                        )}
                     </div>
 
                     <div className="md:hidden">
@@ -257,15 +287,41 @@ export default function Navbar() {
                                     </div>
                                     <div className="p-6 border-t bg-gray-50 mt-auto">
                                         <div className="w-full">
-                                            <Button
-                                                asChild
-                                                className="w-full py-3 text-base font-medium bg-blue-600 hover:bg-blue-700 text-white min-w-0"
-                                                onClick={() => setIsOpen(false)}
-                                            >
-                                                <Link to={"/login"}>
-                                                    সাইন ইন
-                                                </Link>
-                                            </Button>
+                                            {user ? (
+                                                <div className="space-y-3">
+                                                    {['admin','content-manager','course-manager'].includes(user.role) && (
+                                                        <Button
+                                                            className="w-full py-3 text-base font-medium bg-blue-600 hover:bg-blue-700 text-white"
+                                                            onClick={() => {
+                                                                setIsOpen(false)
+                                                                navigate("/admin/dashboard")
+                                                            }}
+                                                        >
+                                                            প্রশাসনিক প্যানেল
+                                                        </Button>
+                                                    )}
+                                                    <Button
+                                                        className="w-full py-3 text-base font-medium bg-red-500 hover:bg-red-600 text-white"
+                                                        onClick={() => {
+                                                            setIsOpen(false)
+                                                            logout()
+                                                            navigate("/login")
+                                                        }}
+                                                    >
+                                                        সাইন আউট
+                                                    </Button>
+                                                </div>
+                                            ) : (
+                                                <Button
+                                                    asChild
+                                                    className="w-full py-3 text-base font-medium bg-blue-600 hover:bg-blue-700 text-white min-w-0"
+                                                    onClick={() => setIsOpen(false)}
+                                                >
+                                                    <Link to={"/login"}>
+                                                        সাইন ইন
+                                                    </Link>
+                                                </Button>
+                                            )}
                                         </div>
                                     </div>
                                 </div>

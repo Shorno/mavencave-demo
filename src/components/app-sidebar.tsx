@@ -5,6 +5,7 @@ import {
     IconFolder,
     IconListDetails, IconRobot,
     IconUsers,
+    IconCalendar,
 } from "@tabler/icons-react"
 
 import { NavMain } from "@/components/nav-main"
@@ -33,6 +34,11 @@ const navLinks = [
         title: "ব্লগসমূহ",
         url: "/admin/dashboard/blogs",
         icon: IconListDetails,
+    },
+    {
+        title: "ইভেন্টসমূহ",
+        url: "/admin/dashboard/events",
+        icon: IconCalendar,
     },
     {
         title: "কোর্সসমূহ",

@@ -5,10 +5,31 @@ import {Card, CardContent, CardDescription, CardHeader, CardTitle} from "@/compo
 import {Separator} from "@/components/ui/separator"
 import {Mail, Lock, Eye, EyeOff} from "lucide-react"
 import {useState} from "react"
-import {Link} from "react-router";
+import {Link, useNavigate, useLocation} from "react-router";
+import { useAuth } from "@/hooks/useAuth";
+import { getOAuthUrl } from "@/lib/api";
 
 export default function SignInPage() {
     const [showPassword, setShowPassword] = useState(false)
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [submitting, setSubmitting] = useState(false)
+    const { login } = useAuth()
+    const navigate = useNavigate()
+    const location = useLocation() as any
+    const from = location.state?.from?.pathname || "/"
+
+    const onSubmit = async (e: React.FormEvent) => {
+        e.preventDefault()
+        if (submitting) return
+        setSubmitting(true)
+        try {
+            await login(email, password)
+            navigate(from, { replace: true })
+        } finally {
+            setSubmitting(false)
+        }
+    }
 
     return (
         <Card className="w-full max-w-md bg-white/95 backdrop-blur-sm shadow-xl border border-white/20">
@@ -22,7 +43,7 @@ export default function SignInPage() {
                 </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-                <form className="space-y-5">
+                <form className="space-y-5" onSubmit={onSubmit}>
                     <div className="space-y-2">
                         <Label htmlFor="email" className="text-purple-700 font-medium">
                             আপনার ইমেইল লিখুন
@@ -34,6 +55,8 @@ export default function SignInPage() {
                                 type="email"
                                 placeholder="আপনার ইমেইল লিখুন"
                                 className="pl-10 bg-white/90 border-gray-300 focus:border-purple-500 focus:ring-purple-500"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
                     </div>
@@ -49,6 +72,8 @@ export default function SignInPage() {
                                 type={showPassword ? "text" : "password"}
                                 placeholder="আপনার পাসওয়ার্ড লিখুন"
                                 className="pl-10 pr-10 bg-white/90 border-gray-300 focus:border-purple-500 focus:ring-purple-500"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                             />
                             <Button
                                 type="button"
@@ -78,8 +103,9 @@ export default function SignInPage() {
                     <Button
                         type="submit"
                         className="w-full  text-white font-medium py-6"
+                        disabled={submitting}
                     >
-                        সাইন ইন
+                        {submitting ? "সাইন ইন হচ্ছে..." : "সাইন ইন"}
                     </Button>
                 </form>
 
@@ -93,6 +119,8 @@ export default function SignInPage() {
                     <Button
                         variant="outline"
                         className="w-full bg-white/90 border-gray-300 hover:bg-gray-50 py-6"
+                        type="button"
+                        onClick={() => (window.location.href = getOAuthUrl("google"))}
                     >
                         <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
                             <path
@@ -114,6 +142,8 @@ export default function SignInPage() {
                     <Button
                         variant="outline"
                         className="w-full bg-white/90 border-gray-300 hover:bg-gray-50 py-6"
+                        type="button"
+                        onClick={() => (window.location.href = getOAuthUrl("facebook"))}
                     >
                         <svg className="w-4 h-4 mr-2" fill="#1877F2" viewBox="0 0 24 24">
                             <path
