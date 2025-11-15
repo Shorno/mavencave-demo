@@ -128,6 +128,9 @@ function App() {
                 <Route index element={<HomePage/>}/>
                 <Route path={"about"} element={<AboutPage/>}/>
                 <Route path={"blog"} element={<BlogPage/>}/>
+
+                <Route path={"bookseat"} element={<BookAseat/>}/>
+
                 {/* blog details pages */}
 
                 {/* cousellor pages */}
@@ -265,7 +268,6 @@ function App() {
                 <Route path={"integration"} element={<IntegrationPage/>}/>
             </Route>
             </Route>
-            <Route path={"bookseat"} element={<BookAseat/>}/>
         </Routes>
     )
 }

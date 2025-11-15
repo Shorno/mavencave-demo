@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
@@ -18,19 +18,8 @@ export const stories = [
     },
 ]
 
-
 export default function SuccessStoriesSection() {
-    const [currentSlide, setCurrentSlide] = useState(0)
     const [showMore, setShowMore] = useState(false)
-
-
-    const nextSlide = () => {
-        setCurrentSlide((prev) => (prev + 1) % stories.length)
-    }
-
-    const prevSlide = () => {
-        setCurrentSlide((prev) => (prev - 1 + stories.length) % stories.length)
-    }
 
     return (
         <section className="bg-gray-50 py-16 px-4">
@@ -40,77 +29,26 @@ export default function SuccessStoriesSection() {
                         <h2 className="text-gray-900 text-3xl md:text-4xl font-bold">স্বপ্ন পূরণের গল্পগুলো</h2>
                     </div>
 
-                    <div className="relative">
-                        <Button
-                            variant="secondary"
-                            size="icon"
-                            className="absolute left-2 md:-left-10 top-1/2 -translate-y-1/2 z-10 rounded-full w-10 h-10 md:w-12 md:h-12 bg-blue-600 hover:bg-blue-700 text-white border-0"
-                            onClick={prevSlide}
-                        >
-                            <ChevronLeft className="h-4 w-4 md:h-5 md:w-5"/>
-                        </Button>
-
-                        <Button
-                            variant="secondary"
-                            size="icon"
-                            className="absolute right-2 md:-right-10 top-1/2 -translate-y-1/2 z-10 rounded-full w-10 h-10 md:w-12 md:h-12 bg-blue-600 hover:bg-blue-700 text-white border-0"
-                            onClick={nextSlide}
-                        >
-                            <ChevronRight className="h-4 w-4 md:h-5 md:w-5"/>
-                        </Button>
-
-                        <div className="md:hidden px-8">
-                            <Card className="bg-white border-0 shadow-lg">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        {stories.map((story, index) => (
+                            <Card
+                                key={index}
+                                className="bg-white p-0 border-0 shadow-lg"
+                            >
                                 <CardContent className="p-0 -mt-4">
                                     <div className="relative rounded-lg">
                                         <img
-                                            src={stories[currentSlide].image || "/placeholder.svg"}
+                                            src={story.image || "/placeholder.svg"}
                                             alt="Success story"
                                             className="w-full h-64 p-2 object-cover rounded-lg"
                                         />
                                     </div>
                                     <div className="p-6">
-                                        <p className="text-gray-700 text-sm leading-relaxed">"{stories[currentSlide].quote}"</p>
+                                        <p className="text-gray-700 text-sm leading-relaxed">"{story.quote}"</p>
                                     </div>
                                 </CardContent>
                             </Card>
-                        </div>
-
-                        <div className="hidden md:grid md:grid-cols-3 gap-8 px-16">
-                            {stories.map((story, index) => (
-                                <Card
-                                    key={index}
-                                    className={`bg-white border-0 shadow-lg transition-all duration-300 ${
-                                        index === currentSlide ? "scale-105" : "scale-100 opacity-70"
-                                    }`}
-                                >
-                                    <CardContent className="p-0 -mt-4">
-                                        <div className="relative rounded-lg">
-                                            <img
-                                                src={story.image || "/placeholder.svg"}
-                                                alt="Success story"
-                                                className="w-full h-64 p-2 object-cover rounded-lg"
-                                            />
-                                        </div>
-                                        <div className="p-6">
-                                            <p className="text-gray-700 text-sm leading-relaxed">"{story.quote}"</p>
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            ))}
-                        </div>
-
-                        <div className="flex justify-center mt-8 space-x-2">
-                            {stories.map((_, index) => (
-                                <button
-                                    key={index}
-                                    className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                                        index === currentSlide ? "bg-blue-600" : "bg-gray-300"
-                                    }`}
-                                    onClick={() => setCurrentSlide(index)}
-                                />
-                            ))}
-                        </div>
+                        ))}
                     </div>
                 </div>
 

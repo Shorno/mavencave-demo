@@ -87,7 +87,9 @@ const UniversityCard: React.FC<UniversityCardProps> = ({university}) => {
                         <Button
                             className="rounded-full w-full"
                         >
-                            আপনার যোগ্যতা যাচাই করুন
+                            <Link to={"/resources/eligibility"}>
+                                আপনার যোগ্যতা যাচাই করুন
+                            </Link>
                         </Button>
                     </div>
                 </div>
